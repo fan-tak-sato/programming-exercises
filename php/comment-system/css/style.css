@@ -1,0 +1,61 @@
+body{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	
+	font-family: "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
+	font-size: 12.5px;
+	color: #666;
+}
+img { border: 0 }
+a:link { color: #00AAE9; text-decoration: none; }
+a:visited { color: #00AAE9; text-decoration: none; }
+a:hover { color: #00AAE9; text-decoration: underline; }
+h2 { text-align: center }
+.container { width: 70%; margin: auto; }
+.formleft { float: left; width: 15% }
+.clearall { clear: both }
+
+#commentform label.error {
+	color: red;
+	margin-left: 0.5%;
+}
+#commentform input.error, #commentform textarea.error {
+	border: 1px solid red;
+}
+
+.commentContainer { border-bottom: 1px solid #ccc; padding: 1%; margin-bottom: 1% }
+
+/* messages */
+.msgInfo, .msgSuccess, .msgWarning, .msgError {
+	border: 1px solid;
+	margin: 10px 0px;
+	padding:15px 10px;
+	/*
+	background-repeat: no-repeat;
+	background-position: 10px center;-moz-border-radius:.5em;
+	-webkit-border-radius:.5em;
+	border-radius:.5em;
+	*/
+}
+.msgInfo {
+	color: #00529B;
+	background-color: #BDE5F8;
+}
+.msgSuccess {
+	color: #4F8A10;
+	background-color: #DFF2BF;
+}
+.msgWarning {
+	color: #9F6000;
+	background-color: #FEEFB3;
+}
+.msgError {
+	color: #D8000C;
+	background-color: #FFBABA;
+}
+
+input, textarea { padding: 0.5% }
