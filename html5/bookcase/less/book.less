@@ -1,0 +1,120 @@
+@import url('elements.less');
+@import url('typography.less');
+
+body {
+    background-image: url('bg.png');
+    overflow-x: hidden;
+}
+
+.texture {
+    position: absolute;
+    left: -9999px;
+}
+
+.transform(@what: all, @time: 1s) {
+    -moz-transition: @what @time, -moz-transform @time;
+    -webkit-transition: @what @time, -webkit-transform @time;
+    -o-transition: @what @time, -o-transform @time;
+    transition: @what @time, transform @time;
+}
+
+.scale(@x, @y: @x) {
+    transform: scale(@x, @y);
+    -ms-transform: scale(@x, @y); /* IE 9 */
+    -webkit-transform: scale(@x, @y); /* Safari and Chrome */
+}
+
+.origin(@x, @y) {
+    transform-origin: @x @y;
+    -ms-transform-origin: @x @y; /* IE 9 */
+    -webkit-transform-origin: @x @y; /* Safari and Chrome */
+}
+
+.rotate(@ang: 7deg, @scale: 1){
+    transform:rotate(@ang) scale(@scale);
+    -ms-transform:rotate(@ang) scale(@scale); /* IE 9 */
+    -webkit-transform:rotate(@ang) scale(@scale); /* Safari and Chrome */
+}
+
+.rotate(@ang: 7deg, @scale: 1){
+    transform:rotate(@ang) scale(@scale);
+    -ms-transform:rotate(@ang) scale(@scale); /* IE 9 */
+    -webkit-transform:rotate(@ang) scale(@scale); /* Safari and Chrome */
+}
+
+#bookcase-cont {
+    float: left;
+    height: 390px;
+    width: 100%;
+    background-image: url('border.png');
+    box-shadow: 0 0 120px 60px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.8);
+}
+
+#hidden-container {
+    position: absolute;
+    left: -9999px;
+}
+
+#bookcase {
+    position: absolute;
+    height: 360px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('wood.png');
+    box-shadow: inset 0 0 120px rgba(0,0,0,0.8);
+ 
+    .book {
+        border-width: 0,0,0,0;
+        border-radius: 4px;
+        position: relative;
+        bottom: 0;
+        overflow: hidden;
+        float: left;
+        z-index: 0;
+        .transform(all, 0.1s);
+        .scale(1);
+        .origin(50%,100%);
+        &:hover {
+            box-shadow: -3px 20px 20px rgba(0,0,0,0.8);
+            .scale(1.1,1.02);
+            z-index: 9999;
+        }
+        .canvas-texture {
+            border: none;
+            position: absolute;
+            z-index: 0;
+        }
+        .booktext {
+            white-space: nowrap;
+            color: #bba217;
+            font-size: 1.25em;
+            font-family: Garamond, "Adobe Garamond Pro";
+            speak: none;
+            font-smoothing: antialiased;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 900;
+            text-decoration: none;
+            text-shadow: 1px 1px 1px rgba(255,255,255,0.2), -1px -1px 1px rgba(0,0,0,0.8);
+            
+            display: block;
+            position: relative;
+            left: 50%;
+            
+            @originx: 0%;
+            @originy: 50%;
+            transform-origin: @originx @originy;
+            -webkit-transform-origin: @originx @originy;
+            -moz-transform-origin: @originx @originy;
+            -o-transform-origin: @originx @originy;
+            
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            i {
+                font-size: 0.75em;
+                margin-bottom: 0.2em;
+            }
+        }
+    }
+}
