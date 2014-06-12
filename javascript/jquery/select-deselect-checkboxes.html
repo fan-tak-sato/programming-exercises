@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>JQuery select and deselect checkboxes</title>
+
+    <link href="../../common/bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+	<h1>JQuery checkbox selection</h1>
+		
+	<p>An example to select and deselect checkboxes on a specific div</p>
+
+	<form class="form-inline" role="form">
+		<div class="form-group">
+			<div>
+				<div class="checkbox">
+					<label for="select-all">
+						<button type="button" class="btn btn-primary" onclick="selectAllCheckboxes('allcheckboxes')">Select all</button>
+					</label>
+					
+				</div>
+				<div class="checkbox">
+					<label for="deselectAll">
+						<button type="button" class="btn btn-primary" onclick="deselectAllCheckboxes('allcheckboxes')">Deselect all</button>
+					</label>
+				</div>
+				<div>&nbsp;</div>
+				
+				<fieldset>
+				<div id="allcheckboxes">
+					<div class="checkbox">
+					<label for="checkbox-one">
+						<input type="checkbox" name="checkbox-one" id="checkbox-one" value="1"/> Checkbox One
+					</label>
+					</div>
+					
+					<div class="checkbox">
+						<label for="checkbox-two">
+							<input type="checkbox" name="checkbox-two" id="checkbox-two" value="2"/> Checkbox One
+						</label>
+					</div>
+						
+					<div class="checkbox">
+						<label for="checkbox-three">				
+							<input type="checkbox" name="checkbox-three" id="checkbox-three" value="3" /> Checkbox Three
+						</label>
+					</div>				
+				</div>
+				</fieldset>
+				
+			</div>
+		</div>
+	</form>
+
+</div>
+
+<script src="../../common/jquery/jquery.min.js"></script>
+<script src="../../common/bootstrap3/js/bootstrap.min.js"></script>
+
+<script>
+function selectAllCheckboxes(divId)
+{
+    checkboxSelection(divId, true);
+}
+
+function deselectAllCheckboxes(divId)
+{
+    checkboxSelection(divId, false);
+}
+
+function checkboxSelection(divId, value)
+{
+	$("#"+divId).find('input[type=checkbox]').each(function () {
+		this.checked = value;
+    });
+}
+</script>
+
+</body>
+</html>

@@ -8,3 +8,5 @@ http://en.wikipedia.org/wiki/Abstract_factory_pattern
 http://en.wikipedia.org/wiki/Abstract_factory
 
 http://it.wikipedia.org/wiki/Abstract_factory
+
+![Alt text](/design-patterns/uml/abstract_factory.jpg)
