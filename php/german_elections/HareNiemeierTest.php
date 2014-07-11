@@ -3,7 +3,6 @@
 /**
  * @author Andrea Fiori
  * @since  18 November 2013
- *
  */
 class HareNiemer {
 	

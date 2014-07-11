@@ -1,3 +1,6 @@
+Array Extremes
+=================
+
 A zero-indexed array A consisting of N integers is given. The average value of array A is defined as:
 
 (A[0] + A[1] + ... + A[N-1]) / N

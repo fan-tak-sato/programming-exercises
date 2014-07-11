@@ -1,3 +1,6 @@
+Task
+=======
+
 In some German federal states' elections the parliamentary seats are distributed as follows. The seats allocated to a party are calculated by this method in two steps:
 In the first step the corresponding number of votes that are attributable to a party is multiplied by the total number of available seats and divided by the total number of valid votes.
 In the second step the result is split into the integer portion and the rest. The integer parts are attributed to the respective party as seats. The remaining seats are allocated to parties in the order of the size of the fractional portions.

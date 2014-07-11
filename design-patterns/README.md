@@ -15,6 +15,8 @@ Wikipedia
 ------------------
 
 	http://en.wikipedia.org/wiki/Design_pattern_(computer_science)
+	http://en.wikipedia.org/wiki/Object-oriented_design
+	
 	http://en.wikipedia.org/wiki/Creational_pattern
 	http://en.wikipedia.org/wiki/Structural_pattern
 	http://en.wikipedia.org/wiki/Behavioral_pattern

@@ -31,4 +31,3 @@ function solution($A)
 	
 	return $extremeMaxKey;
 }
-
