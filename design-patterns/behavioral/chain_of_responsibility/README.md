@@ -1,7 +1,7 @@
 Chain-of-responsibility pattern
 ===================================
 
-The chain-of-responsibility pattern is a design pattern consisting of a source of command objects and a series of processing objects
+The chain-of-responsibility pattern is a design pattern consisting of a source of command objects and a series of processing objects.
 
 http://en.wikipedia.org/wiki/Chain-of-responsibility_pattern
 
@@ -19,5 +19,7 @@ Intent
 - Launch-and-leave requests with a single processing pipeline that contains many possible handlers.
 - An object-oriented linked list with recursive traversal.
 
+UML
+-----
 
 ![Alt text](/design-patterns/uml/chain_of_responsibility.jpg)

@@ -7,29 +7,29 @@
  */
 function accumulate(iBinaryOperator $op, array $operands)
 {
-	if (count($operands) < 2) {
-		return "error";
-	}
+    if (count($operands) < 2) {
+        return "error";
+    }
 
-	$i=0;
-	foreach($operands as $operand) {
-		
-		if ( !is_numeric($operand) ) {
-			return "error";
-		}
-		
-		if ($i == 0) {
-			$result = $operand + next($operands);
-		} elseif ($i > 1) {
-			$result = $op->calc($result, $operand);
-		}
-		
-		if ( !is_numeric($result) ) {
-			return $result;
-		}
-		
-		$i++;
-	}
+    $i=0;
+    foreach($operands as $operand) {
 
-	return $result;
+        if ( !is_numeric($operand) ) {
+            return "error";
+        }
+
+        if ($i == 0) {
+            $result = $operand + next($operands);
+        } elseif ($i > 1) {
+            $result = $op->calc($result, $operand);
+        }
+
+        if ( !is_numeric($result) ) {
+            return $result;
+        }
+
+        $i++;
+    }
+
+    return $result;
 }

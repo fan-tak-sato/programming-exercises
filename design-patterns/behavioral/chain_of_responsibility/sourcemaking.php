@@ -5,7 +5,7 @@ abstract class AbstractBookTopic {
     abstract function getTitle();
     abstract function setTitle($title_in);
 }
- 
+
 class BookTopic extends AbstractBookTopic {
 
     private $topic;

@@ -39,7 +39,7 @@ abstract class PropertyDecorator implements PropertyInterface
 
     public function setValue($value)
     {
-        return $this->_property->setValue($value)
+        return $this->_property->setValue($value);
     }
 
     public function getValue()
@@ -81,7 +81,6 @@ class PaddedPropertyDecorator extends PropertyDecorator
     }
 }
 
-// USAGE
 $property = new Property();
 $property->setValue('property value');
 

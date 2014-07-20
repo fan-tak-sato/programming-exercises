@@ -2,8 +2,8 @@
 
 class Subtraction implements iBinaryOperator
 {
-	public function calc($x, $y)
-	{
-		return $x - $y;
-	}
+    public function calc($x, $y)
+    {
+        return $x - $y;
+    }
 }

@@ -1,3 +1,6 @@
+MySQL invoice number and price
+==================================
+
 Given a table invoice_items with the following structure:
 
   create table invoice_items (
@@ -5,6 +8,7 @@ Given a table invoice_items with the following structure:
          item varchar(10) not null,
          price integer not null
   );
+
 write an SQL query that returns a list of invoices (inv_num) with the total price of each. The list should be ordered by inv_num (in descending order).
 
 For example, given:

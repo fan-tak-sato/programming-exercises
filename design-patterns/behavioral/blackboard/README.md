@@ -8,5 +8,3 @@ Context
 ----------
 
 An immature domain wich no closed approach to a solution is known or feasible
-
-
