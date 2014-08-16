@@ -4,7 +4,7 @@ R::setup('mysql:host=localhost;dbname=quiz', 'root', '');
 $topics = R::getAll("SELECT DISTINCT(topics) AS topics FROM interview ORDER BY topics, position ");
 
 $qInterview = "SELECT * FROM interview WHERE 1 ";
-if ($_GET['topic']) {
+if ( isset($_GET['topic']) ) {
 	$qInterview .= "AND topics = '".urldecode($_GET['topic'])."' ";
 }
 $qInterview .= "ORDER BY topics, position";
@@ -13,7 +13,9 @@ $interview = R::getAll($qInterview);
 function getTextBetweenTags($string, $tagname) {
     $pattern = "/<$tagname>([\w\W]*?)<\/$tagname>/";
     preg_match($pattern, $string, $matches);
-    return $matches[1];
+    if (isset($matches[1])) {
+        return $matches[1];
+    }
 }
 ?>
 <!DOCTYPE html>

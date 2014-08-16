@@ -1,8 +1,8 @@
 Programming exercizes
 ========================
 
-Algorithms, design patterns and coding interviews.
+Algorithms, design patterns, interview questions and coding interviews.
 
 Each directory has the README.md file with documentation.
 
-Some project are under construction. Documentation and code samples will be completed.
+Some projects are under construction.
