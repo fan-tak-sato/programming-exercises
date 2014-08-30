@@ -7,4 +7,11 @@ In this example we have a SimpleBook class that has a getAuthor() and getTitle()
 
 Adapters are helpful if you want to use a class that doesn't have quite the exact methods you need, and you can't change the orignal class. The adapter can take the methods you can access in the original class, and adapt them into the methods you need.
 
+
+Resources
+--------------
+
+http://en.wikipedia.org/wiki/Adapter_pattern
+
+
 ![Alt text](/design-patterns/uml/adapter.jpg)

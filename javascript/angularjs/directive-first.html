@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.min.js"></script>
+</head>
+<body>
+
+    <div ng-app="superhero">
+        <superman></superman>
+    </div>
+    
+    <script>
+    var app = angular.module("superhero", [])
+
+    app.directive("superman", function() {
+        return {
+            restrict: "E",
+            template: "<div> Here I am to save the day </div>"
+        }
+    });
+    </script>
+</body>
+</html>

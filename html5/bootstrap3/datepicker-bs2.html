@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+    <meta charset="utf-8">
+    <title>Datetimepicker example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/bootstrap/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/bootstrap/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/bootstrap/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">
+</head>
+    
+<body>
+        
+<link rel="stylesheet" type="text/css" media="screen" href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+  
+<div id="datetimepicker" class="input-append date">
+    <input type="text">
+    <span class="add-on">
+        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+    </span>
+</div>
+ 
+<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script type='text/javascript' src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+
+<script type='text/javascript'>
+        
+$(document).ready(function() {
+        
+            $.getScript("http://tarruda.github.io/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js", function(){
+$.getScript("http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js", function(){
+  
+  $('#datetimepicker').datetimepicker({
+    format: 'MM/dd/yyyy hh:mm:ss'
+  });
+  
+var picker = $('#datetimepicker').data('datetimepicker');
+picker.setLocalDate(new Date(Date.UTC(2013, 10, 11, 4, 30)));
+  
+
+});//get script
+});//get script
+
+        
+});
+        
+</script>    
+       
+</body>
+</html>

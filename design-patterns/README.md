@@ -42,6 +42,7 @@ http://sourcemaking.com/design_patterns
 
 Glossary
 ------------------
+
 Abstract algorithms
     Algorithms that do things without precise specifications of how or even what they are doing.
 
