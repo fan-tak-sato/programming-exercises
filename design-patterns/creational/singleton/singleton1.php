@@ -1,69 +1,68 @@
 <?php
 
-// singleton
 class singleton {
 
-	private static $instance;
+    private static $instance;
 
-	public $value1;
-	public $value2;
+    public $value1;
+    public $value2;
 
-	private function initialize() 
-	{
-		$this->value1 = 'test value';
-		$this->value2 = 'test value2';
-	}
+    private function initialize() 
+    {
+        $this->value1 = 'test value';
+        $this->value2 = 'test value2';
+    }
 
-	public function getInstance()
-	{
-		if (!isset(self::$instance))
-		{
-			$class = __CLASS__;
-			self::$instance = new $class();
-			self::$instance->initialize();
-		}
-		return self::$instance;
-	}
-	
-	public function getInstanceObject($className)
-	{
-		$class = $className;
-		self::$instance = new $class();
-		self::$instance->initialize();
-		return self::$instance;
-	}
+    public function getInstance()
+    {
+        if (!isset(self::$instance))
+        {
+            $class = __CLASS__;
+            self::$instance = new $class();
+            self::$instance->initialize();
+        }
+        return self::$instance;
+    }
+
+    public function getInstanceObject($className)
+    {
+        $class = $className;
+        self::$instance = new $class();
+        self::$instance->initialize();
+        return self::$instance;
+    }
 
 }
 
 class application {
 
-	private static $instance;
+    private static $instance;
 
-	public $value1, $value2, $channel;
+    public $value1, $value2, $channel;
 
-	public function checkit()
-	{
-		$this->channel = 1;
-		echo "Another mothod... ".$this->channel;
-	}
+    public function checkit()
+    {
+        $this->channel = 1;
+        
+        echo "Another mothod... ".$this->channel;
+    }
 	
-	public function initialize()
-	{
-		$this->value1 = 'test value';
-		$this->value2 = 'test value2';
-		$this->channel = 33;
-	}
-	
-	public function getInstance()
-	{
-		if (!isset(self::$instance))
-		{
-			$class = __CLASS__;
-			self::$instance = new $class();
-			self::$instance->initialize();
-		}
-		return self::$instance;
-	}
+    public function initialize()
+    {
+        $this->value1 = 'test value';
+        $this->value2 = 'test value2';
+        $this->channel = 33;
+    }
+
+    public function getInstance()
+    {
+        if (!isset(self::$instance)) {
+            $class = __CLASS__;
+            self::$instance = new $class();
+            self::$instance->initialize();
+        }
+        return self::$instance;
+    }
 }
 
 // $myInstance = singleton::getInstance();
@@ -76,4 +75,3 @@ class application {
 $application = 'application';
 $obj = singleton::getInstanceObject($GLOBALS['application']);
 $obj->checkit();
-exit;

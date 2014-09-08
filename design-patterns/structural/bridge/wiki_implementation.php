@@ -1,7 +1,5 @@
 <?php
 
-// From the wikipedia page: http://en.wikipedia.org/wiki/Bridge_pattern
-
 interface DrawingAPI {
     function drawCircle($dX, $dY, $dRadius);
 }

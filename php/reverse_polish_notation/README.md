@@ -1,5 +1,5 @@
 Reverse Polish notation
-==============================
+====================================
 
 Algorithm implementations of the RPN
 

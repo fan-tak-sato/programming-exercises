@@ -2,35 +2,31 @@
 
 class news {
 
-	var $db, $messageLogger;
-	
-	public function __construct()
-	{
-		$obj = singleton::getInstance();
-	}
-	
-	public function setVar($varName, $value)
-	{
-		$this->$varName = $value;
-	}
+    var $db, $messageLogger;
+
+    public function __construct()
+    {
+        $obj = singleton::getInstance();
+    }
+
+    public function setVar($varName, $value)
+    {
+        $this->$varName = $value;
+    }
 }
 
 class singleton
 {
     private static $_instance;
-	
-	private function __construct() {}
-	
+    
     public static function getInstance()
     {
-        if (is_null(self::$_instance))
-		{
+        if (is_null(self::$_instance)) {
             self::$_instance = new self;
         }
         return self::$_instance;
     }
 
-	
     private function __clone() {}
 }
 
