@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    
+    <script type="text/javascript" src="../../../common/angularjs/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="twitterApp">
+    <div ng-controller="AppCtrl">
+        <div enter>Roll over to load more tweets</div>
+    </div>
+    
+    <div id="toggle" style="display:none">Toggle this...</div>
+</div>
+
+    <script>
+    var app = angular.module('twitterApp', []);
+
+    app.controller("AppCtrl", function ($scope) {
+        $scope.loadMoreTweets = function () {
+            tg = document.getElementById('toggle');
+            if (tg.style.display=='none') {
+                tg.style.display = 'block';
+            } else {
+                tg.style.display = 'none';
+            }
+        };
+    });
+
+    app.directive("enter", function () {
+        return function (scope, element, attrs) {
+            element.bind("mouseenter", function () {
+                scope.loadMoreTweets();
+            });
+        };
+    });
+    </script>
+</body>
+</html>

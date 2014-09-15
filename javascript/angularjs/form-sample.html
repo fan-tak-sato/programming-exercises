@@ -64,19 +64,18 @@
     </div>
 
     <script>
-    angular.module('formExample', [])
-            .controller('ExampleController', ['$scope', function($scope) {
-    $scope.master = {};
+    angular.module('formExample', []).controller('ExampleController', ['$scope', function($scope) {
+        $scope.master = {};
 
-    $scope.update = function(user) {
-        $scope.master = angular.copy(user);
-    };
+        $scope.update = function(user) {
+            $scope.master = angular.copy(user);
+        };
 
-    $scope.reset = function() {
-        $scope.user = angular.copy( {} );
-    };
+        $scope.reset = function() {
+            $scope.user = angular.copy( {} );
+        };
 
-    $scope.reset();
+        $scope.reset();
     }]);
     </script>
 </body>

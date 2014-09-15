@@ -3,20 +3,20 @@
 <head>
     <title>AngularJS REST resource sample 1</title>
 
-	<script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js'></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular-resource.js"></script>
+	<script type="text/javascript" src="../../../common/angularjs/angular.min.js"></script>
+	<script type="text/javascript" src="../../../common/angularjs/angular-resource.min.js"></script>
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 <body>
 
-<div ng-controller="PostIndexCtrl" data-ng-init="init()">
+<div ng-controller="PostIndexCtrl">
 	<table class="table table-bordered">
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Title</th>
+				<th>Titolo</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -31,13 +31,6 @@
 	</table>
 </div>
 
-<!--
-
-Resource;
-	http://fdietz.github.io/recipes-with-angular-js/consuming-external-services/consuming-restful-apis.htm
-	
--->				
-
 <script type="text/javascript">
 //<![CDATA[
 
@@ -49,6 +42,8 @@ app.factory("Post", function($resource) {
 
 app.controller("PostIndexCtrl", function($scope, Post) {
 	Post.query(function(data) {
+		/* dump of an object */
+		// console.log( JSON.stringify(data) );
 		$scope.posts = data;
 	});
 });
