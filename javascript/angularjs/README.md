@@ -13,6 +13,11 @@ Egghead: https://egghead.io/
 http://www.ng-newsletter.com/
 https://github.com/jmcunningham/AngularJS-Learning
 
+Tutorial
+----------
+
+https://thinkster.io/angulartutorial/a-better-way-to-learn-angularjs/
+
 Videos
 ----------
     
@@ -26,5 +31,11 @@ Videos
 
 Books
 ----------
-
-    
+	The complete ng-book: https://www.ng-book.com/
+	Dependency injection with AngularJS
+	AngularJS in Action
+	AngularJS up and running
+	AngularJS essential
+	AngularJS services
+	Mastering AngularJS directives
+		

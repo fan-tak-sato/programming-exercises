@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>requestAnimationFrame</title>
+
+    <style type='text/css'>
+    html { background: #000; }
+
+    *, body, button, input, textarea, select {
+        text-rendering: optimizeLegibility;
+        font-size:100%;
+    }
+
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+        margin:0;
+        padding:0;
+    }
+    table {
+        border-collapse:collapse;
+        border-spacing:0;
+    }
+    fieldset,img { 
+        border:0;
+    }
+    address,caption,cite,code,dfn,em,strong,th,var {
+        font-style:normal;
+        font-weight:normal;
+    }
+    ol,ul {
+        list-style:none;
+    }
+    caption,th {
+        text-align:left;
+    }
+    h1,h2,h3,h4,h5,h6 {
+        font-size:100%;
+        font-weight:normal;
+    }
+    q:before,q:after {
+        content:'';
+    }
+    abbr,acronym { border:0;}
+
+    </style>
+  
+</head>
+<body>
+  
+  
+<!-- Resource: http://mrdoob.com/lab/javascript/requestanimationframe/ -->
+
+<script type='text/javascript'>
+//<![CDATA[ 
+
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       || 
+          window.webkitRequestAnimationFrame || 
+          window.mozRequestAnimationFrame    || 
+          window.oRequestAnimationFrame      || 
+          window.msRequestAnimationFrame     || 
+          function(/* function */ callback, /* DOMElement */ element){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
+
+var canvas, context, toggle;
+
+init();
+animate();
+
+function init() {
+    canvas = document.createElement( 'canvas' );
+    canvas.width = 512;
+    canvas.height = 512;
+
+    context = canvas.getContext( '2d' );
+
+    document.body.appendChild( canvas );
+}
+
+function animate() {
+    requestAnimFrame( animate );
+    draw();
+}
+
+function draw() {
+
+    var time = new Date().getTime() * 0.002;
+    var x = Math.sin( time ) * 192 + 256;
+    var y = Math.cos( time * 0.9 ) * 192 + 256;
+    toggle = !toggle;
+
+    context.fillStyle = toggle ? 'rgb(200,200,20)' :  'rgb(20,20,200)';
+    context.beginPath();
+    context.arc( x, y, 10, 0, Math.PI * 2, true );
+    context.closePath();
+    context.fill();
+
+}
+
+//]]>
+</script>
+
+</body>
+</html>

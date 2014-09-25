@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Learning WebGL —Mandelbrot shader on a spinning cube</title>
+
+<title>Learning WebGL — Mandelbrot shader on a spinning cube</title>
 
 <script type="text/javascript" src="js/glMatrix-0.9.5.min.js"></script>
 <script type="text/javascript" src="js/webgl-utils.js"></script>
-
 
 <script id="color-shader-fs" type="x-shader/x-fragment">
 precision mediump float;
@@ -33,7 +32,6 @@ void main(void) {
 	vColor = aColor;
 }
 </script>
-
 
 
 <script id="mandelbrot-shader-fs" type="x-shader/x-fragment">
@@ -134,28 +132,28 @@ void main(void) {
   }
 
 
-  function getShader(gl, id) {
+function getShader(gl, id) {
     var shaderScript = document.getElementById(id);
     if (!shaderScript) {
-      return null;
+        return null;
     }
 
     var str = "";
     var k = shaderScript.firstChild;
     while (k) {
-      if (k.nodeType == 3) {
-        str += k.textContent;
-      }
-      k = k.nextSibling;
+        if (k.nodeType == 3) {
+            str += k.textContent;
+        }
+        k = k.nextSibling;
     }
 
     var shader;
     if (shaderScript.type == "x-shader/x-fragment") {
-      shader = gl.createShader(gl.FRAGMENT_SHADER);
+        shader = gl.createShader(gl.FRAGMENT_SHADER);
     } else if (shaderScript.type == "x-shader/x-vertex") {
-      shader = gl.createShader(gl.VERTEX_SHADER);
+        shader = gl.createShader(gl.VERTEX_SHADER);
     } else {
-      return null;
+        return null;
     }
 
     gl.shaderSource(shader, str);
@@ -167,10 +165,10 @@ void main(void) {
     }
 
     return shader;
-  }
+}
 
 
-  function initProgram(fragmentShaderName, vertexShaderName) {
+function initProgram(fragmentShaderName, vertexShaderName) {
     var fragmentShader = getShader(gl, fragmentShaderName);
     var vertexShader = getShader(gl, vertexShaderName);
 
@@ -190,12 +188,12 @@ void main(void) {
     program.mvMatrixUniform = gl.getUniformLocation(program, "uMVMatrix");
 
     return program;
-  }
+}
 
+var colorProgram;
+var mandelbrotProgram;
 
-  var colorProgram;
-  var mandelbrotProgram;
-  function initPrograms() {
+function initPrograms() {
     colorProgram = initProgram("color-shader-fs", "color-shader-vs");
     colorProgram.vertexColorAttribute = gl.getAttribLocation(colorProgram, "aColor");
     gl.enableVertexAttribArray(colorProgram.vertexColorAttribute);
@@ -203,47 +201,47 @@ void main(void) {
     mandelbrotProgram = initProgram("mandelbrot-shader-fs", "mandelbrot-shader-vs");
     mandelbrotProgram.vertexPlotPositionAttribute = gl.getAttribLocation(mandelbrotProgram, "aPlotPosition");
     gl.enableVertexAttribArray(mandelbrotProgram.vertexPlotPositionAttribute);
-  }
+}
 
 
-  var currentProgram;
-  function setCurrentProgram(program) {
+var currentProgram;
+function setCurrentProgram(program) {
     currentProgram = program;
     gl.useProgram(program);
-  }
+}
 
 
-  var mvMatrix = mat4.create();
-  var mvMatrixStack = [];
-  var pMatrix = mat4.create();
+var mvMatrix = mat4.create();
+var mvMatrixStack = [];
+var pMatrix = mat4.create();
 
-  function mvPushMatrix() {
+function mvPushMatrix() {
     var copy = mat4.create();
     mat4.set(mvMatrix, copy);
     mvMatrixStack.push(copy);
-  }
+}
 
-  function mvPopMatrix() {
+function mvPopMatrix() {
     if (mvMatrixStack.length == 0) {
       throw "Invalid popMatrix!";
     }
     mvMatrix = mvMatrixStack.pop();
-  }
+}
 
 
-  function setMatrixUniforms() {
+function setMatrixUniforms() {
     gl.uniformMatrix4fv(currentProgram.pMatrixUniform, false, pMatrix);
     gl.uniformMatrix4fv(currentProgram.mvMatrixUniform, false, mvMatrix);
-  }
+}
 
 
-  function degToRad(degrees) {
+function degToRad(degrees) {
     return degrees * Math.PI / 180;
-  }
+}
 
 
-  var cubes = Array();
-  function MandelbrotCube(xPos, yPos, zPos, xVel, yVel, zVel, xRot, yRot, zRot) {
+var cubes = Array();
+function MandelbrotCube(xPos, yPos, zPos, xVel, yVel, zVel, xRot, yRot, zRot) {
     this.xPos = xPos;
     this.yPos = yPos;
     this.zPos = zPos;
@@ -263,10 +261,10 @@ void main(void) {
     this.centerOffsetsY = [0, 0, 0, 0, 0, 0];
     this.zoomCenterX = 0.28693186889504513;
     this.zoomCenterY = 0.014286693904085048;
-  }
+}
 
 
-  MandelbrotCube.prototype.animate = function(elapsed) {
+MandelbrotCube.prototype.animate = function(elapsed) {
     this.xRot += (20 * elapsed) / 1000.0;
     this.yRot += (90 * elapsed) / 1000.0;
     this.zRot += (0 * elapsed) / 1000.0;
@@ -284,31 +282,31 @@ void main(void) {
     }
 
     for (var i in this.zooms) {
-      if (this.zooms[i] < 1 || this.zooms[i] > 10000) {
-        this.zoomRates[i] = 1 / this.zoomRates[i];
-      }
-      this.zooms[i] = this.zooms[i] * this.zoomRates[i];
+        if (this.zooms[i] < 1 || this.zooms[i] > 10000) {
+            this.zoomRates[i] = 1 / this.zoomRates[i];
+        }
+        this.zooms[i] = this.zooms[i] * this.zoomRates[i];
 
-      if (this.zoomRates[i] > 1) {
-        if (this.centerOffsetsX[i] != this.zoomCenterX) {
-          this.centerOffsetsX[i] += (this.zoomCenterX - this.centerOffsetsX[i]) / 2;
+        if (this.zoomRates[i] > 1) {
+            if (this.centerOffsetsX[i] != this.zoomCenterX) {
+                this.centerOffsetsX[i] += (this.zoomCenterX - this.centerOffsetsX[i]) / 2;
+            }
+            if (this.centerOffsetsY[i] != this.zoomCenterY) {
+                this.centerOffsetsY[i] += (this.zoomCenterY - this.centerOffsetsY[i]) / 2;
+            }
+        } else {
+            if (this.centerOffsetsX[i] != 0) {
+                this.centerOffsetsX[i] -= (this.zoomCenterX - this.centerOffsetsX[i]) / 2;
+            }
+            if (this.centerOffsetsY[i] != 0) {
+                  this.centerOffsetsY[i] -= (this.zoomCenterY - this.centerOffsetsY[i]) / 2;
+            }
         }
-        if (this.centerOffsetsY[i] != this.zoomCenterY) {
-          this.centerOffsetsY[i] += (this.zoomCenterY - this.centerOffsetsY[i]) / 2;
-        }
-      } else {
-        if (this.centerOffsetsX[i] != 0) {
-          this.centerOffsetsX[i] -= (this.zoomCenterX - this.centerOffsetsX[i]) / 2;
-        }
-        if (this.centerOffsetsY[i] != 0) {
-          this.centerOffsetsY[i] -= (this.zoomCenterY - this.centerOffsetsY[i]) / 2;
-        }
-      }
     }
-  }
+}
 
 
-  MandelbrotCube.prototype.draw = function() {
+MandelbrotCube.prototype.draw = function() {
     setCurrentProgram(mandelbrotProgram);
 
     mat4.identity(mvMatrix);
@@ -339,15 +337,15 @@ void main(void) {
     gl.drawElements(gl.TRIANGLES, cubeVertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
 
     gl.deleteBuffer(positionBuffer);
-  }
+}
 
 
-  var boundingBoxVertexPositionBuffer;
-  var boundingBoxVertexColorBuffer;
-  var boundingBoxVertexIndexBuffer;
-  var cubeVertexPositionBuffer;
-  var cubeVertexIndexBuffer;
-  function initBuffers() {
+var boundingBoxVertexPositionBuffer;
+var boundingBoxVertexColorBuffer;
+var boundingBoxVertexIndexBuffer;
+var cubeVertexPositionBuffer;
+var cubeVertexIndexBuffer;
+function initBuffers() {
     boundingBoxVertexPositionBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, boundingBoxVertexPositionBuffer);
     var vertices = [
@@ -491,7 +489,7 @@ void main(void) {
     mat4.perspective(45, gl.viewportWidth / gl.viewportHeight, 0.1, 100.0, pMatrix);
 
     for (var i in cubes) {
-      cubes[i].draw();
+        cubes[i].draw();
     }
 
     setCurrentProgram(colorProgram);
@@ -506,27 +504,27 @@ void main(void) {
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, boundingBoxVertexIndexBuffer);
     setMatrixUniforms();
     gl.drawElements(gl.TRIANGLES, boundingBoxVertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
-  }
+}
 
 
-  var lastTime = 0;
-  function animate() {
+var lastTime = 0;
+function animate() {
     var timeNow = new Date().getTime();
     if (lastTime != 0) {
-      var elapsed = timeNow - lastTime;
-      for (var i in cubes) {
-        cubes[i].animate(elapsed);
-      }
+        var elapsed = timeNow - lastTime;
+        for (var i in cubes) {
+            cubes[i].animate(elapsed);
+        }
     }
     lastTime = timeNow;
-  }
+}
 
 
-  function tick() {
+function tick() {
     requestAnimFrame(tick);
     drawScene();
     animate();
-  }
+}
 
 
 function webGLStart() {
@@ -539,17 +537,16 @@ function webGLStart() {
     gl.enable(gl.DEPTH_TEST);
 
     for (var i=0; i < 10; i++) {
-      cubes.push(
-        new MandelbrotCube(
-          0, 0, -12,
-          0.2 * Math.random() - 0.1, 0.2 * Math.random() - 0.1, 0.2 * Math.random() - 0.1,
-          360 * Math.random(), 360 * Math.random(), 360 * Math.random()
-        )
-      );
+        cubes.push( new MandelbrotCube(
+                0, 0, -12,
+                0.2 * Math.random() - 0.1, 0.2 * Math.random() - 0.1, 0.2 * Math.random() - 0.1,
+                360 * Math.random(), 360 * Math.random(), 360 * Math.random()
+            )
+        );
     }
 
     tick();
-  }
+}
 
 </script>
 

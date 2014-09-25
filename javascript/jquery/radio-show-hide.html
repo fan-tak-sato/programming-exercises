@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>JQuery select and deselect checkboxes</title>
+
+    <link href="../../common/bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .content {
+        display: none;
+    }
+    label {
+        font-weight: normal
+    }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h3>JQuery radio button show\hide elements</h3>
+    
+    <p>JQuery radio button show \ hide elements onclick</p>
+    
+    <form id="group">
+        <label>
+            <input type="radio" name="group1" class="sim-micro-btn trigger" data-rel="sim-micro-desktop"> sim-micro
+        </label>
+        <label>
+            <input type="radio" name="group1" class="sim-mini-btn trigger" data-rel="sim-mini-desktop"> sim-mini
+        </label>
+        <label>
+            <input type="radio" name="group1" class="sim-maxi-btn trigger" data-rel="sim-maxi-desktop"> sim-maxi
+        </label>
+        <label>
+            <input type="radio" name="group1" class="sim-mega-btn trigger" data-rel="sim-mega-desktop"> sim-mega
+        </label>
+    </form>
+    
+    <div class="billpay-internet-add-ons">
+        <div class="sim-micro-desktop content">sim-micro</div>
+        <div class="sim-mini-desktop content">sim-mini</div>
+        <div class="sim-maxi-desktop content">sim-maxi</div>
+        <div class="sim-mega-desktop content">sim-mega</div>
+    </div>
+
+</div>
+
+<script src="../../common/jquery/jquery.min.js"></script>
+<script src="../../common/bootstrap3/js/bootstrap.min.js"></script>
+
+<script>
+$('.trigger').click(function() {
+    $('.content').hide();
+    $('.' + $(this).data('rel')).show();
+});
+</script>
+
+</body>
+</html>

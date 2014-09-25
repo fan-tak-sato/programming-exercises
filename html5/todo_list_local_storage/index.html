@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    
+    <link href="../../common/bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .alert h1 {margin: 0}
+    #localstorage_no_support {margin-top: 1.5%}
+    </style>
+    
+    <title>HTML5 TODO list using local storage</title>
+</head>
+<body>
+    
+<noscript>
+
+</noscript>
+
+<div class="container">
+    
+    <div id="localstorage_no_support" class="alert alert-danger" style="display: none">
+        <h1>Warning</h1>
+        <div>Local storage is not supported on this browser. Update or download a new browser.</div>
+    </div>
+    
+    <header>
+        <h1>To-Do list</h1>
+        <p>TODO list using JQuery and HTML5 local storage</p>
+    </header>
+
+    <section>
+        <ul id="edit" contenteditable="true">
+            <li></li>
+        </ul>
+    </section>
+
+    <em>Add some items, and refresh the page. It'll remember what you typed.</em>
+</div>
+
+<script src="../../common/jquery/jquery.min.js"></script>
+<script src="../../common/bootstrap3/js/bootstrap.min.js"></script>
+
+<script>
+    
+if(typeof(Storage) !== "undefined") {
+    $(function() {
+
+        var edit = document.getElementById('edit');
+
+        $(edit).blur(function() {
+            localStorage.setItem('todoData', this.innerHTML);
+        });
+
+        /* When the page loads */
+        if ( localStorage.getItem('todoData') ) {
+            edit.innerHTML = localStorage.getItem('todoData'); 
+        }
+
+    });
+} else {
+    /* Display error message */
+    $('#localstorage_no_support').show();
+}
+
+</script>
+
+</html>

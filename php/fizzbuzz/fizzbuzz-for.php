@@ -17,5 +17,5 @@ for ($i = 1; $i <= 100; $i++)
 	if ($mod3 && $mod5) {
 		$str .= $i;
 	}
-	echo $str, "\n";
+	echo $str, "<br>\n";
 }

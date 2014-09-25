@@ -18,7 +18,6 @@
 </head>
 
 <body>
-
 <div class="container">
     <div class="row">
         <div class="table-responsive">
@@ -138,8 +137,9 @@
 <script src="../../common/bootstrap3/js/bootstrap.min.js"></script>
 
 <script>
-    
-$.fn.pageMe = function(opts){
+
+$.fn.pageMe = function(opts)
+{
     var $this = this,
         defaults = {
             perPage: 7,
@@ -204,17 +204,20 @@ $.fn.pageMe = function(opts){
         return false;
     });
     
-    function previous(){
+    function previous()
+    {
         var goToPage = parseInt(pager.data("curr")) - 1;
         goTo(goToPage);
     }
-     
-    function next(){
+    
+    function next()
+    {
         goToPage = parseInt(pager.data("curr")) + 1;
         goTo(goToPage);
     }
     
-    function goTo(page){
+    function goTo(page)
+    {
         var startAt = page * perPage,
             endOn = startAt + perPage;
         
@@ -237,14 +240,11 @@ $.fn.pageMe = function(opts){
         pager.data("curr",page);
       	pager.children().removeClass("active");
         pager.children().eq(page+1).addClass("active");
-    
     }
 };
 
-$(document).ready(function(){
-
+$(document).ready(function() {
     $('#myTable').pageMe({pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:4});
-  
 });
 
 </script>

@@ -12,3 +12,9 @@ In my example I do this by having memento only allow calls to it's get and set f
 ------------------------------------------------------------------------------------------
 
 Without violating encapsulation, capture and externalize an object's internal state allowing the object to be restored to this state later.
+
+
+UML
+-----
+
+![Alt text](/design-patterns/uml/memento.jpg)
