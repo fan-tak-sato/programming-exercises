@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datas>
+    <cars> 
+        <car>
+            <manufacture country="japan">Honda</manufacture>
+            <type>Honda Jazz</type>
+        </car>
+        <car>
+            <manufacture country="korea">Nissan</manufacture>
+            <type>Nissan Livina</type>
+        </car>	
+    </cars>
+</datas>
+
