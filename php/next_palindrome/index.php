@@ -53,6 +53,7 @@ if ( isset($_POST['palindrome']) ) {
 		<h3>Next Palidrome Number to <?php echo $palindrome ?> is <?php echo $nextPalindrome ?></h3>
 		</div>
 		<?php endif; ?>
+                
 		<?php if (isset($exceptionError)): ?>
 		<div class="alert alert-danger">
 		<h1>An error occurred:</h1>

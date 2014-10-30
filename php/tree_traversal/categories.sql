@@ -1,0 +1,30 @@
+CREATE TABLE IF NOT EXISTS categories (
+    id INT(10) NOT NULL AUTO_INCREMENT,
+    parent_id INT(10) DEFAULT NULL,
+    name VARCHAR(50) DEFAULT NULL, PRIMARY KEY (id)
+);
+INSERT INTO categories (id, parent_id, name) VALUES
+    (1,  NULL, 'Electronics'),
+    (2,  1,    'Cameras and Photography'),
+    (3,  1,    'Computers and Tablets'),
+    (4,  1,    'Cell Phones and Accessories'),
+    (5,  1,    'TV and Audio'),
+    (6,  2,    'Digital Cameras'),
+    (7,  2,    'Camcorders'),
+    (8,  2,    'Accessories'),
+    (9,  3,    'Laptops'),
+    (10, 3,    'Desktops'),
+    (11, 3,    'Netbooks'),
+    (12, 3,    'Tablets'),
+    (13, 4,    'Cell Phones'),
+    (14, 4,    'Smartphones'),
+    (15, 4,    'Accessories'),
+    (16, 5,    'Televisions'),
+    (17, 5,    'Home Audio'),
+    (18, 5,    'Speakers and Subwoofers'),
+    (19, 16,   'CRT'),
+    (20, 16,   'LCD'),
+    (21, 16,   'LED'),
+    (22, 16,   'Plasma'),
+    (23, 12,   'Android'),
+    (24, 12,   'iPad');

@@ -1,9 +1,9 @@
 <?php
 require_once("redbean/rb.php");
 R::setup('mysql:host=localhost;dbname=quiz', 'root', '');
-$topics = R::getAll("SELECT DISTINCT(topics) AS topics FROM interview ORDER BY topics, position ");
+$topics = R::getAll("SELECT DISTINCT(topics) AS topics FROM interview_questions ORDER BY topics, position ");
 
-$qInterview = "SELECT * FROM interview WHERE 1 ";
+$qInterview = "SELECT * FROM interview_questions WHERE 1 ";
 if ( isset($_GET['topic']) ) {
 	$qInterview .= "AND topics = '".urldecode($_GET['topic'])."' ";
 }
