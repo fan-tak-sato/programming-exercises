@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <script src="jquery.min.js"></script>
+    
+    <title>Edit in place unordered list</title>
+</head>
+<body>
+
+    <header>
+        <h1> My Simple To-Do List </h1>
+    </header>
+  
+    <section>
+    <ul id="edit" contenteditable="true">
+        <li>oro</li><li>prova</li><li>aaa</li><li><br></li>
+    </ul>
+    </section>
+    
+    <em>Add some items, and refresh the page. It'll remember what you typed.</em>
+    
+<script>
+$(function() {
+    var edit = document.getElementById('edit');
+
+    $(edit).blur(function() {
+        localStorage.setItem('todoData', this.innerHTML);
+    });
+
+    // when the page loads
+    if ( localStorage.getItem('todoData') ) {
+        edit.innerHTML = localStorage.getItem('todoData'); 
+    }
+
+    // to reset
+    // localStorage.clear();
+});
+</script>
+<script src="edit.js"></script>
+
+</body>
+</html>
