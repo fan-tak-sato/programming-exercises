@@ -1,0 +1,37 @@
+
+NOTE SUL FRAMEWORK
+
+Organizzazione file nel framework MVC.
+
+1. controllers/
+   - directory contenente un file per ciascun controller di pagina. il
+     nome del file rispecchia il primo valore presente dopo / nell'url
+2. db/
+   - directory che contiene il file di interazione con il dbms
+3. models/
+   - directory che contiene un file per ciascuna tabella presente nel
+     database, il nome del file rispecchia il nome della tabella
+4. views/
+   - directory che contiene tutti i file di presentazione grafica di 
+     informazioni all'utente. Il file "base.php" è il gestore del 
+     sistema di presentazione, saranno poi presenti una serie di 
+     sotto-directory (una per ogni controller) contenenti a loro volta
+     una serie di file (uno per ogni azione gestita dal controller)  
+     - views/test è la directory con le "viste" per il controller test
+     - views/test/dummy.php è il file "grafico" relativo all'azione
+       dummy del controller test. La variabile $view_test al suo interno
+       è generata dal controller test, alla riga 13, tramite il metodo 
+       assign(NOME_VARIABILE,VALORE_VARIABILE) 
+5. index.php
+   - file principale che permette al sistema di caricare ed eseguire i
+     file relativi al controller in funzione dell'url della pagina
+     richiesto dal browser
+
+Formato degli url
+
+1. il primo parametro dopo / rappresenta il controller
+2. il secondo parametro dopo / rappresenta l'azione
+
+esempio: http://www.xxxx.it/progetti/lista
+- controller = progetti
+- azione     = lista
