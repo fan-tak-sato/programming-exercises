@@ -40,7 +40,7 @@ class configDecorator {
 
 }
 
-/*** Usage ***/
+// Usage
 $app = new app();
 
 $configDecorator = new configDecorator($app);

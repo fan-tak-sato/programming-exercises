@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<div id="content_1" style="display: none">Hidden</div>
+<div id="content_2" style="display: none">Hidden</div>
+<div id="content_3" style="display: none">Hidden</div>
+
+<br><br>
+
+<div id="extra_content"> 
+    <div id="content_extra_1">Text 1</div>
+    <div id="content_extra_2">Text 2</div>
+</div>
+ 
+<script>
+$('[id^="content_"]').html('Show');
+$('[id^="content_"]').show();
+
+$('#extra_content [id^="content_"]').html('Text changed!');
+</script>
+ 
+</body>
+</html>
