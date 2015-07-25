@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>Confirm exit</title>
+
+    <link href="../../common/bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+	
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+	<h3>Confirm exit</h3>
+	<form class="form-horizontal" action="" method="post">
+		<div class="form-group">
+			<label class="form-label col-sm-2">Email</label>
+			<div class="col-sm-10">
+				<input type="text" placeholder="Email ..." class="form-control" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-primary">Login</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<script src="../../common/jquery/jquery.min.js"></script>
+<script src="../../common/bootstrap3/js/bootstrap.min.js"></script>
+<script>
+
+var confirm_nav_ignore = [];
+
+function confirm_nav() {
+
+    function save_form_state($form) {
+        var old_state = $form.serialize();
+        $form.data('old_state', old_state);
+    }
+
+    $('form').each(function() {
+        save_form_state($(this));
+    });
+
+    $('form').submit(function() {
+        save_form_state($(this));
+    });
+
+    function strip(form_data) {
+        for (var i=0; i<confirm_nav_ignore.length; i++) {
+            var field = confirm_nav_ignore[i];
+            form_data = form_data.replace(new RegExp("\\b"+field+"=[^&]*"), '');
+        }   
+        return form_data;
+    }
+
+    $(window).on('beforeunload', function(e) {
+        var rv;
+        $('form').each(function() {
+            var $form = $(this);
+            var old_state = strip($form.data('old_state'));
+            var new_state = strip($form.serialize());
+            if (new_state != old_state) {
+                rv = 'Are you sure to leave this page?';
+            }   
+        }); 
+        return rv;
+    }); 
+}
+
+$(function() {
+    prevent_accidental_navigation();
+});
+</script>
+
+</body>
+</html>

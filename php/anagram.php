@@ -17,3 +17,4 @@ class AreAnagrams
 }
 
 echo AreAnagrams::areStringsAnagrams('momdad', 'dadmom') ? 'True' : 'False';
+

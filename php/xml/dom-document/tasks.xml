@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<tasklist>
+	<note>
+		<tasks>Validate data</tasks>
+		<details>String Validation</details>
+	</note>
+	<note>
+		<tasks>Secure data</tasks>
+		<details>Encryption</details>
+	</note>
+ </tasklist>

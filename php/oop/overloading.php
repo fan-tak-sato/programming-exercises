@@ -2,11 +2,6 @@
 
 class test
 {
-    public function __construct()
-    {
-
-    }
-    
     public function __call($method_name , $parameter)
     {
         if($method_name == "overlodedFunction")
