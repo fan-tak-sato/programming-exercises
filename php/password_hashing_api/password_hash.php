@@ -1,4 +1,5 @@
 <?php
+
 /**
  * We just want to hash our password using the current DEFAULT algorithm.
  * This is presently BCRYPT, and will produce a 60 character result.

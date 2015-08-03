@@ -9,9 +9,9 @@ function fibonacci($n) {
         return ( fibonacci($n - 1) + fibonacci($n - 2) );
 }
 
-$term = 15;
+$term = 10;
 $c = 0;
 for ($i = 1; $i <= $term; $i++) {
-    echo "<br>".fibonacci($c);
+    echo fibonacci($c)."<br>";
     $c++;
 }

@@ -1,18 +1,19 @@
 <?php
 
 class Caller {
-  private $x = array('a', 'b', 'c');
 
-  public function existing()
-  {
-     echo "I exists!";
-  }
+	private $x = array('a', 'b', 'c');
 
-  public function __call($method, $args) {
-    print "Method $method called:\n";
-    var_dump($args);
-    return $this->x;
-  }
+	public function existing()
+	{
+		echo "I exists!";
+	}
+
+	public function __call($method, $args) {
+		print "Method $method called:\n";
+		var_dump($args);
+		return $this->x;
+	}
 }
 
 $foo = new Caller();

@@ -9,9 +9,8 @@ Adapters are helpful if you want to use a class that doesn't have quite the exac
 
 
 Resources
---------------
+-------------------
 
 http://en.wikipedia.org/wiki/Adapter_pattern
-
 
 ![Alt text](/design-patterns/uml/adapter.jpg)

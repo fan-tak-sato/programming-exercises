@@ -1,7 +1,7 @@
 <?php
 
-function GetCurlPage($pageSpec)
-{
+function GetCurlPage($pageSpec) {
+
     $ch = curl_init($pageSpec);
     
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -13,7 +13,7 @@ function GetCurlPage($pageSpec)
     return $tmp;
 }
 
-$url = "/zf2-apicms/api/v1/cms/albo-pretorio?username=a.fiori@cheapnet.it&password=niggurath";
+$url = "{myCurlURL}";
 
 $output = GetCurlPage($url);
 

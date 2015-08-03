@@ -17,7 +17,7 @@ Password hashing API
 -------------------------
 password_hash()
 password_verify()
-password_needs_rehash
+password_needs_rehash()
 password_get_info()
 
 Other news
@@ -33,23 +33,28 @@ Improved GD extension
 
 Deprecated features in PHP 5.5
 ----------------------------------
-ext/mysql: In this version, the original MySQL extension got deprecated, and will generate E_DEPRECATED errors while you try to connect to a database. Instead of that, you should use MySQLi or PDO_MySQL extensions.
-preg_replace()/e modifier: In this version, the preg_replace() /e modifier is deprecated and instead of this, preg_replace_callback() function can be used.
 
-intl: Now, IntlDateFormatter::setTimeZoneID() and datefmt_set_timezone_id() got deprecated and you can use IntlDateFormatter::setTimeZone() and datefmt_set_timezone() functions.
-mcrypt: There is also a mcrypt deprecations. The following functions got deprecated in this version of PHP:
+- ext/mysql: In this version, the original MySQL extension got deprecated, and will generate E_DEPRECATED errors while you try to connect to a database. Instead of that, you should use MySQLi or PDO_MySQL extensions.
+
+- preg_replace()/e modifier: In this version, the preg_replace() /e modifier is deprecated and instead of this, preg_replace_callback() function can be used.
+
+- intl: Now, IntlDateFormatter::setTimeZoneID() and datefmt_set_timezone_id() got deprecated and you can use IntlDateFormatter::setTimeZone() and datefmt_set_timezone() functions.
+
+- mcrypt: There is also a mcrypt deprecations. The following functions got deprecated in this version of PHP:
 
     mcrypt_cbc()
     mcrypt_cfb()
     mcrypt_ecb()
     mcrypt_ofb()
 
-curlwrappers: In this version, this feature has been removed.
+- curlwrappers: In this version, this feature has been removed.
+
 
 Advanced changes and migration
 --------------------------------
 
 http://us1.php.net/migration55.new-features
+
 
 Running code samples
 --------------------------

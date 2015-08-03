@@ -30,3 +30,13 @@ abc… 		Letters
 \D 		any Non-digit character
 \s 		any Whitespace
 \S 		ny Non-whitespace character
+
+Resources
+-----------------------------------
+
+[http://regexr.com](http://regexr.com/)
+[http://php-regex.blogspot.it](http://php-regex.blogspot.it)
+[http://www.regular-expressions.info](http://www.regular-expressions.info/)
+[Wikipedia](https://en.wikipedia.org/wiki/Regular_expression)
+[http://www.noupe.com/development/php-regular-expressions.html](http://www.noupe.com/development/php-regular-expressions.html)
+

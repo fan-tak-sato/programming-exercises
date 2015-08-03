@@ -45,7 +45,8 @@ if (!empty($_POST)) {
 	<h2>Result:</h2>
 	
 	<?php
-	foreach($_POST['row'] as $row) {
+
+	foreach($_POST['row'] as $key => $row) {
 		?>Name: <?php echo $row['name']; ?><br><?php
 		?>Surname: <?php echo $row['surname']; ?><br><br><?php
 	}
