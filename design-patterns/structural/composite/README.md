@@ -5,4 +5,4 @@ In software engineering, the composite pattern is a partitioning design pattern.
 
 http://stackoverflow.com/questions/11908586/composite-pattern-in-php-how-to-design-classes-to-work-around-the-need-to-exten
 
-![Alt text](/design-patterns/uml/composite.jpg)
+![Alt text](../../uml/composite.jpg)

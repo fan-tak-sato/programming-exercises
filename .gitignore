@@ -2,6 +2,7 @@ work_in_progress/
 tests/
 nbproject/
 hackerrank/
-*~
+*.*~
 *.swp
 *.swo
+*.class

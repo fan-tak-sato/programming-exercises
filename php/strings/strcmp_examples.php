@@ -6,7 +6,9 @@
  * if str1 < str2  return  < 0
  * if str1 > str2  return  > 0
  * if str1 == str2  return 0
+ *
  */
+echo strcasecmp('Hi', 'hi');
 $comparison = strcmp(5678, '5678');
 
 if ($comparison===0) {

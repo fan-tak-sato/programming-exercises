@@ -7,7 +7,7 @@ $b = array_merge(explode(', ', $a), array("a", "b"));
 echo count($b);
 
 // Output: 7
-
+var_dump($b);
 
 var_dump( array_merge(array("a", "b"), array("a", "c")) ); // This will not overwrite a
 var_dump( array_merge(array("mykey" => 1, "b"), array("mykey" => 1, "c")) ); // This will overwrite a!!!
