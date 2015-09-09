@@ -4,11 +4,6 @@ class Getter {
 
 	private $x;
 
-	public function __construct()
-	{
-
-	}
-
 	public function __get($var) {
 		echo 'Variable '. $var.' does not exist!';
 	}
