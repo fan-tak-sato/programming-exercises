@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+
+	<title>Updating a table row</title>
+
+	<link href="../../common/bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+	<h3>Update a table row</h3>
+
+	<p>Updating a table row using a button.</p>
+
+	<table class="table table-bordered">
+		<tr>
+			<th>Name</th>
+			<th>Surname</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td>John</td>
+			<td>Doe</td>
+			<td><button class="btn btn-primary" id="btnEdit">Change value</button></td>
+		<tr>
+	</table>
+</div>
+
+<script src="../../common/jquery/jquery.min.js"></script>
+<script src="../../common/bootstrap3/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function () {
+    $("#btnEdit").click(function() {
+        $('#btnEdit').closest('tr').children('td:eq(0)').html('Andy');
+        $('#btnEdit').closest('tr').children('td:eq(1)').html('Warhol');
+    });
+});
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<head>
+</head>
+<body>
+
+<form action="#" id="myform" method="post">
+	<label>Email:</label> <input type="text" name="email" id="email">
+	
+	<input type="text" id="serialized" name="serialized">
+	<input type="submit" value="send" name="submit">
+</form>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+	$("#email").val('johndoe@email.com');
+
+	var data = $("#email").serialize();
+	$("#serialized").val(data);
+});
+</script>
+
+</body>
+</html>

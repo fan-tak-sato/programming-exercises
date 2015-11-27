@@ -1,9 +1,9 @@
 <?php
 
 $inventory = array(
-	array("type"=>"fruit", "price"=>3.50),
-	array("type"=>"milk", "price"=>2.90),
-	array("type"=>"pork", "price"=>5.43),
+	array("type" => "fruit", "price" => 3.50),
+	array("type" => "milk", "price" => 2.90),
+	array("type" => "pork", "price" => 5.43),
 );
 
 function pricesort($a, $b) {
@@ -18,7 +18,6 @@ function pricesort($a, $b) {
 }
 
 usort($inventory, "pricesort");
-// uksort($inventory, "pricesort");
 
 print("first: ".$inventory[0]['type']."<br><br>");
 

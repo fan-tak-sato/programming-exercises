@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+<div id="date">23/05/2013</div>
+
+<script src="../../common/jquery/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+	$("#date").html('<span>'+$("#date").text().substring(0, 2) + '</span> '+$("#date").text().substring(3));
+});
+</script>
+
+</body>
+</html>

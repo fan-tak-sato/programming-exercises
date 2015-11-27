@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<title>jQuery.deserialize</title>
+	</head>
+	<body>
+		<h2>Populate form with serialized data</h2>
+
+		<form class="login" id="login">
+			<label for="username">username:</label>
+			<input type="text" id="username" name="username" value="">
+
+			<label for="password">password:</label>
+			<input type="text" id="password" name="password" value="">
+
+			<input type="checkbox" name="days[]" value="mon"> Mon
+			<input type="checkbox" name="days[]" value="tue"> Tue
+
+			<button type="button" id="sbmt">Login</button>
+		</form>
+	
+		<div id="result"></div>
+
+		<!-- Resource: https://github.com/kflorence/jquery-deserialize -->
+		<script src="../../common/jquery/jquery.min.js"></script>
+		<script src="../../common/jquery/json2.min.js"></script>
+		<script src="../../common/jquery/jquery.deserialize.min.js"></script>
+		<script>
+			$("#sbmt").click(function() {
+				$("#result").html( $('.login').serialize() );
+			});
+
+			jQuery(function( $ ) {
+				// $('form').deserialize( location.search.substr(1) ); // populate from query string
+				$('form').deserialize('username=myusername&password=12345');
+			});
+		</script>
+	</body>
+</html>

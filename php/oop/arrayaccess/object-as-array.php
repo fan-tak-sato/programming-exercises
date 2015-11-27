@@ -11,3 +11,4 @@ $x = new Foo();
 
 echo array_key_exists('foo', $x) ? 'true' : 'false';
 
+// Output: false

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+</head>
+<body>
+
+<div class="foo">
+	<div class="bar">
+		<span class="baz">Foobar</span>
+	</div>
+</div>
+
+<script src="../../common/jquery/jquery.min.js"></script>
+<script>
+// before run open FireBug console or another
+$(function(){
+    var foobar = $(".foo .bar .baz");
+    $(".foo .bar").append('<span class="baz">Another Foobar</span>');   
+    // we want our variable with actual elements
+    console.log(foobar); // but here we do not have from
+    foobar = $(foobar.selector);
+    console.log(foobar); // yes!
+});
+</script>
+</body>
+</html>
+
