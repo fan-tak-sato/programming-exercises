@@ -9,6 +9,9 @@ abstract class Math
 // ConcreteComponent
 class StandardMath extends Math
 {
+    /**
+     * @return int
+     */
     public function execute()
     {
         return 0;
@@ -19,7 +22,10 @@ class StandardMath extends Math
 abstract class MathDecorator extends Math
 {
     protected $_math;
- 
+
+    /**
+     * @param Math $math
+     */
     public function __construct(Math $math)
     {
         $this->_math = $math;
@@ -29,6 +35,9 @@ abstract class MathDecorator extends Math
 // ConcreteDecoratorA
 class AddTwoDecorator extends MathDecorator
 {
+    /**
+     * @return mixed
+     */
     public function execute()
     {
         return $this->_math->execute() + 2;
@@ -38,13 +47,16 @@ class AddTwoDecorator extends MathDecorator
 // ConcreteDecoratorB
 class MultiplyTreeDecorator extends MathDecorator
 {
+    /**
+     * @return mixed
+     */
     public function execute()
     {
         return $this->_math->execute() * 3;
     }
 }
 
-/* Usage */
+// Usage
 $m = new AddTwoDecorator( new MultiplyTreeDecorator( new AddTwoDecorator( new StandardMath() ) ) );
 
 echo $m->execute(); // 8

@@ -8,4 +8,4 @@ This type of design pattern comes under creational pattern as this pattern provi
 UML
 -----------------
 
-![Alt text](/design-patterns/uml/factory_method.jpg)
+![Alt text](../../uml/factory_method.jpg)

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The smallest cohesive interface we can think of for this type
  * of Decorator. This is the Component interface.
@@ -79,11 +80,17 @@ class LabelDecorator extends HtmlDecorator
 {
     protected $_label;
 
+    /**
+     * @param $label
+     */
     public function setLabel($label)
     {
         $this->_label = $label;
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         $name = $this->getName();
@@ -122,8 +129,7 @@ $error = new ErrorDecorator($input);
 $error->setError('You must enter a unique nickname');
 echo $error, "\n";
 
-// how can we obtain a LabelledErrorInputText, which has both the <label>
-// and <span> elements?
+// how can we obtain a LabelledErrorInputText, which has both the <label> and <span> elements?
 $input = new InputText('nickname');
 $labelled = new LabelDecorator($input);
 $labelled->setLabel('Nick:');

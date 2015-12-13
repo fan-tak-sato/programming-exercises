@@ -1,6 +1,8 @@
 Concurrency patterns
 ========================
 
+[http://en.wikipedia.org/wiki/Concurrency_pattern](http://en.wikipedia.org/wiki/Concurrency_pattern)
+
 In software engineering, concurrency patterns are those types of design patterns that deal with the multi-threaded programming paradigm.
 
 Examples:
@@ -18,4 +20,3 @@ Examples:
 - Thread pool pattern
 - Thread-Specific Storage
 
-http://en.wikipedia.org/wiki/Concurrency_pattern

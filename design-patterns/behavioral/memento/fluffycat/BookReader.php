@@ -1,6 +1,4 @@
 <?php
-
-include_once('BookMark.php');
   
 class BookReader {
     
@@ -8,8 +6,8 @@ class BookReader {
     private $page;
     
     /**
-     * @param type $title_in
-     * @param type $page_in
+     * @param string $title_in
+     * @param int $page_in
      */
     public function __construct($title_in, $page_in) {
         $this->setPage($page_in);
@@ -33,7 +31,10 @@ class BookReader {
     public function setTitle($title_in) {
         $this->title = $title_in;
     }
-    
+
+    /**
+     * @return mixed
+     */
     public function getTitle() {
         return $this->title;
     }

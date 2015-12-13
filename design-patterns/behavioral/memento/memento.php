@@ -5,8 +5,8 @@
  * specifically to avoid that someone passes to Caretaker's
  * methods strings, instead of Memento instances.
  */
-interface Memento
-{
+interface Memento {
+
 }
 
 /**
@@ -18,17 +18,27 @@ class ConcreteMemento implements Memento
     protected $_url;
     protected $_currentLine;
 
+    /**
+     * @param string $url
+     * @param string $currentLine
+     */
     public function __construct($url, $currentLine)
     {
         $this->_url = $url;
         $this->_currentLine = $currentLine;
     }
 
+    /**
+     * @return mixed
+     */
     public function getUrl()
     {
         return $this->_url;
     }
 
+    /**
+     * @return string
+     */
     public function getCurrentLine()
     {
         return $this->_currentLine;
@@ -48,7 +58,11 @@ class Service
 {
     protected $_url;
     protected $_currentLine = 0;
+    protected $_content;
 
+    /**
+     * @param null $url
+     */
     public function __construct($url = null)
     {
         $this->_url = $url;
@@ -67,16 +81,20 @@ class Service
         return new ConcreteMemento($this->_url, $this->_currentLine);
     }
 
+    /**
+     * @param ConcreteMemento $state
+     * @throws Exception
+     */
     public function setState(ConcreteMemento $state)
     {
-        if (!($state instanceof Memento)) {
-            throw new Exception('Memento object not recognized.');
-        }
         $this->_url= $state->getUrl();
         $this->_currentLine = $state->getCurrentLine();
         $this->init();
     }
 
+    /**
+     * @return mixed
+     */
     public function getLine()
     {
         $line = $this->_content[$this->_currentLine];
@@ -85,8 +103,8 @@ class Service
     }
 }
 
-//Caretaker code
-$service = new Service('http://giorgiosironi.blogspot.com');
+// Caretaker code
+$service = new Service('http://mywebsite.com');
 $service->init();
 echo $service->getLine();
 echo $service->getLine();

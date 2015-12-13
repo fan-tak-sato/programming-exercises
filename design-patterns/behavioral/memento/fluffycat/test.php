@@ -1,49 +1,34 @@
 <?php
 
-//copyright Lawrence Truett and www.FluffyCat.com 2005, all rights reserved
-
 include_once('BookReader.php');  
 include_once('BookMark.php');
-
-echo tagins("html");
-echo tagins("head");
-echo tagins("/head");
-echo tagins("body");
-
-echo "BEGIN TESTING MEMENTO PATTERN";
-echo tagins("br").tagins("br");
 
 $bookReader = new BookReader("Core PHP Programming, Third Edition","103");
 $bookMark = new BookMark($bookReader);
 
-echo "(at beginning) bookReader title: ".
-  $bookReader->getTitle().tagins("br");
-echo "(at beginning) bookReader page: ".
-  $bookReader->getPage().tagins("br");
+?>
+<html>
+<head>
+    <title>Testing Memento pattern implementation</title>
+</head>
+<body>
 
+<h1>MEMENTO PATTERN</h1>
+
+<p>(At beginning) bookReader title: <?php echo $bookReader->getTitle(); ?></p>
+<p>(At beginning) bookReader page: <?php echo $bookReader->getPage(); ?></p>
+
+<?php
 $bookReader->setPage("104");
 $bookMark->setPage($bookReader);
 
-echo "(one page later) bookReader page: ". $bookReader->getPage().tagins("br");
-
-$bookReader->setPage('2005'); //oops! a typo
-
-echo "(after typo) bookReader page: ".
-  $bookReader->getPage().tagins("br");
-
+$bookReader->setPage('2005'); // Oops! a typo
+?>
+<p>(after typo) bookReader page: <?php echo $bookReader->getPage(); ?></p>
+<?php
 $bookMark->getPage($bookReader);
+?>
+<p>(back to one page later) bookReader page: <?php echo $bookReader->getPage() ?></p>
 
-echo "(back to one page later) bookReader page: ".
-  $bookReader->getPage().tagins("br");    
-
-echo tagins("br");
-echo "END TESTING MEMENTO PATTERN";
-echo tagins("br");
-
-echo tagins("/body");
-echo tagins("/html");
-
-//doing this so code can be displayed without breaks
-function tagins($stuffing) {
-    return "<".$stuffing.">";
-}
+</body>
+</html>

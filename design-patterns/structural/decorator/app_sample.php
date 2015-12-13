@@ -21,18 +21,26 @@ class app extends application {
 }
 
 
-// The config decorator will set the value of the final app class
+/**
+ * The config decorator will set the value of the final app class
+ */
 class configDecorator {
 	
     private $_app;
 
-    // passing the app object...
+    /**
+     * @param application $app
+     */
     public function __construct(application $app)
     {
         $this->_app = $app;
     }
 
-    // Decorate the app property
+    /**
+     * Decorate the app property
+     *
+     * @param mixed $config
+     */
     public function setConfig($config)
     {
         $this->_app->setConfig($config);
