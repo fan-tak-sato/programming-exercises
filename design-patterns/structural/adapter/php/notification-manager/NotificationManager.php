@@ -2,6 +2,11 @@
 
 class NotificationManager {
 
+	/**
+	 * @param string $type
+	 * @param $data
+	 * @return bool
+	 */
 	public function sendNotification($type = '', $data)
 	{
 		switch($type) {

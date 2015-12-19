@@ -10,25 +10,39 @@ class BookTopic extends AbstractBookTopic {
 
     private $topic;
     private $title;
-	
-    function __construct($topic_in) {
+
+    /**
+     * @param $topic_in
+     */
+    public function __construct($topic_in) {
 		$this->topic = $topic_in;
 		$this->title = NULL;
     }
-    function getTopic() {
+
+    /**
+     * @return mixed
+     */
+    public function getTopic() {
 		return $this->topic;
     }
-	
-    //this is the end of the chain - returns title or says there is none
-    function getTitle() {
+
+    /**
+     * This is the end of the chain - returns title or says there is none
+     *
+     * @return null|string
+     */
+    public function getTitle() {
 		if (NULL != $this->title) {
 			return $this->title;
 		} else {
 			return 'there is no title avaialble';
 		}
     }
-	
-    function setTitle($title_in) {
+
+    /**
+     * @param $title_in
+     */
+    public function setTitle($title_in) {
 		$this->title = $title_in;
 	}
 }
@@ -39,30 +53,46 @@ class BookSubTopic extends AbstractBookTopic {
     private $topic;
     private $parentTopic;
     private $title;
-	
-    function __construct($topic_in, BookTopic $parentTopic_in) {
+
+    /**
+     * @param string $topic_in
+     * @param BookTopic $parentTopic_in
+     */
+    public function __construct($topic_in, BookTopic $parentTopic_in) {
 		$this->topic = $topic_in;
 		$this->parentTopic = $parentTopic_in;
 		$this->title = NULL;
     }
-	
-    function getTopic() {
-      return $this->topic;
+
+    /**
+     * @return string
+     */
+    public function getTopic() {
+        return $this->topic;
     }
-	
-    function getParentTopic() {
+
+    /**
+     * @return BookTopic
+     */
+    public function getParentTopic() {
 		return $this->parentTopic;
     }
-	
-    function getTitle() {
+
+    /**
+     * @return null|string
+     */
+    public function getTitle() {
 		if (NULL != $this->title) {
 			return $this->title;
 		} else {
 			return $this->parentTopic->getTitle();
 		}
     }
-    
-    function setTitle($title_in) {
+
+    /**
+     * @param string $title_in
+     */
+    public function setTitle($title_in) {
         $this->title = $title_in;
     }
 }
@@ -73,30 +103,46 @@ class BookSubSubTopic extends AbstractBookTopic {
     private $topic;
     private $parentTopic;
     private $title;
-    
-    function __construct($topic_in, BookSubTopic $parentTopic_in) {
-        $this->topic = $topic_in;
-        $this->parentTopic = $parentTopic_in;
-        $this->title = NULL;
+
+    /**
+     * @param $topic_in
+     * @param BookSubTopic $parentTopic_in
+     */
+    public function __construct($topic_in, BookSubTopic $parentTopic_in) {
+        $this->topic        = $topic_in;
+        $this->parentTopic  = $parentTopic_in;
+        $this->title        = NULL;
     }
-    
-    function getTopic() {
-      return $this->topic;
+
+    /**
+     * @return mixed
+     */
+    public function getTopic() {
+        return $this->topic;
     }
-    
-    function getParentTopic() {
+
+    /**
+     * @return BookSubTopic
+     */
+    public function getParentTopic() {
         return $this->parentTopic;
     }
-    
-    function getTitle() {
+
+    /**
+     * @return null|string
+     */
+    public function getTitle() {
         if (NULL != $this->title) {
             return $this->title;
         } else {
             return $this->parentTopic->getTitle();
         }
     }
-    
-    function setTitle($title_in) {
+
+    /**
+     * @param string $title_in
+     */
+    public function setTitle($title_in) {
         $this->title = $title_in;
     }
 }

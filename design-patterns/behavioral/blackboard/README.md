@@ -5,6 +5,6 @@ Blackboard Architectural Pattern
 - In Blackboard several specialised sub-systems assemble their knowledge to build a possibly partial or approximate solution.
 
 Context
-----------
+------------------------------------
 
 An immature domain wich no closed approach to a solution is known or feasible

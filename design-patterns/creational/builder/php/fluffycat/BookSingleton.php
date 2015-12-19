@@ -19,7 +19,10 @@ class BookSingleton {
         }
     }
 
-    function returnBook(BookSingleton $bookReturned) {
+    /**
+     * @param BookSingleton $bookReturned
+     */
+    public function returnBook(BookSingleton $bookReturned) {
         self::$isLoanedOut = FALSE;
     }
 
@@ -27,6 +30,9 @@ class BookSingleton {
 
     function getTitle() {return $this->title;}
 
+    /**
+     * @return string
+     */
     function getAuthorAndTitle() {
         return $this->getTitle() . ' by ' . $this->getAuthor();
     }

@@ -28,14 +28,13 @@ class Lamborghini extends Car {
  
 
 class Bianchina extends Car {
+
     protected $_type = "Bianchina";
- 
-    // overidde method
+
     public function getType(){
         echo $this->_type . ' still exist!';
     }
 }
-
 
 $carFactory = new CarFactory();
  

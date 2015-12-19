@@ -23,8 +23,16 @@ abstract class Shape {
     protected $oDrawingAPI;
  
     public abstract function draw();
+
+    /**
+     * @param $dPct
+     * @return mixed
+     */
     public abstract function resizeByPercentage($dPct);
- 
+
+    /**
+     * @param DrawingAPI $oDrawingAPI
+     */
     protected function __construct(DrawingAPI $oDrawingAPI) {
         $this->oDrawingAPI = $oDrawingAPI;
     }
@@ -35,7 +43,13 @@ class CircleShape extends Shape {
     private $dX;
     private $dY;
     private $dRadius;
- 
+
+    /**
+     * @param DrawingAPI $dX
+     * @param $dY
+     * @param $dRadius
+     * @param DrawingAPI $oDrawingAPI
+     */
     public function __construct(
             $dX, $dY,
             $dRadius,
@@ -46,7 +60,7 @@ class CircleShape extends Shape {
         $this->dY = $dY;
         $this->dRadius = $dRadius;
     }
- 
+
     public function draw() {
         $this->oDrawingAPI->drawCircle(
                 $this->dX,
@@ -54,7 +68,10 @@ class CircleShape extends Shape {
                 $this->dRadius
         );
     }
- 
+
+    /**
+     * @param $dPct
+     */
     public function resizeByPercentage($dPct) {
         $this->dRadius *= $dPct;
     }
@@ -74,5 +91,5 @@ class Tester {
         }
     }
 }
- 
+
 Tester::main();

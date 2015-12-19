@@ -3,13 +3,13 @@ Chain-of-responsibility pattern
 
 The chain-of-responsibility pattern is a design pattern consisting of a source of command objects and a series of processing objects.
 
-http://en.wikipedia.org/wiki/Chain-of-responsibility_pattern
+[Wikipedia](http://en.wikipedia.org/wiki/Chain-of-responsibility_pattern)
 
 
 Sourcemaking.com example
 ----------------------------
 
-http://sourcemaking.com/design_patterns/chain_of_responsibility
+[SourceMaking](http://sourcemaking.com/design_patterns/chain_of_responsibility)
 
 A method called in one object will move up a chain of objects until one is found that can properly handle the call.
 
@@ -20,6 +20,6 @@ Intent
 - An object-oriented linked list with recursive traversal.
 
 UML
------
+----------------------------
 
-![Alt text](/design-patterns/uml/chain_of_responsibility.jpg)
+![Alt text](../../uml/chain_of_responsibility.jpg)

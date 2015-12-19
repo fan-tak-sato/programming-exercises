@@ -1,7 +1,16 @@
 <?php
 
 interface ITest {
+
 	public function Links();
+
+	/**
+	 * Method required by interface
+	 *
+	 * @param string $gen
+	 * @param string $nota
+	 * @return string
+	 */
 	public function Tutorials($str, $nota);
 }
 
@@ -9,18 +18,29 @@ class WebDevelopment implements ITest {
 
 	protected $site = 'www.andreafiori.net';
 
-	// method required by interface
+	/**
+	 * Method required by interface
+	 *
+	 * @return string
+	 */
 	public function Links() {
 		return $this->site;
 	}
 
-	// method required by interface
+	/**
+	 * @inheritdoc
+	 */
 	public function Tutorials($gen, $nota) {
 		$re = $gen. ' - '. $nota;
+
 		return $re;
 	}
 
-	// additional method
+	/**
+	 * Additional method
+	 *
+	 * @param string $site
+	 */
 	public function setSite($site) {
 		$this->site = $site;
 	}
@@ -28,15 +48,18 @@ class WebDevelopment implements ITest {
 
 class Languages implements ITest {
 
-	// protected property
 	protected $adr = 'www.marplo.net/';
 
-	// method required by interface
+	/**
+	 * @return string
+	 */
 	public function Links() {
 		return'Good way';
 	}
 
-	// method required by interface
+	/**
+	 * @inheritdoc
+	 */
 	public function Tutorials($gen, $nr) {
 		$re = $nr.' - '. $this->adr. $gen;
 		return $re;
@@ -44,18 +67,13 @@ class Languages implements ITest {
 	
 }
 
-
-// function that accepts only arguments which are objects of the classes which implement ITest
+/**
+ * @param ITest $obj
+ */
 function courses(ITest $obj) {
-	// calls the methods declared in ITest interface
 	echo '<br />'. $obj->Links();
 	echo '<br />'. $obj->Tutorials('php-mysql', 4);
 }
 
-// creates the object instances
-$web_development = new WebDevelopment();
-$limbi_straine = new Languages();
-
-// calls the courses() function, passing the objects for argument
-courses($web_development);
-courses($limbi_straine);
+courses(new WebDevelopment());
+courses(new Languages());

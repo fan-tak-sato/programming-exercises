@@ -1,7 +1,5 @@
 <?php
 
-include_once('BookPrototype.php');
-
 class PHPBookPrototype extends BookPrototype {
 
 	public function __construct() {

@@ -1,0 +1,3 @@
+Lazy initiation pattern
+===============================
+

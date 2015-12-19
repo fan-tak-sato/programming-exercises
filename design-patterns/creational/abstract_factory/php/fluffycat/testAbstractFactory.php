@@ -1,58 +1,47 @@
 <?php
 
-//copyright Lawrence Truett and www.FluffyCat.com 2005, all rights reserved
+include_once('AbstractBook.php');
+include_once('AbstractBookFactory.php');
+include_once('AbstractMySQLBook.php');
+include_once('AbstractPHPBook.php');
+include_once('OReillyBookFactory.php');
+include_once('OReillyPHPBook.php');
+include_once('OReillyMySQLBook.php');
+include_once('SamsBookFactory.php');
+include_once('SamsMySQLBook.php');
+include_once('SamsPHPBook.php');
 
-  include_once('OReillyBookFactory.php');  
-  include_once('SamsBookFactory.php');
+/**
+ * @param AbstractBookFactory $bookFactoryInstance
+ */
+function testConcreteFactory(AbstractBookFactory $bookFactoryInstance) {
+  $phpBookOne = $bookFactoryInstance->makePHPBook();
+  echo 'first php Author: '.
+      $phpBookOne->getAuthor()."<br>";
+  echo 'first php Title: '.
+      $phpBookOne->getTitle()."<br>";
 
-  echo tagins("html");
-  echo tagins("head");  
-  echo tagins("/head");  
-  echo tagins("body");
+  $phpBookTwo = $bookFactoryInstance->makePHPBook();
+  echo 'second php Author: '.
+      $phpBookTwo->getAuthor()."<br>";
+  echo 'second php Title: '.
+      $phpBookTwo->getTitle()."<br>";
 
-  echo "BEGIN TESTING ABSTRACT FACTORY PATTERN";
-  echo tagins("br").tagins("br");
-  
-  echo 'testing OReillyBookFactory'.tagins("br");
-  $bookFactoryInstance = new OReillyBookFactory;
-  testConcreteFactory($bookFactoryInstance);
-  
-  echo tagins("br");
-  
-  echo 'testing SamsBookFactory'.tagins("br");
-  $bookFactoryInstance = new SamsBookFactory;
-  testConcreteFactory($bookFactoryInstance);  
-  
-  echo tagins("br");
-  echo "END TESTING ABSTRACT FACTORY PATTERN";
-  echo tagins("br");
-  
-  echo tagins("/body");
-  echo tagins("/html");
+  $mySqlBook = $bookFactoryInstance->makeMySQLBook();
+  echo 'MySQL Author: '. $mySqlBook->getAuthor()."<br>";
+  echo 'MySQL Title: '.
+      $mySqlBook->getTitle()."<br>";
+}
 
-  function testConcreteFactory($bookFactoryInstance) {
-    $phpBookOne = $bookFactoryInstance->makePHPBook();
-    echo 'first php Author: '. 
-	  $phpBookOne->getAuthor().tagins("br");
-    echo 'first php Title: '.
-	  $phpBookOne->getTitle().tagins("br");
-	  
-    $phpBookTwo = $bookFactoryInstance->makePHPBook();
-    echo 'second php Author: '.
-	  $phpBookTwo->getAuthor().tagins("br");
-    echo 'second php Title: '.
-	  $phpBookTwo->getTitle().tagins("br");
-    
-	$mySqlBook = $bookFactoryInstance->makeMySQLBook();
-    echo 'MySQL Author: '.
-	  $mySqlBook->getAuthor().tagins("br");
-    echo 'MySQL Title: '.
-	  $mySqlBook->getTitle().tagins("br");
-  }
-  
-  //doing this so code can be displayed without breaks
-  function tagins($stuffing) {
-    return "<".$stuffing.">";
-  }
 
 ?>
+<html>
+<head>
+  <title>ABSTRACT FACTORY PATTERN test</title>
+</head>
+<body>
+  <h1>ABSTRACT FACTORY PATTERN test</h1>
+  <p><strong>testing OReillyBookFactory:</strong> <?php testConcreteFactory(new OReillyBookFactory); ?></p>
+  <p><strong>testing SamsBookFactory:</strong> <?php testConcreteFactory(new SamsBookFactory); ?></p>
+</body>
+</html>

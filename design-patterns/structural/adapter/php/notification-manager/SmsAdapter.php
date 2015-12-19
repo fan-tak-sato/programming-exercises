@@ -4,6 +4,9 @@ class SmsAdapter implements NotificationInterface
 {
 	protected $_data;
 
+	/**
+	 * @param $data
+	 */
 	public function setData($data) {
 		$this->_data = $data;
 	}

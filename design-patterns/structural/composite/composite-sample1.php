@@ -1,22 +1,33 @@
 <?php
 
-/** Component */
+/**
+ * Component
+ */
 abstract class Basket
 {
     protected $_components = array();
 
+    /**
+     * @param Basket $component
+     */
     public function add(Basket $component)
     {
         array_push($this->_components, $component);
-            // throw new BasketException( get_class($this)." is a leaf" );
+        // throw new BasketException( get_class($this)." is a leaf" );
     }
 
+    /**
+     * @param $pos
+     */
     public function remove($pos)
     {
         unset($this->_components[$pos]);
-            // throw new BasketException( get_class($this)." is a leaf" );
+        // throw new BasketException( get_class($this)." is a leaf" );
     }
 
+    /**
+     * @return int
+     */
     public function getPoints()
     {
         $points = 0;
@@ -28,6 +39,9 @@ abstract class Basket
         return $points;
     }
 
+    /**
+     * @return string
+     */
     public function show()
     {
         $res = '';
@@ -40,7 +54,9 @@ abstract class Basket
 }
 
 
-/** Composite **/
+/**
+ * Composite
+ */
 class Team extends Basket
 {
     private $_name;
@@ -57,7 +73,9 @@ class Team extends Basket
     }
 }
 
-/** Composite **/
+/**
+ * Composite
+ */
 class Game extends Basket
 {
     private $_date;
@@ -74,48 +92,54 @@ class Game extends Basket
     }	
 }
 
-/** Leaf **/
+/**
+ * Leaf
+ */
 class Player extends Basket
 {
     private $_name;
 	
     private $_points;
 
+    /**
+     * @param $name
+     * @param int $points
+     */
     public function __construct($name, $points = 0)
     {
         $this->_name = $name;
         $this->_points = $points;
     }
 
+    /**
+     * @return int
+     */
     public function getPoints()
     {
         return $this->_points;
     }
 
+    /**
+     * @return string
+     */
     public function show()
     {
         return "{$this->_name} ({$this->getPoints()}) <br>";
     }
 }
 
-//Creo due squadre
 $team1 = new Team('Boston Celtics');
 $team2 = new Team('Los Angeles Lakers');
- 
-//Aggiungo due giocatori alla prima squadra
+
 $team1->add(new Player('Larry Bird', 33));
 $team1->add(new Player('Kevin McHale', 12));
 
-//Aggiungo due giocatori alla seconda squadra
 $team2->add(new Player('Magic Johnson', 28));
 $team2->add(new Player('Kareem Abdul-Jabbar', 16));
- 
-//Creo una partita
+
 $game = new Game();
- 
-//Aggiungo le due squadre alla partita
+
 $game->add($team1);
 $game->add($team2);
- 
-//Mostro il risultato
+
 echo $game->show();

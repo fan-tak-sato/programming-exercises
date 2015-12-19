@@ -1,3 +1,6 @@
+About this example
+======================
+
 In the Abstract Factory Pattern, an abstract factory defines what objects the non-abstract or concrete factory will need to be able to create. 
 
 The concrete factory must create the correct objects for it's context, insuring that all objects created by the concrete factory have been chosen to be able to work correctly for a given circumstance. 

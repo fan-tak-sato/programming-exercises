@@ -45,6 +45,9 @@ class ObjectTag
         $this->_html = $html;
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         return "<object>{$this->_html}</object>\n";
@@ -59,16 +62,25 @@ class FlashWidget implements BlinkingWidget
 {
     private $_objectTag;
 
+    /**
+     * @param ObjectTag $objectTag
+     */
     public function __construct(ObjectTag $objectTag)
     {
         $this->_objectTag = $objectTag;
     }
 
+    /**
+     * @param $text
+     */
     public function initialize($text)
     {
         $this->_objectTag->setContent("<param name=\"text\">$text</param>");
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         return (string) $this->_objectTag;

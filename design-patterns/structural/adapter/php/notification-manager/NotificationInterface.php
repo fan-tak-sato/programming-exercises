@@ -2,7 +2,11 @@
 
 interface NotificationInterface {
 
-	public function setData($data);
+    /**
+     * @param $data
+     * @return mixed
+     */
+    public function setData($data);
 
-	public function sendNotification();
+    public function sendNotification();
 }

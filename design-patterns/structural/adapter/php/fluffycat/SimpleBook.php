@@ -1,21 +1,31 @@
 <?php
 
-//copyright Lawrence Truett and FluffyCat.com 2006, all rights reserved
-  
-  class SimpleBook {
+class SimpleBook {
 
     private $author;
     private $title;
 
-    function __construct($author_in, $title_in) {
-      $this->author = $author_in;
-      $this->title  = $title_in;
+    /**
+     * @param $author_in
+     * @param $title_in
+     */
+    public function __construct($author_in, $title_in) {
+        $this->author = $author_in;
+        $this->title  = $title_in;
     }
 
-    function getAuthor() {return $this->author;}
+    /**
+     * @return mixed
+     */
+    public function getAuthor() {
+        return $this->author;
+    }
 
-    function getTitle() {return $this->title;}
+    /**
+     * @return mixed
+     */
+    public function getTitle() {
+        return $this->title;
+    }
 
-  }
-
-?>
+}

@@ -1,74 +1,76 @@
 <?php
 
-//copyright Lawrence Truett and FluffyCat.com 2005, all rights reserved
-
-  include_once('BookList.php');
+class Interpreter {
   
-  class Interpreter {  
-  
-	private $bookList;
+  private $bookList;
 
-    public function __construct($bookListIn) {
-      $this->bookList = $bookListIn;
-    }
+  /**
+   * @param $bookListIn
+   */
+  public function __construct($bookListIn) {
+    $this->bookList = $bookListIn;
+  }
 
-    public function interpret($stringIn) {
-      
+  /**
+   * @param $stringIn
+   * @return null|string
+   */
+  public function interpret($stringIn) {
+
       $arrayIn = explode(" ",$stringIn);
-      
+
       $returnString = NULL;
-      
-      //go through the array validating 
+
+      //go through the array validating
       //  and if possible calling a book method
-      //could use refactoring, some duplicate logic 
+      //could use refactoring, some duplicate logic
       if ('book' == $arrayIn[0]) {
         if ('author' == $arrayIn[1]) {
           if (is_numeric($arrayIn[2])) {
             $book = $this->bookList->getBook($arrayIn[2]);
             if (NULL == $book) {
               $returnString = 'Can not process, there is no book # '.
-                $arrayIn[2]; 
+                $arrayIn[2];
             } else {
-              $returnString = $book->getAuthor(); 
+              $returnString = $book->getAuthor();
             }
           } elseif ('title' == $arrayIn[2]) {
             if (is_numeric($arrayIn[3])) {
               $book = $this->bookList->getBook($arrayIn[3]);
               if (NULL == $book) {
                 $returnString = 'Can not process, there is no book # '.
-                  $arrayIn[3]; 
+                  $arrayIn[3];
               } else {
-                $returnString = $book->getAuthorAndTitle(); 
+                $returnString = $book->getAuthorAndTitle();
               }
             } else {
-              $returnString = 
-                'Can not process, book # must be numeric.'; 
-            }            
+              $returnString =
+                'Can not process, book # must be numeric.';
+            }
           } else {
-            $returnString = 'Can not process, book # must be numeric.'; 
+            $returnString = 'Can not process, book # must be numeric.';
           }
         }
+
         if ('title' == $arrayIn[1]) {
           if (is_numeric($arrayIn[2])) {
             $book = $this->bookList->getBook($arrayIn[2]);
             if (NULL == $book) {
               $returnString = 'Can not process, there is no book # '.
-                $arrayIn[2]; 
+                $arrayIn[2];
             } else {
-              $returnString = $book->getTitle(); 
+              $returnString = $book->getTitle();
             }
           } else {
-            $returnString = 'Can not process, book # must be numeric.'; 
+            $returnString = 'Can not process, book # must be numeric.';
           }
         }
       } else {
         $returnString = 'Can not process, '.
                         'can only process book author #, <b'.
-                        'r> book title #, or book author title #'; 
+                        'r> book title #, or book author title #';
       }
-      
-      return $returnString;  
-    }
 
-  }
-?>
+      return $returnString;
+    }
+}

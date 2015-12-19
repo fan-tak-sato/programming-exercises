@@ -1,22 +1,16 @@
 <?php
+  
+class OReillyPHPBook extends AbstractPHPBook {
+  
+  private $author;
+    
+  private $title;
+    
+  private static $oddOrEven = 'odd';
 
-  include_once('AbstractPHPBook.php');
-  
-  class OReillyPHPBook extends AbstractPHPBook {
-  
-    private $author;
-    
-    private $title;
-    
-    private static $oddOrEven = 'odd';
-    
-    function __construct() {
-    
-    
-    
-      //alternate between 2 books
+  public function __construct() {
       
-      if ('odd' == self::$oddOrEven) {
+    if ('odd' == self::$oddOrEven) {
         $this->author = 'Rasmus Lerdorf and Kevin Tatroe';
         $this->title  = 'Programming PHP';
         self::$oddOrEven = 'even';

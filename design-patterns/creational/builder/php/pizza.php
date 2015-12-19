@@ -1,11 +1,11 @@
 <?php
 
 class Pizza {
- 
+
     protected $dough;
     protected $sauce;
     protected $topping;
- 
+
     public function setDough($dough) {
         $this->dough = $dough;
     }
@@ -26,9 +26,15 @@ class Pizza {
 }
  
 abstract class PizzaBuilder {
- 
+
+    /**
+     * @var Pizza
+     */
     protected $pizza;
- 
+
+    /**
+     * @return mixed
+     */
     public function getPizza() {
         return $this->pizza;
     }
@@ -37,13 +43,14 @@ abstract class PizzaBuilder {
         $this->pizza = new Pizza();
     }
  
-    public abstract function buildDough();
-    public abstract function buildSauce();
-    public abstract function buildTopping();
+    abstract public function buildDough();
+    abstract public function buildSauce();
+    abstract public function buildTopping();
 }
 
 
 class HawaiianPizzaBuilder extends PizzaBuilder {
+
 	public function buildDough() {
 		$this->pizza->setDough("cross");
 	}
@@ -75,13 +82,19 @@ class SpicyPizzaBuilder extends PizzaBuilder {
 
 
 class Waiter {
- 
+
     protected $pizzaBuilder;
- 
+
+    /**
+     * @param PizzaBuilder $pizzaBuilder
+     */
     public function setPizzaBuilder(PizzaBuilder $pizzaBuilder) {
         $this->pizzaBuilder = $pizzaBuilder;
     }
- 
+
+    /**
+     * @return mixed
+     */
     public function getPizza() {
         return $this->pizzaBuilder->getPizza();
     }
@@ -95,31 +108,22 @@ class Waiter {
     }
 }
 
+echo "<h1>Pizza Builder (pattern) test</h1>";
 
-class Tester
-{
-    	public static function main()
-	{
-		$oWaiter               = new Waiter();
-		$oHawaiianPizzaBuilder = new HawaiianPizzaBuilder();
-		$oSpicyPizzaBuilder    = new SpicyPizzaBuilder();
+$oWaiter               = new Waiter();
+$oHawaiianPizzaBuilder = new HawaiianPizzaBuilder();
+$oSpicyPizzaBuilder    = new SpicyPizzaBuilder();
 
-		$oWaiter->setPizzaBuilder($oHawaiianPizzaBuilder);
-		$oWaiter->constructPizza();
+$oWaiter->setPizzaBuilder($oHawaiianPizzaBuilder);
+$oWaiter->constructPizza();
 
-		$pizza = $oWaiter->getPizza();
-		$pizza->showIngredients();
+$pizza = $oWaiter->getPizza();
+$pizza->showIngredients();
 
-		echo "<br/>";
+echo "<br/>";
 
-		$oWaiter->setPizzaBuilder($oSpicyPizzaBuilder);
-		$oWaiter->constructPizza();
+$oWaiter->setPizzaBuilder($oSpicyPizzaBuilder);
+$oWaiter->constructPizza();
 
-		$pizza = $oWaiter->getPizza();
-		$pizza->showIngredients();
-	}
-
-}
-
-Tester::main();
-
+$pizza = $oWaiter->getPizza();
+$pizza->showIngredients();

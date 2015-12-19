@@ -3,7 +3,10 @@
 class Interpreter {
 
     private $bookList;
-	
+
+	/**
+	 * @param $bookListIn
+	 */
     public function __construct($bookListIn) {
 		$this->bookList = $bookListIn;
     }
@@ -62,18 +65,25 @@ class BookList {
 
     private $books = array();
     private $bookCount = 0;
-	
-    public function __construct() {
-    }
-	
+
+	/**
+	 * @return int
+	 */
     public function getBookCount() {
         return $this->bookCount;
     }
-	
+
+	/**
+	 * @param $newCount
+	 */
     private function setBookCount($newCount) {
         $this->bookCount = $newCount;
     }
-	
+
+	/**
+	 * @param int $bookNumberToGet
+	 * @return null
+	 */
     public function getBook($bookNumberToGet) {
         if ( (is_numeric($bookNumberToGet)) && 
            ($bookNumberToGet <= $this->getBookCount())) {
@@ -82,13 +92,21 @@ class BookList {
            return NULL;
         }
     }
-	
+
+	/**
+	 * @param Book $book_in
+	 * @return int
+	 */
     public function addBook(Book $book_in) {
         $this->setBookCount($this->getBookCount() + 1);
         $this->books[$this->getBookCount()] = $book_in;
         return $this->getBookCount();
     }
-	
+
+	/**
+	 * @param Book $book_in
+	 * @return int
+	 */
     public function removeBook(Book $book_in) {
 		$counter = 0;
 		while (++$counter <= $this->getBookCount()) {
@@ -109,21 +127,34 @@ class Book {
 
     private $author;
     private $title;
-	
-    function __construct($title_in, $author_in) {
+
+	/**
+	 * @param $title_in
+	 * @param $author_in
+	 */
+    public function __construct($title_in, $author_in) {
         $this->author = $author_in;
         $this->title  = $title_in;
     }
-	
-    function getAuthor() {
+
+	/**
+	 * @return string
+	 */
+    public function getAuthor() {
         return $this->author;
     }
-	
-    function getTitle() {
+
+	/**
+	 * @return string
+	 */
+    public function getTitle() {
         return $this->title;
     }
-	
-    function getAuthorAndTitle() {
+
+	/**
+	 * @return string
+	 */
+    public function getAuthorAndTitle() {
         return $this->getTitle().' by '.$this->getAuthor();
     }
 }

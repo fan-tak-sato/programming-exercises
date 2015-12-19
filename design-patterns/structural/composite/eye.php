@@ -42,11 +42,17 @@ class P implements HtmlElement
 {
     private $_text;
 
+    /**
+     * @param $text
+     */
     public function __construct($text)
     {
         $this->_text = $text;
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         return "<p>{$this->_text}</p>";
@@ -61,11 +67,17 @@ class Div implements HtmlElement
 {
     private $_children = array();
 
+    /**
+     * @param HtmlElement $element
+     */
     public function addChild(HtmlElement $element)
     {
         $this->_children[] = $element;
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         $html = "<div>\n";
@@ -80,11 +92,12 @@ class Div implements HtmlElement
 	
 }
 
-// Client code
 $div = new Div();
 $div->addChild(new H1('Title'));
 $div->addChild(new P('Lorem ipsum...'));
+
 $sub = new Div();
 $sub->addChild(new P('Dolor sit amet...'));
 $div->addChild($sub);
+
 echo $div, "\n";

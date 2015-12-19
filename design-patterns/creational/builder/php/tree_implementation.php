@@ -48,6 +48,9 @@ class Tree
         return $this->_right;
     }
 
+    /**
+     * @param Tree $t
+     */
     public function setRight(Tree $t)
     {
         $this->_right = $t;

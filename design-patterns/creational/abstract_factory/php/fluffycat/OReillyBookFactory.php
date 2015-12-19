@@ -1,20 +1,21 @@
 <?php
 
-//copyright Lawrence Truett and FluffyCat.com 2005, all rights reserved
+class OReillyBookFactory extends AbstractBookFactory {
 
-  include_once('AbstractBookFactory.php');
-  
-  include_once('OReillyPHPBook.php');
-  include_once('OReillyMySQLBook.php');
-  
-  class OReillyBookFactory extends AbstractBookFactory {
-  
-    private $context = "OReilly";  
-  
-    function makePHPBook() {return new OReillyPHPBook;}
-    
-    function makeMySQLBook() {return new OReillyMySQLBook;}
-  
-  }
+    private $context = "OReilly";
 
-?>
+    /**
+     * @return OReillyPHPBook
+     */
+    public function makePHPBook() {
+        return new OReillyPHPBook();
+    }
+
+    /**
+     * @return OReillyMySQLBook
+     */
+    public function makeMySQLBook() {
+        return new OReillyMySQLBook();
+    }
+
+}

@@ -5,9 +5,9 @@ In the singleton pattern a class can distribute one instance of itself to other 
 
 Singleton is often considered an Anti-pattern! Many people does not consider singleton as a design pattern.
 
-[SIngleton on wikipedia](http://en.wikipedia.org/wiki/Singleton_pattern)
+[Singleton on Wikipedia](http://en.wikipedia.org/wiki/Singleton_pattern)
 
 UML
------------------
+----------------------
 
-![Alt text](/design-patterns/uml/singleton.jpg)
+![Alt text](../../uml/singleton.jpg)

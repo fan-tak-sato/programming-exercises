@@ -1,24 +1,27 @@
 <?php
 
-  include_once('AbstractMySQLBook.php');
-  
-  class OReillyMySQLBook extends AbstractMySQLBook {
-  
-    private $author;
+class OReillyMySQLBook extends AbstractMySQLBook {
+
+  private $author;
     
-    private $title;
+  private $title;
     
-    function __construct() {
-    
-      $this->author = 'George Reese, Randy Jay Yarger, and Tim King';
-      $this->title  = 'Managing and Using MySQL';
- 
-    }
-  
-    function getAuthor() {return $this->author;}
-    
-    function getTitle() {return $this->title;}
-  
+  public function __construct() {
+    $this->author = 'George Reese, Randy Jay Yarger, and Tim King';
+    $this->title  = 'Managing and Using MySQL';
   }
 
-?>
+  /**
+   * @return string
+   */
+  public function getAuthor() {
+    return $this->author;
+  }
+
+  /**
+   * @return string
+   */
+  public function getTitle() {
+    return $this->title;
+  }
+}

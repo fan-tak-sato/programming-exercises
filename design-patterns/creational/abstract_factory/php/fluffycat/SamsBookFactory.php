@@ -1,20 +1,15 @@
 <?php
 
-//copyright Lawrence Truett and FluffyCat.com 2005, all rights reserved
+class SamsBookFactory extends AbstractBookFactory {
 
-  include_once('AbstractBookFactory.php');
-  
-  include_once('SamsPHPBook.php');
-  include_once('SamsMySQLBook.php');
-  
-  class SamsBookFactory extends AbstractBookFactory {
-  
-    private $context = "Sams";   
-  
-    function makePHPBook() {return new SamsPHPBook;}
-    
-    function makeMySQLBook() {return new SamsMySQLBook;}
-  
+  private $context = "Sams";
+
+  public function makePHPBook() {
+    return new SamsPHPBook();
   }
 
-?>
+  public function makeMySQLBook() {
+    return new SamsMySQLBook();
+  }
+
+}

@@ -3,7 +3,7 @@
 class Factory
 {
     /**
-     * @param $type
+     * @param mixed $type
      * @return mixed
      *
      * @throws Exception

@@ -2,6 +2,6 @@
 
 abstract class AbstractPHPBook {
 
-    private $subject = "PHP";
+    protected $subject = "PHP";
 
 }
