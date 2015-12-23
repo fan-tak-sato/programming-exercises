@@ -1,46 +1,5 @@
 <?php
 
-/*
- * @category Design Pattern Tutorial
- * @package Memento Sample
- * @author Dmitry Sheiko <me@dsheiko.com>
- * @link http://dsheiko.com
- */
-/**
- * Memento
- */
-class Memento
-{
-    private $_originator;
-
-    /**
-     * @param $originator
-     */
-    public function  __construct(&$originator)
-    {
-        $this->_originator = &$originator;
-    }
-
-    public function save()
-    {
-        $this->_state = $this->_originator->getState();
-    }
-
-    public function restore()
-    {
-        $this->_originator->setState($this->_state);
-    }
-}
-
-/**
- * Originator
- */
-interface Restorable
-{
-    public function getState();
-    public function setState($state);
-}
-
 class RestorableIterator implements Iterator, Restorable
 {
     private $_data;
@@ -109,20 +68,3 @@ class RestorableIterator implements Iterator, Restorable
         return $this->_valid;
     }
 }
-
-/**
- * Caretaker
- */
-$it = new RestorableIterator(array('a', 'b', 'c', 'd'));
-$itMemento = new Memento($it);
-$it->next();
-$itMemento->save();
-$it->next();
-$it->next();
-echo "Current value ", $it->current(), "<br>";
-$itMemento->restore();
-echo "Current value ", $it->current(), "<br>";
-
-// Output:
-// Current value d
-// Current value b

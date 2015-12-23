@@ -1,8 +1,13 @@
 <?php
 
+/**
+ * @param $var
+ * @return float
+ * @throws Exception
+ */
 function fun($var)
 {
-    if (!$var) {
+    if (!$var or $var<=0) {
         throw new Exception('Arithmetic exception: Divide by zero...');
     }
 

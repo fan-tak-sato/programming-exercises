@@ -3,30 +3,48 @@
 // SPL object: http://www.php.net/manual/it/book.spl.php
 
 class MyObserver1 implements SplObserver {
+
+    /**
+     * @param SplSubject $subject
+     */
     public function update(SplSubject $subject) {
         echo __CLASS__ . ' - ' . $subject->getName();
     }
 }
  
 class MyObserver2 implements SplObserver {
+
+    /**
+     * @param SplSubject $subject
+     */
     public function update(SplSubject $subject) {
         echo __CLASS__ . ' - ' . $subject->getName();
     }
 }
- 
+
 class MySubject implements SplSubject {
+
     private $_observers;
     private $_name;
- 
+
+    /**
+     * @param $name
+     */
     public function __construct($name) {
         $this->_observers = new SplObjectStorage();
         $this->_name = $name;
     }
- 
+
+    /**
+     * @param SplObserver $observer
+     */
     public function attach(SplObserver $observer) {
         $this->_observers->attach($observer);
     }
- 
+
+    /**
+     * @param SplObserver $observer
+     */
     public function detach(SplObserver $observer) {
         $this->_observers->detach($observer);
     }
@@ -36,7 +54,10 @@ class MySubject implements SplSubject {
             $observer->update($this);
         }
     }
- 
+
+    /**
+     * @return mixed
+     */
     public function getName() {
         return $this->_name;
     }

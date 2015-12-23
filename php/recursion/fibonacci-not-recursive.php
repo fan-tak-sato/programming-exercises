@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @param int $n
+ * @return array
+ */
 function fibonacci($n)
 {
     $fibarray = array(0, 1);
@@ -10,14 +14,19 @@ function fibonacci($n)
     return $fibarray;
 }
 
+/**
+ * @param int $n
+ * @return mixed
+ */
 function getFibonacciOccurrence($n)
 {
     $fibLowValues = array(0, 1);
     if (isset($fibLowValues[$n])) {
         return $fibLowValues[$n];
     }
-    
+
     $fibonacci = fibonacci($n);
+
     return $fibonacci[count($fibonacci)-1];
 }
 

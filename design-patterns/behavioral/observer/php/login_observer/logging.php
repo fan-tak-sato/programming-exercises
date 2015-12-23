@@ -1,7 +1,10 @@
 <?php
 
 class Logging implements SplObserver {
- 
+
+    /**
+     * @param SplSubject $SplSubject
+     */
     public function update( SplSubject $SplSubject ) {
  
         $status = $SplSubject->getStatus();
@@ -19,7 +22,7 @@ class Logging implements SplObserver {
             case Login::ALREADY_LOGGED_IN:
                 echo __CLASS__ . ": Logging already logged in to error file.";
 		break;
- 
+
             case Login::ALLOW:
                 echo __CLASS__ . ": Logging to access file.";
  

@@ -10,7 +10,10 @@ abstract class Observer
             $subject->attach($this);
         }
     }
- 
+
+    /**
+     * @param $subject
+     */
     public function update($subject) {
         // looks for an observer method with the state name
         if (method_exists($this, $subject->getState())) {
@@ -18,7 +21,6 @@ abstract class Observer
         }
     }
 }
-
 
 abstract class Subject
 {
@@ -51,16 +53,22 @@ abstract class Subject
             }
         }
     }
- 
+
+    /**
+     * @return null
+     */
     public function getState() {
         return $this->state;
     }
- 
+
+    /**
+     * @param $state
+     */
     public function setState($state) {
         $this->state = $state;
         $this->notify();
     }
- 
+
     public function notify() {
         if (!empty($this->observers)) {
             foreach ($this->observers as $observer) {
@@ -69,6 +77,9 @@ abstract class Subject
         }
     }
 
+    /**
+     * @return array
+     */
     public function getObservers() {
         return $this->observers;
     }
@@ -77,17 +88,15 @@ abstract class Subject
 
 class Auth extends Subject
 {
-    function login() {
-        // existing code to perform login authentication
-        // ...
- 
+    public function login() {
+        // existing code to perform login authentication...
+
         // signal any observers that the user has logged in
         $this->setState("login");
     }
  
-    function logout() {
-        // existing code to perform some operation when user logs out
-        // e.g. destroy session, etc...
+    public function logout() {
+        // existing code to perform some operation when user logs out e.g. destroy session, etc...
  
         // signal any observers that the user has logged out
         $this->setState("logout");
@@ -96,17 +105,21 @@ class Auth extends Subject
 
 class Auth_ForumHook extends Observer
 {
-    function login($subject) {
-        // call the forum's API functions to log the user in
-        // ...
+    /**
+     * @param $subject
+     */
+    public function login($subject) {
+        // call the forum's API functions to log the user in ...
     }
- 
-    function logout($subject) {
-        // call the forum's API functions to log the user out
-        // ...
+
+    /**
+     * @param $subject
+     */
+    public function logout($subject) {
+        // call the forum's API functions to log the user out...
     }
 }
 
 $auth = new Auth();
-// attach an observer
+// Attach an observer
 $auth->attach(new Auth_ForumHook());

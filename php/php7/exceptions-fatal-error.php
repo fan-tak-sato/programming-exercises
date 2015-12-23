@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * @param object $obj
+ */
 function call_method($obj) {
     $obj->method();
 }

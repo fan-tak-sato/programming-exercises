@@ -1,7 +1,10 @@
 <?php
 
 class Security implements SplObserver {
- 
+
+    /**
+     * @param SplSubject $SplSubject
+     */
     public function update( SplSubject $SplSubject ) {
  
         $status = $SplSubject->getStatus();

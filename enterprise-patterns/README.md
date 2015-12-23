@@ -1,4 +1,5 @@
 Patterns of Enterprise Application Architecture
+===========================================================
 
 Here we have the patterns of enterprise applications architecture. Introduced by [Martin Fowler](http://martinfowler.com/eaaCatalog/index.html).
 
@@ -25,7 +26,6 @@ Object-Relational Behavioral Patterns
 - Identity Map
 - Lazy Load
 
-
 Object-Relational Structural Patterns
 -----------------------------------------------------------
 
@@ -39,7 +39,6 @@ Object-Relational Structural Patterns
 - Class Table Inheritance
 - Concrete Table Inheritance
 - Inheritance Mappers
-
 
 Object-Relational Metadata Mapping Patterns
 -----------------------------------------------------------
@@ -58,7 +57,6 @@ Web Presentation Patterns
 - Transform View
 - Two-Step View
 - Application Controller
-
 
 Distribution Patterns
 -----------------------------------------------------------
@@ -95,4 +93,3 @@ Base Patterns
 - Plugin
 - Service Stub
 - Record Set
-

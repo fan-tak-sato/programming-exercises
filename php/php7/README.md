@@ -8,17 +8,17 @@ New features
 - Type hinting on functions will be possible for int, string and float
 - Removed PHP4 deprecated features
 - New reserved words:
-    bool
-    int
-    float
-    string
-    null
-    false
-    true
-    resource
-    object
-    mixed
-    numeric
+    - bool
+    - int
+    - float
+    - string
+    - null
+    - false
+    - true
+    - resource
+    - object
+    - mixed
+    - numeric
 - 64-bit integer support on Windows
 - Cleanup edge-case integer overflow/underflow
 - Support for strings with length >= 2^31 bytes in 64 bit builds.

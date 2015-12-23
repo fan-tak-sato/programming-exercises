@@ -1,9 +1,15 @@
 <?php
+
+/**
+ * @param mixed $key
+ * @param mixed $arr
+ * @return bool
+ */
 function find_in_arr($key, $arr) {
     foreach ($arr as $k => $v) {
         if ($k == $key) {
             return $v;
-        }       
+        }
         if (is_array($v)) {
             foreach ($v as $_k => $_v) {
             if ($_k == $key) {
@@ -14,7 +20,7 @@ function find_in_arr($key, $arr) {
     }
     return false;
 }
- 
+
 $arr = [
     'name' => 'Php Master',
     'subject' => 'Php',

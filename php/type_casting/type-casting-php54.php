@@ -9,5 +9,3 @@ var_dump((int)1);
 var_dump((float)1);
 var_dump((string)1);
 var_dump((bool)1);
-
-

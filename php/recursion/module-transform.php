@@ -9,7 +9,11 @@ function doit($a, $b) {
 }
 echo "Final: ".doit($argumentA, $argumentB)."<br><br><br>";
 
-
+/**
+ * @param $a
+ * @param $b
+ * @return int
+ */
 function doit_notrecursive($a, $b)
 {
     while ($b > 0) {

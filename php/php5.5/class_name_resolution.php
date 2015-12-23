@@ -1,4 +1,5 @@
 <?php
+
 namespace mynamespace
 {
     class myclass
@@ -8,5 +9,6 @@ namespace mynamespace
             echo "Hello";
         }
     }
-echo myclass::class;
+
+    echo myclass::class;
 }

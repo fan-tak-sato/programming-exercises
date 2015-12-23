@@ -13,7 +13,13 @@ class Login implements SplSubject {
     public function __construct() {
         $this->storage = new SplObjectStorage();
     }
- 
+
+    /**
+     * @param string $username
+     * @param string $password
+     * @param string $ip
+     * @return bool
+     */
     public function init( $username, $password, $ip ) {
  
         // Let's simulate different login procedures
@@ -28,29 +34,42 @@ class Login implements SplSubject {
  
         return false;
     }
- 
+
+    /**
+     * @param $status
+     * @param $username
+     * @param $ip
+     */
     private function setStatus( $status, $username, $ip ) {
         $this->status = array( $status, $username, $ip );
     }
- 
+
+    /**
+     * @return array
+     */
     public function getStatus() {
         return $this->status;
     }
- 
+
+    /**
+     * @param SplObserver $observer
+     */
     public function attach( SplObserver $observer ) {
         $this->storage->attach( $observer );
     }
- 
-     public function detach( SplObserver $observer ) {
+
+    /**
+     * @param SplObserver $observer
+     */
+    public function detach( SplObserver $observer ) {
         $this->storage->detach( $observer );
     }
- 
+
     public function notify() {
- 
+
         foreach ( $this->storage as $observer ) {
             $observer->update( $this );
         }
  
     }
-
 }
