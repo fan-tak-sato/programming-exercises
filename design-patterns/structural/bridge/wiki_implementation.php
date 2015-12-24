@@ -12,7 +12,12 @@ class DrawingAPI1 implements DrawingAPI {
 }
  
 class DrawingAPI2 implements DrawingAPI {
- 
+
+    /**
+     * @param $dX
+     * @param $dY
+     * @param $dRadius
+     */
     public function drawCircle($dX, $dY, $dRadius) {
         echo "API2.circle at ".$dX.":".$dY." radius ".$dRadius."<br/>";
     }
@@ -50,11 +55,7 @@ class CircleShape extends Shape {
      * @param $dRadius
      * @param DrawingAPI $oDrawingAPI
      */
-    public function __construct(
-            $dX, $dY,
-            $dRadius,
-            DrawingAPI $oDrawingAPI
-    ) {
+    public function __construct($dX, $dY, $dRadius, DrawingAPI $oDrawingAPI) {
         parent::__construct($oDrawingAPI);
         $this->dX = $dX;
         $this->dY = $dY;
@@ -76,9 +77,9 @@ class CircleShape extends Shape {
         $this->dRadius *= $dPct;
     }
 }
- 
+
 class Tester {
- 
+
     public static function main() {
         $aShapes = array(
             new CircleShape(1, 3, 7,  new DrawingAPI1()),

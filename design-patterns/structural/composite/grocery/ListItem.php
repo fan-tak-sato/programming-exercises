@@ -1,53 +1,80 @@
 <?php
 
 abstract class ListItem {
-     
+
     protected $description = "";
     protected $datedue = null;
     protected $datecreated = null;
     protected $datecompleted = null;
-     
-    function __construct( $description, $datedue=null ) {
-         
+
+    /**
+     * @param string $description
+     * @param null $datedue
+     */
+    public function __construct( $description, $datedue=null ) {
         $this->setDescription( $description );
         $this->setDateDue( $datedue );
         $this->setDateCreated( time() );
     }
-     
-    function getComposite() {
+
+    /**
+     * @return null
+     */
+    public function getComposite() {
         return null;
     }
-     
-    function setDescription( $description ) {
+
+    /**
+     * @param $description
+     */
+    public function setDescription( $description ) {
         $this->description = $description;
     }
-     
-    function getDescription() {
+
+    /**
+     * @return string
+     */
+    public function getDescription() {
         return $this->description;
     }
-     
-    function setDateDue( $datedue ) {
+
+    /**
+     * @param $datedue
+     */
+    public function setDateDue( $datedue ) {
         $this->datedue = $datedue ;
     }
-     
-    function getDateDue() {
+
+    /**
+     * @return null
+     */
+    public function getDateDue() {
         return $this->datedue;
     }
-     
-    function setDateCompleted( $datecompleted ) {
+
+    public function setDateCompleted( $datecompleted ) {
         $this->datecompleted = $datecompleted;
     }
-     
-    function getDateCompleted() {
+
+    /**
+     * @return null
+     */
+    public function getDateCompleted() {
         return $this->datecompleted;
     }
-     
-    function setDateCreated( $datecreated ) {
+
+    /**
+     * @param $datecreated
+     */
+    public function setDateCreated( $datecreated ) {
         $this->datecreated = $datecreated;
     }
-     
-    function getDateCreated() {
+
+    /**
+     * @return null
+     */
+    public function getDateCreated() {
         return $this->datecreated;
     }
-     
+
 }

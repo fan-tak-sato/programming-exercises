@@ -5,21 +5,33 @@ class AddressDisplay {
     private $addressType;
     private $addressText;
 
+    /**
+     * @param $addressType
+     */
     public function setAddressType($addressType)
     {
         $this->addressType = $addressType;
     }
 
+    /**
+     * @return mixed
+     */
     public function getAddressType()
     {
         return $this->addressType;
     }
 
+    /**
+     * @param $addressText
+     */
     public function setAddressText($addressText)
     {
         $this->addressText = $addressText;
     }
 
+    /**
+     * @return mixed
+     */
     public function getAddressText()
     {
         return $this->addressText;
@@ -30,12 +42,18 @@ class AddressDisplay {
 class EmailAddress {
 
     private $emailAddress;
-    
+
+    /**
+     * @return mixed
+     */
     public function getEmailAddress()
     {
         return $this->emailAddress;
     }
-    
+
+    /**
+     * @param $address
+     */
     public function setEmailAddress($address)
     {
         $this->emailAddress = $address;
@@ -48,6 +66,9 @@ class EmailAddress {
  */
 class EmailAddressDisplayAdapter extends AddressDisplay
 {
+    /**
+     * @param $emailAddr
+     */
     public function __construct($emailAddr)
     {
         $this->setAddressType("email");

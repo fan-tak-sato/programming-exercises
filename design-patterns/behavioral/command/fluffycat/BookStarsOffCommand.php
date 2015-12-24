@@ -1,13 +1,9 @@
 <?php
 
-//copyright Lawrence Truett and FluffyCat.com 2005, all rights reserved
+class BookStarsOffCommand extends BookCommand {
 
-  include_once('BookCommand.php');
+    public function execute() {
+        $this->bookCommandee->setStarsOff();
+    }
 
-  class BookStarsOffCommand extends BookCommand {
-
-    function execute() {$this->bookCommandee->setStarsOff();}
-
-  }
-
-?>
+}

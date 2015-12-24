@@ -10,7 +10,7 @@
 interface HtmlElement
 {
     /**
-     * @return string   representation
+     * @return string representation
      */
     public function __toString();
 }
@@ -28,6 +28,9 @@ class H1 implements HtmlElement
         $this->_text = $text;
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         return "<h1>{$this->_text}</h1>";
@@ -56,6 +59,15 @@ class P implements HtmlElement
     public function __toString()
     {
         return "<p>{$this->_text}</p>";
+    }
+
+    /**
+     * @return string    the name of the POST request key for this element,
+     *                   aka the "name" attribute.
+     */
+    public function getName()
+    {
+        // TODO: Implement getName() method.
     }
 }
 

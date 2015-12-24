@@ -61,4 +61,3 @@ var_dump($obj === Singleton::getInstance());
 
 $anotherObj = SingletonChild::getInstance();
 var_dump($anotherObj === SingletonChild::getInstance());
-

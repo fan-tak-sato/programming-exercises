@@ -25,7 +25,7 @@ abstract class BridgeBook {
      * @return string
      */
     public function showAuthor() {
-      return $this->bbImp->showAuthor($this->bbAuthor);
+        return $this->bbImp->showAuthor($this->bbAuthor);
     }
 
     /**
@@ -34,5 +34,4 @@ abstract class BridgeBook {
     public function showTitle() {
         return $this->bbImp->showTitle($this->bbTitle);
     }
-
 }

@@ -1,32 +1,29 @@
 <?php
 
-/**
- * @author Lawrence Truett and FluffyCat.com 2005
- */ 
-class BookTopic extends AbstractBookTopic
-{
+class BookTopic extends AbstractBookTopic {
+
     private $topic;
     private $title;
 
     /**
-     * 
-     * @param string $topic_in
+     * @param $topic_in
      */
-    public function __construct($topic_in)
-    {
+    public function __construct($topic_in) {
         $this->topic = $topic_in;
         $this->title = NULL;
     }
 
-    public function getTopic()
-    {
+    /**
+     * @return mixed
+     */
+    public function getTopic() {
         return $this->topic;
     }
 
     /**
-     * this is the end of the chain - returns title or says there is none
-     * 
-     * @return string
+     * This is the end of the chain - returns title or says there is none
+     *
+     * @return null|string
      */
     public function getTitle() {
         if (NULL != $this->title) {
@@ -35,10 +32,11 @@ class BookTopic extends AbstractBookTopic
             return 'there is no title avaialble';
         }
     }
-    
-    public function setTitle($title_in)
-    {
+
+    /**
+     * @inheritDoc
+     */
+    public function setTitle($title_in) {
         $this->title = $title_in;
     }
-
 }

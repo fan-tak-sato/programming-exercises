@@ -1,13 +1,16 @@
 <?php
-include_once("duck.php");
-class TurkeyAdapter implements Duck{
-    
+
+class TurkeyAdapter implements Duck
+{
     private $turkey;
-    
+
+    /**
+     * @param Turkey $turkey
+     */
     public function __construct(Turkey $turkey){
         $this->turkey = $turkey;
     }
-    
+
     public function quack(){
         $this->turkey->gobble();
     }

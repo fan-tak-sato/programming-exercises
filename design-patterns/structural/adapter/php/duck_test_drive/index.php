@@ -4,8 +4,8 @@ include_once("mallardDuck.php");
 include_once("wildTurkey.php");
 include_once("turkeyAdapter.php");
  
-class DuckTestDrive {
-
+class DuckTestDrive
+{
     public static function main()
 	{
         $duck = new MallardDuck();
@@ -26,7 +26,10 @@ class DuckTestDrive {
         self::testDuck($turkeyAdapter);
         echo("<br />");
     }
-     
+
+    /**
+     * @param Duck $duck
+     */
     private static function testDuck(Duck $duck)
 	{
         $duck->quack();

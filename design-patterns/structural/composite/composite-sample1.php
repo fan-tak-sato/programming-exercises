@@ -61,11 +61,17 @@ class Team extends Basket
 {
     private $_name;
 
+    /**
+     * @param $name
+     */
     public function __construct($name)
     {
         $this->_name = $name;
     }
 
+    /**
+     * @return string
+     */
     public function show()
     {
         // $res = "$this->_name ({$this->getPoints()}) <br>";
@@ -85,6 +91,9 @@ class Game extends Basket
         $this->_date = date("d/m/Y");
     }
 
+    /**
+     * @return string
+     */
     public function show()
     {
         $res = "Partita del: ({$this->_date}) <br>";

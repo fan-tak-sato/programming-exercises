@@ -1,10 +1,12 @@
 <?php
+
 include_once("mallardDuck.php");
 include_once("wildTurkey.php");
 include_once("turkeyAdapter.php");
 
-class DuckTestDrive{
-    public static function main(){
+class DuckTestDrive
+{
+    public static function main() {
         $duck = new MallardDuck();
         $turkey = new WildTurkey();
         $turkeyAdapter = new TurkeyAdapter($turkey);
@@ -22,11 +24,12 @@ class DuckTestDrive{
         echo("The turkey adapter says ...");
         self::testDuck($turkeyAdapter);
         echo("<br />");
-        
-        
     }
-    
-    private static function testDuck(Duck $duck){
+
+    /**
+     * @param Duck $duck
+     */
+    private static function testDuck(Duck $duck) {
         $duck->quack();
         echo("<br />");
         $duck->fly();

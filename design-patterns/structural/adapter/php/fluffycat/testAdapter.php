@@ -7,7 +7,7 @@ include_once('BridgeBookStarsImp.php');
 
 define('BR', '<'.'BR'.'>');
 
-echo 'BEGIN TESTING ADAPTER PATTERN'.BR;
+echo 'ADAPTER PATTERN TEST'.BR;
 echo BR;
 
 $book = new SimpleBook("Gamma, Helm, Johnson, and Vlissides", "Design Patterns");

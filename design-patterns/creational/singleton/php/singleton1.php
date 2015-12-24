@@ -13,18 +13,25 @@ class singleton {
         $this->value2 = 'test value2';
     }
 
+    /**
+     * @return mixed
+     */
     public function getInstance()
     {
-        if (!isset(self::$instance))
-        {
+        if (!isset(self::$instance)) {
             $class = __CLASS__;
             self::$instance = new $class();
             self::$instance->initialize();
         }
+
         return self::$instance;
     }
 
-    public function getInstanceObject($className)
+    /**
+     * @param $className
+     * @return mixed
+     */
+    public static function getInstanceObject($className)
     {
         $class = $className;
         self::$instance = new $class();
@@ -54,6 +61,9 @@ class application {
         $this->channel = 33;
     }
 
+    /**
+     * @return mixed
+     */
     public function getInstance()
     {
         if (!isset(self::$instance)) {
@@ -61,6 +71,7 @@ class application {
             self::$instance = new $class();
             self::$instance->initialize();
         }
+
         return self::$instance;
     }
 }

@@ -29,7 +29,7 @@ $groceryList->addListItem( $groceryItem1 );
 $groceryList->addListItem( $groceryItem2 );
 $groceryList->addListItem( $groceryItem3 );
  
-// Create our ToDo List, and add our other lists and items to it    
+// Create our To-Do List, and add our other lists and items to it
 $todoList = new ToDoList("My ToDo List");
 $todoList->addListItem( $groceryList );
 $todoList->addListItem( $libList );

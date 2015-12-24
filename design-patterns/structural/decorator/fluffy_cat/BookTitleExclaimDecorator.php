@@ -1,7 +1,5 @@
 <?php
 
-include_once('BookTitleDecorator.php');
-  
 class BookTitleExclaimDecorator extends BookTitleDecorator {
 
     private $btd;
@@ -10,8 +8,7 @@ class BookTitleExclaimDecorator extends BookTitleDecorator {
         $this->btd = $btd_in;
     }
 
-    function exclaimTitle() {
+    public function exclaimTitle() {
         $this->btd->title = "!" . $this->btd->title . "!";
     }
-
 }

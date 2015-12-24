@@ -10,6 +10,9 @@ abstract class StreamDecorator
 {
 	protected $stream;
 
+	/**
+	 * @param Stream $stream
+	 */
 	public function __construct(Stream $stream) {
 		$this->stream = $stream;
 	}

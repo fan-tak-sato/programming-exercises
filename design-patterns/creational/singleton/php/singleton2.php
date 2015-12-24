@@ -23,8 +23,8 @@ class singleton {
         }
         return self::$instance;
     }
-
 }
 
 $myInstance = singleton::getInstance();
+
 echo $myInstance->value1;

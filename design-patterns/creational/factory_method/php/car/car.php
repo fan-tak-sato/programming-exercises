@@ -5,6 +5,10 @@ class Car
     private $vehicleMake;
     private $vehicleModel;
 
+    /**
+     * @param $make
+     * @param $model
+     */
     public function __construct($make, $model)
     {
         $this->vehicleMake = $make;
@@ -19,6 +23,11 @@ class Car
 
 class CarFactory
 {
+    /**
+     * @param $make
+     * @param $model
+     * @return Automobile
+     */
     public static function create($make, $model)
     {
         return new Automobile($make, $model);

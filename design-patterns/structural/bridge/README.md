@@ -8,7 +8,7 @@ The bridge pattern is helpful when you want to decouple a class from it's implem
 Resources
 ----------------------
 
-[Wikipedia](http://en.wikipedia.org/wiki/Bridge_pattern)
+- [Wikipedia](http://en.wikipedia.org/wiki/Bridge_pattern)
 
 UML
 ----------------------

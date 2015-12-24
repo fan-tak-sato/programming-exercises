@@ -1,11 +1,14 @@
 <?php
 
-/**
- * @author Lawrence Truett and FluffyCat.com 2005
- */
-abstract class AbstractBookTopic
-{
+abstract class AbstractBookTopic {
+
     abstract function getTopic();
+
     abstract function getTitle();
+
+    /**
+     * @param string $title_in
+     * @return mixed
+     */
     abstract function setTitle($title_in);
 }

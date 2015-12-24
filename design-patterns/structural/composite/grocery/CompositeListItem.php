@@ -42,7 +42,7 @@ abstract class CompositeListItem extends ListItem {
         if ( in_array( $listitem, $this->listitems, true ) ) {
             return;
         }
-     
+
         $this->listitems[] = $listitem;
     }
 }

@@ -1,7 +1,8 @@
 Patterns of Enterprise Application Architecture
 ===========================================================
 
-Here we have the patterns of enterprise applications architecture. Introduced by [Martin Fowler](http://martinfowler.com/eaaCatalog/index.html).
+Here we have the patterns of enterprise applications architecture. 
+Introduced by [Martin Fowler](http://martinfowler.com/eaaCatalog/index.html).
 
 Domain Logic Patterns
 -----------------------------------------------------------

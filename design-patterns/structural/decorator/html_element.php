@@ -27,16 +27,25 @@ class InputText implements HtmlElement
 {
     protected $_name;
 
+    /**
+     * @param $name
+     */
     public function __construct($name)
     {
         $this->_name = $name;
     }
 
+    /**
+     * @return mixed
+     */
     public function getName()
     {
         return $this->_name;
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         return "<input type=\"text\" id=\"{$this->_name}\" name=\"{$this->_name}\" />\n";
@@ -51,6 +60,9 @@ abstract class HtmlDecorator implements HtmlElement
 {
     protected $_element;
 
+    /**
+     * @param HtmlElement $input
+     */
     public function __construct(HtmlElement $input)
     {
         $this->_element = $input;
@@ -66,6 +78,9 @@ abstract class HtmlDecorator implements HtmlElement
         return $this->_element->getName();
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         return $this->_element->__toString();
@@ -107,11 +122,17 @@ class ErrorDecorator extends HtmlDecorator
 {
     protected $_error;
 
+    /**
+     * @param string $message
+     */
     public function setError($message)
     {
         $this->_error = $message;
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         return $this->_element->__toString()
