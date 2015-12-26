@@ -11,4 +11,6 @@ A facade can:
 
 [http://en.wikipedia.org/wiki/Facade_pattern](http://en.wikipedia.org/wiki/Facade_pattern)
 
+UML
+------------------
 ![Alt text](../../uml/facade.jpg)

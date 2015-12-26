@@ -23,12 +23,12 @@ For PHP files, for example, we can use composer to build an autoloader and separ
 Wikipedia
 ------------------
 
-[Design Patterns](http://en.wikipedia.org/wiki/Design_pattern_(computer_science))
-    - [Creational Patterns](http://en.wikipedia.org/wiki/Creational_pattern)
-    - Concurrency patterns
-    - [Structural Patterns](http://en.wikipedia.org/wiki/Structural_pattern)
-    - [Behavioral Patterns](http://en.wikipedia.org/wiki/Behavioral_pattern)
- [OO Design](http://en.wikipedia.org/wiki/Object-oriented_design)
+- <a href="http://en.wikipedia.org/wiki/Design_pattern_(computer_science)" title="Design Patterns on Wikipedia">Design Patterns on Wikipedia</a>
+- [Creational Patterns](http://en.wikipedia.org/wiki/Creational_pattern)
+- Concurrency patterns
+- [Structural Patterns](http://en.wikipedia.org/wiki/Structural_pattern)
+- [Behavioral Patterns](http://en.wikipedia.org/wiki/Behavioral_pattern)
+- [OO Design](http://en.wikipedia.org/wiki/Object-oriented_design)
 
 Gang of Four
 ------------------

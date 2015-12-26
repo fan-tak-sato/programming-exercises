@@ -7,4 +7,4 @@ Since then it has played an influential role in most UI frameworks and in the th
 
 UML
 -------------------------------------
-![Alt text](../../../design-patterns/uml_enterprise/mvc.gif)
+![Alt text](../../uml/mvc.gif)

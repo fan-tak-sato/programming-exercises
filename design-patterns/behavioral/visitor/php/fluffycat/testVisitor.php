@@ -46,7 +46,7 @@ function acceptVisitor(Visitee $visitee_in, Visitor $visitor_in) {
     <br>
     <?php
 
-    acceptVisitor($software,$plainVisitor);
+    acceptVisitor($software, $plainVisitor);
     echo "plain description of software: ".$plainVisitor->getDescription();
 
     ?>
@@ -55,14 +55,14 @@ function acceptVisitor(Visitee $visitee_in, Visitor $visitor_in) {
 
     $fancyVisitor = new FancyDescriptionVisitor();
 
-    acceptVisitor($book,$fancyVisitor);
+    acceptVisitor($book, $fancyVisitor);
     echo "fancy description of book: ".$fancyVisitor->getDescription();
 
     ?>
     <br>
     <?php
 
-    acceptVisitor($software,$fancyVisitor);
+    acceptVisitor($software, $fancyVisitor);
     echo "fancy description of software: ".$fancyVisitor->getDescription();
 
     ?>
