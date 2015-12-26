@@ -9,7 +9,6 @@ define('BR', '<'.'BR'.'>');
 echo 'BEGIN TESTING INTERPRETER PATTERN'.BR;
 echo BR;
 
-//load BookList for test data
 $bookList = new BookList();
 $inBook1 = new Book('PHP for Cats','Larry Truett');
 $inBook2 = new Book('MySQL for Cats','Larry Truett');
