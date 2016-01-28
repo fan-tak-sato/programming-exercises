@@ -9,31 +9,29 @@ WebGL report project
 
 Chrome experiments
 ----------------------------------------------------------------------------------------------
+- [http://www.chromeexperiments.com/](http://www.chromeexperiments.com/)
 - [WebGL chrome experiments](http://www.chromeexperiments.com/webgl/)
 - [Official home page](http://www.chromeexperiments.com/webgl/)
 - [http://grouek.com/ctrlpaper/](http://grouek.com/ctrlpaper/)
 - [Bookcase](http://workshop.chromeexperiments.com/bookcase/)
 - [Playmap Cube](http://www.playmapscube.com/)
-- http://uglyhack.appspot.com/videofx/
-- http://www.ro.me/ interactive movie
-- http://www.ro.me/tech/
-- Google LEGO game: https://www.buildwithchrome.com/buildacademy
-- Aquarium: https://www.youtube.com/watch?v=9pM9LBcKxK4
-- Hobbit middle earth: http://middle-earth.thehobbit.com/
-- http://www.chromeexperiments.com/
-- http://www.chromeexperiments.com/tag/3d/
+- [http://www.ro.me/] Rome Interactive Movie
+- [http://www.ro.me/tech/](http://www.ro.me/tech/)
+- [Google LEGO game](https://www.buildwithchrome.com/buildacademy)
+- [Aquarium (video)](https://www.youtube.com/watch?v=9pM9LBcKxK4)
+- [Hobbit middle earth](http://middle-earth.thehobbit.com/)
 
 Various projects
 ----------------------------------------------------------------------------------------------
 
-- http://nouvellevague.ultranoir.com/
+- [http://nouvellevague.ultranoir.com/](http://nouvellevague.ultranoir.com/)
 - http://www.itsamessage.com/holiday2011/
 - http://www.solointeractivestudio.com/
 - WebGL water: http://madebyevan.com/webgl-water/
 - http://alteredqualia.com/three/examples/webgl_terrain_dynamic.html
-- LEGO bricks: http://www.mecabricks.com/en/workshop
-- Rubik cube: http://www.randelshofer.ch/webgl/rubikscube/
-- 3D constructor:	http://www.3dtin.com/
+- [LEGO bricks](http://www.mecabricks.com/en/workshop)
+- [Rubik cube](http://www.randelshofer.ch/webgl/rubikscube/)
+- [3D constructor](http://www.3dtin.com/)
 - Human bodies: http://www.zygotebody.com/
 - Shaders: https://www.shadertoy.com/
 - http://www.georgeandjonathan.com/
