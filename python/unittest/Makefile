@@ -1,0 +1,3 @@
+runall:
+	./runtests.sh
+

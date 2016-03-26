@@ -6,7 +6,7 @@ $f = function () {
 };
 
 class MyClass {
-    private $n = 42;
+	private $n = 42;
 }
 
 $myC = new MyClass;
@@ -24,4 +24,4 @@ class MyClass {
 }
 
 $myC = new MyClass;
-$f->call($myC);
+echo $f->call($myC);

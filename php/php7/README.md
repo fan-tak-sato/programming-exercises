@@ -29,5 +29,5 @@ New features
 Resources
 ----------------------
 
+- [PHP 7 new features](http://php.net/manual/en/migration70.new-features.php)
 - [Slide](http://talks.php.net/fluent15#/php7sth)
-- [PHP.net](http://php.net/)
