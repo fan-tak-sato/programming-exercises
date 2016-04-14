@@ -1,0 +1,6 @@
+/home/andrea/Scaricati/C_sharp_lessons/HelloWorld/HelloWorld/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/andrea/Scaricati/C_sharp_lessons/HelloWorld/HelloWorld/bin/Debug/HelloWorld.exe.mdb
+/home/andrea/Scaricati/C_sharp_lessons/HelloWorld/HelloWorld/bin/Debug/HelloWorld.exe
+/home/andrea/Scaricati/C_sharp_lessons/HelloWorld/HelloWorld/obj/x86/Debug/HelloWorld.exe
+/home/andrea/Scaricati/C_sharp_lessons/HelloWorld/HelloWorld/obj/x86/Debug/HelloWorld.exe.mdb
+/home/andrea/Scaricati/C_sharp_lessons/HelloWorld/HelloWorld/bin/Debug/nunit.framework.dll
