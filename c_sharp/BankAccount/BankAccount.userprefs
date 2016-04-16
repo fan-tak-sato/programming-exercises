@@ -7,10 +7,11 @@
           <Node name="BankAccount" expanded="True">
             <Node name="src" expanded="True">
               <Node name="Bank" expanded="True" />
-              <Node name="Program.cs" selected="True" />
             </Node>
             <Node name="test" expanded="True">
-              <Node name="Bank" expanded="True" />
+              <Node name="Bank" expanded="True">
+                <Node name="AccountTest.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

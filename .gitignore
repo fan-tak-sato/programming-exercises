@@ -8,3 +8,5 @@ hackerrank/
 *.swo
 *.class
 *.exe
+*.mdb
+*.dll
