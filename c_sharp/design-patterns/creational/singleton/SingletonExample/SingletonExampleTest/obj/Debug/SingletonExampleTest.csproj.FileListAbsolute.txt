@@ -1,0 +1,9 @@
+C:\Users\Tommaso\Downloads\Andrea\design-patterns\creational\singleton\SingletonExample\SingletonExampleTest\bin\Debug\SingletonExampleTest.dll
+C:\Users\Tommaso\Downloads\Andrea\design-patterns\creational\singleton\SingletonExample\SingletonExampleTest\bin\Debug\SingletonExampleTest.pdb
+C:\Users\Tommaso\Downloads\Andrea\design-patterns\creational\singleton\SingletonExample\SingletonExampleTest\bin\Debug\nunit.framework.dll
+C:\Users\Tommaso\Downloads\Andrea\design-patterns\creational\singleton\SingletonExample\SingletonExampleTest\bin\Debug\SingletonExample.exe
+C:\Users\Tommaso\Downloads\Andrea\design-patterns\creational\singleton\SingletonExample\SingletonExampleTest\bin\Debug\SingletonExample.pdb
+C:\Users\Tommaso\Downloads\Andrea\design-patterns\creational\singleton\SingletonExample\SingletonExampleTest\bin\Debug\nunit.framework.xml
+C:\Users\Tommaso\Downloads\Andrea\design-patterns\creational\singleton\SingletonExample\SingletonExampleTest\obj\Debug\SingletonExampleTest.csprojResolveAssemblyReference.cache
+C:\Users\Tommaso\Downloads\Andrea\design-patterns\creational\singleton\SingletonExample\SingletonExampleTest\obj\Debug\SingletonExampleTest.dll
+C:\Users\Tommaso\Downloads\Andrea\design-patterns\creational\singleton\SingletonExample\SingletonExampleTest\obj\Debug\SingletonExampleTest.pdb

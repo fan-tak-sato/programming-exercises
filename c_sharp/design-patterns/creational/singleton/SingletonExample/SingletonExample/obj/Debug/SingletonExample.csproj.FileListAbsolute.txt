@@ -1,0 +1,5 @@
+C:\Users\Tommaso\Downloads\Andrea\design-patterns\creational\singleton\SingletonExample\SingletonExample\bin\Debug\SingletonExample.exe.config
+C:\Users\Tommaso\Downloads\Andrea\design-patterns\creational\singleton\SingletonExample\SingletonExample\bin\Debug\SingletonExample.exe
+C:\Users\Tommaso\Downloads\Andrea\design-patterns\creational\singleton\SingletonExample\SingletonExample\bin\Debug\SingletonExample.pdb
+C:\Users\Tommaso\Downloads\Andrea\design-patterns\creational\singleton\SingletonExample\SingletonExample\obj\Debug\SingletonExample.exe
+C:\Users\Tommaso\Downloads\Andrea\design-patterns\creational\singleton\SingletonExample\SingletonExample\obj\Debug\SingletonExample.pdb
