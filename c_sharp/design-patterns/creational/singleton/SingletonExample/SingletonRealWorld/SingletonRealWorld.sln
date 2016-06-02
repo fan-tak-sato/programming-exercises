@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonRealWorld", "SingletonRealWorld\SingletonRealWorld.csproj", "{7735E22E-B26B-45E9-9890-1E8F98818F7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonRealWorldTest", "SingletonRealWorldTest\SingletonRealWorldTest.csproj", "{33C3B54C-3B24-4121-A8AD-061BE7305AA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33C3B54C-3B24-4121-A8AD-061BE7305AA7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{33C3B54C-3B24-4121-A8AD-061BE7305AA7}.Debug|x86.Build.0 = Debug|Any CPU
+		{33C3B54C-3B24-4121-A8AD-061BE7305AA7}.Release|x86.ActiveCfg = Release|Any CPU
+		{33C3B54C-3B24-4121-A8AD-061BE7305AA7}.Release|x86.Build.0 = Release|Any CPU
+		{7735E22E-B26B-45E9-9890-1E8F98818F7B}.Debug|x86.ActiveCfg = Debug|x86
+		{7735E22E-B26B-45E9-9890-1E8F98818F7B}.Debug|x86.Build.0 = Debug|x86
+		{7735E22E-B26B-45E9-9890-1E8F98818F7B}.Release|x86.ActiveCfg = Release|x86
+		{7735E22E-B26B-45E9-9890-1E8F98818F7B}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = SingletonRealWorld\SingletonRealWorld.csproj
+	EndGlobalSection
+EndGlobal

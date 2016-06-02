@@ -6,15 +6,18 @@
         <State expanded="True">
           <Node name="BankAccount" expanded="True">
             <Node name="src" expanded="True">
-              <Node name="Bank" expanded="True" />
+              <Node name="Bank" expanded="True">
+                <Node name="InsufficientFundsException.cs" selected="True" />
+              </Node>
             </Node>
             <Node name="test" expanded="True">
-              <Node name="Bank" expanded="True">
-                <Node name="AccountTest.cs" selected="True" />
-              </Node>
+              <Node name="Bank" expanded="True" />
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
       </Pad>
       <Pad Id="MonoDevelop.NUnit.TestPad">
         <State expanded="True" selected="True" />

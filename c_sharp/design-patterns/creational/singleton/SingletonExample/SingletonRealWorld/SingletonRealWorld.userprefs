@@ -1,16 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SingletonRealWorld/Program.cs">
+    <Files>
+      <File FileName="SingletonRealWorldTest/Test.cs" Line="15" Column="20" />
+      <File FileName="SingletonRealWorld/Program.cs" Line="9" Column="15" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="SingletonExample" expanded="True">
-            <Node name="Properties" expanded="True" />
+          <Node name="SingletonRealWorld" expanded="True">
+            <Node name="Program.cs" selected="True" />
           </Node>
-          <Node name="SingletonExampleTest" expanded="True">
-            <Node name="References" expanded="True" selected="True" />
-            <Node name="Properties" expanded="True" />
-          </Node>
+          <Node name="SingletonRealWorldTest" expanded="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">

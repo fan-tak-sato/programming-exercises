@@ -1,146 +1,152 @@
-public abstract class BakeryComponent
-{
-    public abstract string GetName();
-    public abstract double GetPrice();
-}
+using System;
 
-class CakeBase : BakeryComponent
-{
-    // In real world these values will typically come from some data store
-    private string m_Name = "Cake Base";
-    private double m_Price = 200.0;
+namespace Bakery {
 
-    public override string GetName()
-    {
-        return m_Name;
-    }
+	public abstract class BakeryComponent
+	{
+		public abstract string GetName();
+		public abstract double GetPrice();
+	}
 
-    public override double GetPrice()
-    {
-        return m_Price;
-    }
-}
+	class CakeBase : BakeryComponent
+	{
+		// In real world these values will typically come from some data store
+		private string m_Name = "Cake Base";
+		private double m_Price = 200.0;
 
-class PastryBase : BakeryComponent
-{
-    // In real world these values will typically come from some data store
-    private string m_Name = "Pastry Base";
-    private double m_Price = 20.0;
+		public override string GetName()
+		{
+		    return m_Name;
+		}
 
-    public override string GetName()
-    {
-        return m_Name;
-    }
+		public override double GetPrice()
+		{
+		    return m_Price;
+		}
+	}
 
-    public override double GetPrice()
-    {
-        return m_Price;
-    }
-}
+	class PastryBase : BakeryComponent
+	{
+		// In real world these values will typically come from some data store
+		private string m_Name = "Pastry Base";
+		private double m_Price = 20.0;
 
-public abstract class Decorator : BakeryComponent
-{
-    BakeryComponent m_BaseComponent = null;
-    
-    protected string m_Name = "Undefined Decorator";
-    protected double m_Price = 0.0;
+		public override string GetName()
+		{
+		    return m_Name;
+		}
 
-    protected Decorator(BakeryComponent baseComponent)
-    {
-        m_BaseComponent = baseComponent;
-    }
+		public override double GetPrice()
+		{
+		    return m_Price;
+		}
+	}
 
-    #region BakeryComponent Members
+	public abstract class Decorator : BakeryComponent
+	{
+		BakeryComponent m_BaseComponent = null;
+		
+		protected string m_Name = "Undefined Decorator";
+		protected double m_Price = 0.0;
 
-    string BakeryComponent.GetName()
-    {
-        return string.Format("{0}, {1}", m_BaseComponent.GetName(), m_Name);
-    }
+		protected Decorator(BakeryComponent baseComponent)
+		{
+		    m_BaseComponent = baseComponent;
+		}
 
-    double BakeryComponent.GetPrice()
-    {
-        return m_Price + m_BaseComponent.GetPrice();
-    }
-    #endregion
-}
+		#region BakeryComponent Members
 
-class ArtificialScentDecorator : Decorator
-{
-    public ArtificialScentDecorator(BakeryComponent baseComponent)
-        : base(baseComponent)
-    {
-        this.m_Name = "Artificial Scent";
-        this.m_Price = 3.0;
-    }
-}
+		string BakeryComponent.GetName()
+		{
+		    return string.Format("{0}, {1}", m_BaseComponent.GetName(), m_Name);
+		}
 
-class CherryDecorator : Decorator
-{
-    public CherryDecorator(BakeryComponent baseComponent)
-        : base(baseComponent)
-    {
-        this.m_Name = "Cherry";
-        this.m_Price = 2.0;
-    }
-}
+		double BakeryComponent.GetPrice()
+		{
+		    return m_Price + m_BaseComponent.GetPrice();
+		}
+		#endregion
+	}
 
-class CreamDecorator : Decorator
-{
-    public CreamDecorator(BakeryComponent baseComponent)
-        : base(baseComponent)
-    {
-        this.m_Name = "Cream";
-        this.m_Price = 1.0;
-    }
-}
+	class ArtificialScentDecorator : Decorator
+	{
+		public ArtificialScentDecorator(BakeryComponent baseComponent)
+		    : base(baseComponent)
+		{
+		    this.m_Name = "Artificial Scent";
+		    this.m_Price = 3.0;
+		}
+	}
 
-class NameCardDecorator : Decorator
-{
-    private int m_DiscountRate = 5;
+	class CherryDecorator : Decorator
+	{
+		public CherryDecorator(BakeryComponent baseComponent)
+		    : base(baseComponent)
+		{
+		    this.m_Name = "Cherry";
+		    this.m_Price = 2.0;
+		}
+	}
 
-    public NameCardDecorator(BakeryComponent baseComponent)
-        : base(baseComponent)
-    {
-        this.m_Name = "Name Card";
-        this.m_Price = 4.0;
-    }
+	class CreamDecorator : Decorator
+	{
+		public CreamDecorator(BakeryComponent baseComponent)
+		    : base(baseComponent)
+		{
+		    this.m_Name = "Cream";
+		    this.m_Price = 1.0;
+		}
+	}
 
-    public override string GetName()
-    {
-        return base.GetName() + 
-            string.Format("\n(Please Collect your discount card for {0}%)", 
-            m_DiscountRate);
-    }        
-}
+	class NameCardDecorator : Decorator
+	{
+		private int m_DiscountRate = 5;
 
-static void Main(string[] args)
-{
-    // Let us create a Simple Cake Base first
-    CakeBase cBase = new CakeBase();
-    PrintProductDetails(cBase);
+		public NameCardDecorator(BakeryComponent baseComponent)
+		    : base(baseComponent)
+		{
+		    this.m_Name = "Name Card";
+		    this.m_Price = 4.0;
+		}
 
-    // Lets add cream to the cake
-    CreamDecorator creamCake = new CreamDecorator(cBase);
-    PrintProductDetails(creamCake);
-    
-    // Let now add a Cherry on it
-    CherryDecorator cherryCake = new CherryDecorator(creamCake);
-    PrintProductDetails(cherryCake);
+		public override string GetName()
+		{
+		    return base.GetName() + 
+		        string.Format("\n(Please Collect your discount card for {0}%)", 
+		        m_DiscountRate);
+		}        
+	}
 
-    // Lets now add Scent to it
-    ArtificialScentDecorator scentedCake = new ArtificialScentDecorator(cherryCake);
-    PrintProductDetails(scentedCake);
+	static void Main(string[] args)
+	{
+		// Let us create a Simple Cake Base first
+		CakeBase cBase = new CakeBase();
+		PrintProductDetails(cBase);
 
-    // Finally add a Name card on the cake
-    NameCardDecorator nameCardOnCake = new NameCardDecorator(scentedCake);
-    PrintProductDetails(nameCardOnCake);
-    
-    // Lets now create a simple Pastry
-    PastryBase pastry = new PastryBase();
-    PrintProductDetails(pastry);
+		// Lets add cream to the cake
+		CreamDecorator creamCake = new CreamDecorator(cBase);
+		PrintProductDetails(creamCake);
+		
+		// Let now add a Cherry on it
+		CherryDecorator cherryCake = new CherryDecorator(creamCake);
+		PrintProductDetails(cherryCake);
 
-    // Lets just add cream and cherry only on the pastry 
-    CreamDecorator creamPastry = new CreamDecorator(pastry);
-    CherryDecorator cherryPastry = new CherryDecorator(creamPastry);
-    PrintProductDetails(cherryPastry);
+		// Lets now add Scent to it
+		ArtificialScentDecorator scentedCake = new ArtificialScentDecorator(cherryCake);
+		PrintProductDetails(scentedCake);
+
+		// Finally add a Name card on the cake
+		NameCardDecorator nameCardOnCake = new NameCardDecorator(scentedCake);
+		PrintProductDetails(nameCardOnCake);
+		
+		// Lets now create a simple Pastry
+		PastryBase pastry = new PastryBase();
+		PrintProductDetails(pastry);
+
+		// Lets just add cream and cherry only on the pastry 
+		CreamDecorator creamPastry = new CreamDecorator(pastry);
+		CherryDecorator cherryPastry = new CherryDecorator(creamPastry);
+		PrintProductDetails(cherryPastry);
+	}
+
 }

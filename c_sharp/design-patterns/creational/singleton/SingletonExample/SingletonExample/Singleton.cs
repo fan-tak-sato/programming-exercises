@@ -12,6 +12,7 @@ namespace GangOfFour.Structural
         // Constructor is 'protected'
         protected Singleton()
         {
+
         }
 
         public static Singleton Instance()

@@ -1,8 +1,12 @@
 .idea/
+.DS_Store
 work_in_progress/
 tests/
 nbproject/
 hackerrank/
+bin/
+obj/
+
 *.*~
 *.swp
 *.swo
@@ -10,3 +14,5 @@ hackerrank/
 *.exe
 *.mdb
 *.dll
+*.cache
+
