@@ -1,0 +1,20 @@
+<!doctype html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<script>
+var olddata = {"fruit":{"apples":10,"pears":21}};
+
+var newdata = {};
+
+newdata['vegetables'] = {"carrots": 2, "potatoes" : 5};
+
+console.log( $.extend(true, olddata, newdata) );
+</script>
+
+</body>
+</html>

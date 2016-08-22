@@ -1,0 +1,53 @@
+<!doctype html>
+<head>
+	<title>Push elements into a JSON object</title>
+</head>
+
+<body>
+
+<script>
+
+/*
+
+// Append to an existing JSON
+var jsonStr = '{"theTeam":[{"teamId":"1","status":"pending"},{"teamId":"2","status":"member"},{"teamId":"3","status":"member"}]}';
+
+var obj = JSON.parse(jsonStr);
+obj['theTeam'].push({"teamId":"4","status":"pending"});
+jsonStr = JSON.stringify(obj);
+
+console.log(jsonStr);
+
+// Push to an empty array
+var jsonStr = '{"theTeam": []}';
+var obj = JSON.parse(jsonStr);
+obj['theTeam'].push({"teamId":"1","status":"pending"});
+obj['theTeam'].push({"teamId":"2","status":"pending"});
+
+console.log( JSON.stringify(obj) );
+
+*/
+
+
+// Append to an empty JSON
+var jsonString = '[]';
+var jsonObject = JSON.parse(jsonString);
+jsonObject.push({"teamId": "4","status": "pending"});
+jsonObjectToString = JSON.stringify(jsonObject);
+// console.log(jsonObjectToString);
+
+// echo json_encode(array("dati" => array("albero" => array(), "schedaVTA" => array() )));
+
+// Push to an empty array
+var jsonStr = '{"dati":{"albero": [], "schedaVTA": []}}';
+var obj = JSON.parse(jsonStr);
+obj['dati']['albero'].push({"id": "1", "pianta": "ok"});
+obj['dati']['schedaVTA'].push({"id": "1", "pianta": "ok"});
+obj['dati']['schedaVTA'].push({"newElem": "myElem"});
+
+console.log( JSON.stringify(obj) );
+
+</script>
+
+</body>
+</html>
