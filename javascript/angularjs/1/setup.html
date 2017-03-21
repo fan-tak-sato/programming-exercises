@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+   <meta name="robots" content="noindex, nofollow">
+   <meta name="googlebot" content="noindex, nofollow">
+
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+   <style type="text/css">
+   .jumbotron {
+      text-align: center;
+      font-size: 40px;
+      margin-top: 30px !important;
+   }
+   </style>
+
+<title>Recommende setup by thomasnyambati</title>
+
+<script type='text/javascript'>
+//<![CDATA[
+window.onload=function(){
+// Modules for controller
+angular.module('myApp.controller', [])
+  .controller('GreetController', function(ResponseService) {
+    this.greetings = ResponseService.greetings
+  });
+
+// Module for services
+angular.module('myApp.service', [])
+  .service('ResponseService', function() {
+    this.greetings = "Nice to meet you controller, I am service";
+  });
+
+// Application level module to attach services, directives,controllers or filters modules
+angular.module('myApp', ['myApp.service', 'myApp.controller'])
+
+
+// bootstraping the app
+angular.element(document).ready(function() {
+  angular.bootstrap(document, ['myApp']);
+})
+
+}//]]> 
+</script>
+
+</head>
+
+<body>
+
+   <div class="container jumbotron">
+      <div ng-controller="GreetController as $ctrl">
+         <p ng-bind="$ctrl.greetings"></p>
+      </div>
+   </div>
+
+   <script>
+     // tell the embed parent frame the height of the content
+     if (window.parent && window.parent.parent){
+       window.parent.parent.postMessage(["resultsFrame", {
+         height: document.body.getBoundingClientRect().height,
+         slug: "nn3g948u"
+       }], "*")
+     }
+   </script>
+
+</body>
+</html>

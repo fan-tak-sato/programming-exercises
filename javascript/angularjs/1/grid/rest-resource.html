@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS REST resource sample 1</title>
+
+	<script type="text/javascript" src="../../../common/angularjs/angular.min.js"></script>
+	<script type="text/javascript" src="../../../common/angularjs/angular-resource.min.js"></script>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div ng-controller="PostIndexCtrl">
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Titolo</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="post in posts">
+				<td>{{ post.id }}</td>
+				<td>{{ post.titolo }}</td>
+			</tr>
+			<tr ng-show="posts.length == 0">
+				<td colspan="3" style="text-align:center">No Records Found..!</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+
+var app = angular.module('myApp', ['ngResource']);
+
+app.factory("Post", function($resource) {
+	return $resource("/zf2-apicms/api/v1/cms/albo-pretorio?username=a.fiori@cheapnet.it&password=niggurath");
+});
+
+app.controller("PostIndexCtrl", function($scope, Post) {
+	Post.query(function(data) {
+		/* dump of an object */
+		// console.log( JSON.stringify(data) );
+		$scope.posts = data;
+	});
+});
+
+//]]>
+</script>
+
+</body>
+</html>

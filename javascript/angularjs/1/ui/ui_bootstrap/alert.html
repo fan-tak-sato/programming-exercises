@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="ui_alert">
+<head>
+    <title>AngularJS UI Bootstrap - Alert</title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <p>&nbsp;</p>
+
+    <div ng-controller="AlertDemoCtrl">
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+        <button class='btn btn-primary' ng-click="addAlert()">Add Alert</button>
+    </div>
+	
+</div>
+
+<script>
+angular.module('ui_alert', ['ui.bootstrap']);
+
+function AlertDemoCtrl($scope) {
+    $scope.alerts = [
+        { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
+        { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
+    ];
+
+    $scope.addAlert = function() {
+        $scope.alerts.push({msg: 'Another alert!'});
+    };
+
+    $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+    };
+}
+</script>
+
+</body>
+</html>
