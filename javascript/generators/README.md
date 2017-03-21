@@ -1,5 +1,4 @@
-NodeJS generators
-================================
+# NodeJS generators
 
 Here are some examples about using generators (yield) in Javascript
 

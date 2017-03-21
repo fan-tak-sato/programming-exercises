@@ -1,5 +1,4 @@
-Max product of three
-======================
+# Max product of three
 
 https://codility.com/c/intro/demo2NG7SE-7PU
 

@@ -1,8 +1,6 @@
-Password hashing API in PHP 5.5
-=======================================
+# Password hashing API in PHP 5.5
 
 [Password Hashing](http://php.net/manual/en/ref.password.php) API
----------------------------------------
 
 - [password_hash](http://php.net/manual/en/function.password-hash.php)
 - [password_verify](http://php.net/manual/en/function.password-verify.php)

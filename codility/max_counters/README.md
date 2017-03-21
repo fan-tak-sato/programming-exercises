@@ -1,5 +1,4 @@
-Max counters
-==================
+# Max counters
 
 https://codility.com/demo/take-sample-test/max_counters
 
