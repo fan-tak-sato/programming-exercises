@@ -1,0 +1,5 @@
+<p>Click on an item:</p>
+<ul>
+	<li *ngFor="#Item of Items" (click)="onItemClicked(Item)">{{ Item.name }}</li>
+</ul>
+<input type="text" [(ngModel)]="clickedItem.name">

@@ -1,5 +1,3 @@
-Bootstrap 3 snippets and templates
-=====================================
+# Bootstrap 3 snippets and templates
 
-I am gathering some useful and ready to use templates and snippets.
-I hope they will help you to re-use this code :)
+[Strap UI retro skin](http://retro.strapui.com/index.html)
