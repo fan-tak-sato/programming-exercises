@@ -52,14 +52,22 @@ Typescript compiles ts file and generates .map and .js files
 [Scotch.io](https://school.scotch.io/guides/building-angular-apps/courses)
 [Learn Building a Simple Website with Angular 2](https://www.eduonix.com/blog/video-tutorials/web-development-tutorials/learn-building-simple-website-angular-2/)
 
-## Examples
+## Examples and Templates
 
 [Heroes](https://angular.io/docs/ts/latest/tutorial/)
 [StartAngular](https://startangular.com/)
 [SBAdmin](https://startangular.com/product/sb-admin-bootstrap-4-angular-2/)
 [SBAdmin2](https://startangular.com/product/sb-admin-angular-theme/)
+[Angular 2 templates on ThemeForest](https://themeforest.net/attributes/compatible-with/angularjs%202)
 
 ### TODO app
 
 [Sitepoint Tutorial](https://www.sitepoint.com/understanding-component-architecture-angular/)
 [TODO app](https://github.com/sitepoint-editors/angular-todo-app)
+
+## TODO (new apps)
+
+TODO: create an ng cli website using bootstrap, routes. Features: contact form (with formBuilder?!, Validation), REST call exampleù
+	Try Angular Material
+
+Starting point: https://github.com/simpulton/angular2-website-routes
