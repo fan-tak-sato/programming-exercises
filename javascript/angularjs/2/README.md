@@ -66,6 +66,8 @@ Typescript compiles ts file and generates .map and .js files
 [Ng2 Bootstrap docs](https://valor-software.com/ng2-bootstrap)
 [Ng2 Bootstrap breadcrumb](https://github.com/gmostert/ng2-breadcrumb)
 
+[Angular 1 to 2 migration](https://angular.io/docs/ts/latest/guide/upgrade.html)
+
 ### TODO app
 
 [Sitepoint Tutorial](https://www.sitepoint.com/understanding-component-architecture-angular/)
