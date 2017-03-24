@@ -34,6 +34,8 @@ Typescript compiles ts file and generates .map and .js files
 [AngularFire 2](https://github.com/angular/angularfire2) The official library for Firebase and Angular 2
 [Typings](https://www.npmjs.com/package/typings) The TypeScript Definition Manager
 
+[Bootstrap active link navbar](http://stackoverflow.com/questions/35422526/how-to-set-bootstrap-navbar-active-class-in-angular-2)
+
 ## Testing
 
 [Testing](https://angular.io/docs/ts/latest/guide/testing.html)
@@ -60,10 +62,18 @@ Typescript compiles ts file and generates .map and .js files
 [SBAdmin2](https://startangular.com/product/sb-admin-angular-theme/)
 [Angular 2 templates on ThemeForest](https://themeforest.net/attributes/compatible-with/angularjs%202)
 
+[Ng2 Bootstrap](https://ng-bootstrap.github.io)
+[Ng2 Bootstrap docs](https://valor-software.com/ng2-bootstrap)
+[Ng2 Bootstrap breadcrumb](https://github.com/gmostert/ng2-breadcrumb)
+
 ### TODO app
 
 [Sitepoint Tutorial](https://www.sitepoint.com/understanding-component-architecture-angular/)
 [TODO app](https://github.com/sitepoint-editors/angular-todo-app)
+[TODO app with done checks](https://github.com/amejiarosario/angular2-todo-app)
+
+Tutorial: http://adrianmejia.com/blog/2016/10/01/Angular-2-Tutorial-Create-a-CRUD-App-with-Angular-CLI-and-TypeScript/
+Demo: http://adrianmejia.com/angular2-todo-app/all
 
 ## TODO (new apps)
 

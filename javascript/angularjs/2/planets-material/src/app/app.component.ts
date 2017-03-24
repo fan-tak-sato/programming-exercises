@@ -10,8 +10,7 @@ import { Planets } from './shared/planets';
 export class AppComponent implements OnInit {
   planetsList: Planets[] = [];
   selectedPlanet: Planets;
-  constructor(
-    private _planetservice: PlanetsService) {}
+  constructor(private _planetservice: PlanetsService) {}
 
   ngOnInit() {
     this._planetservice.getPlanets().then(planets => this.planetsList = planets);
