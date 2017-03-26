@@ -14,6 +14,7 @@ Typescript compiles ts file and generates .map and .js files
 
 [Setup](https://angular.io/docs/ts/latest/guide/setup.html)
 [Cheat sheet](https://angular.io/docs/ts/latest/guide/cheatsheet.html)
+[Cheat sheet 2] https://angular.io/cheatsheet
 [Style guide](https://angular.io/styleguide)
 [Resources links](https://angular.io/resources/#!#Education)
 
@@ -61,6 +62,7 @@ Typescript compiles ts file and generates .map and .js files
 [SBAdmin](https://startangular.com/product/sb-admin-bootstrap-4-angular-2/)
 [SBAdmin2](https://startangular.com/product/sb-admin-angular-theme/)
 [Angular 2 templates on ThemeForest](https://themeforest.net/attributes/compatible-with/angularjs%202)
+[StsrtAngular](https://github.com/start-meteorjs/ani-theme-angular-meteor)
 
 [Ng2 Bootstrap](https://ng-bootstrap.github.io)
 [Ng2 Bootstrap docs](https://valor-software.com/ng2-bootstrap)
@@ -68,9 +70,11 @@ Typescript compiles ts file and generates .map and .js files
 
 [Angular 1 to 2 migration](https://angular.io/docs/ts/latest/guide/upgrade.html)
 
+[SBAdmin bootstrap 4 Angular 2](https://github.com/start-angular/SB-Admin-BS4-Angular-2)
+
 ### TODO app
 
-[Sitepoint Tutorial](https://www.sitepoint.com/understanding-component-architecture-angular/)
+[Sitepoint Tutorial](https://www.sitepoint.com/angular-2-tutorial/)
 [TODO app](https://github.com/sitepoint-editors/angular-todo-app)
 [TODO app with done checks](https://github.com/amejiarosario/angular2-todo-app)
 
@@ -83,3 +87,38 @@ TODO: create an ng cli website using bootstrap, routes. Features: contact form (
 	Try Angular Material
 
 Starting point: https://github.com/simpulton/angular2-website-routes
+
+---------------------------------------------------------------------------------------------------------
+
+Games
+	https://github.com/justindujardin/angular2-rpg
+	http://www.angularjs4u.com/angularjs2/angular-2-games/
+	Chess
+		http://shlomiassaf.github.io/ng2-chess
+		https://github.com/shlomiassaf/ng2-chess
+
+Videos
+	ngconf
+	http://www.angularjs4u.com/angularjs2/top-10-angular-2-tutorial-videos/
+	
+D3
+	https://github.com/gdi2290/ng-vegas-angular2-d3
+	
+Awesome Angular
+	https://github.com/AngularClass/awesome-angular
+	
+Expo: Games		Media	Dashboards	UI	Other	Resources
+	http://angularexpo.com/ 
+
+Ng2 Admin
+	https://github.com/akveo/ng2-admin
+	http://akveo.com/ng2-admin/
+
+Other projects
+	Programmer guide http://angularexpo.com/programmers-guide-to-the-galaxy-2/
+	Hacker news https://github.com/housseindjirdeh/angular2-hn
+	REST https://github.com/Paldom/angular2-rest
+	RxJs https://github.com/Reactive-Extensions/RxJS
+	
+Update and version management
+	NgUpdate 
