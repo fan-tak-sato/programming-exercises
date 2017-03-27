@@ -1,8 +1,10 @@
 # Testing in Javascript
 
-- Mocha
-- Karma
-- Jasmine
+- [Mocha](https://mochajs.org/) TDD, unit testing
+- [Chai](http://chaijs.com/) BDD and TDD
+- [Karma](https://karma-runner.github.io/)
+- [Jasmine](https://jasmine.github.io/)
+- Sinon 
 - Phantom JS
 - Protractor
 - NgMock

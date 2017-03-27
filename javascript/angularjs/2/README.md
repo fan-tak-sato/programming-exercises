@@ -81,23 +81,15 @@ Typescript compiles ts file and generates .map and .js files
 Tutorial: http://adrianmejia.com/blog/2016/10/01/Angular-2-Tutorial-Create-a-CRUD-App-with-Angular-CLI-and-TypeScript/
 Demo: http://adrianmejia.com/angular2-todo-app/all
 
-## TODO (new apps)
+### Games
 
-TODO: create an ng cli website using bootstrap, routes. Features: contact form (with formBuilder?!, Validation), REST call exampleù
-	Try Angular Material
-
-Starting point: https://github.com/simpulton/angular2-website-routes
-
----------------------------------------------------------------------------------------------------------
-
-Games
 	https://github.com/justindujardin/angular2-rpg
 	http://www.angularjs4u.com/angularjs2/angular-2-games/
-	Chess
+	#### Chess
 		http://shlomiassaf.github.io/ng2-chess
 		https://github.com/shlomiassaf/ng2-chess
 
-Videos
+### Videos
 	ngconf
 	http://www.angularjs4u.com/angularjs2/top-10-angular-2-tutorial-videos/
 	
@@ -117,8 +109,13 @@ Ng2 Admin
 Other projects
 	Programmer guide http://angularexpo.com/programmers-guide-to-the-galaxy-2/
 	Hacker news https://github.com/housseindjirdeh/angular2-hn
-	REST https://github.com/Paldom/angular2-rest
+
+REST
+	https://github.com/Paldom/angular2-rest
 	RxJs https://github.com/Reactive-Extensions/RxJS
+	Fake Api \ result https://github.com/typicode/json-server	https://jsonplaceholder.typicode.com/
+	Client online https://www.hurl.it/
+	Postman, advanced rest plugins
 	
 Update and version management
 	NgUpdate 
