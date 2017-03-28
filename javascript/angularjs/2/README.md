@@ -66,7 +66,7 @@ Typescript compiles ts file and generates .map and .js files
 
 [Ng2 Bootstrap](https://ng-bootstrap.github.io)
 [Ng2 Bootstrap docs](https://valor-software.com/ng2-bootstrap)
-[Ng2 Bootstrap breadcrumb](https://github.com/gmostert/ng2-breadcrumb)
+[Ng2 breadcrumb](https://github.com/gmostert/ng2-breadcrumb)
 
 [Angular 1 to 2 migration](https://angular.io/docs/ts/latest/guide/upgrade.html)
 
@@ -82,7 +82,6 @@ Tutorial: http://adrianmejia.com/blog/2016/10/01/Angular-2-Tutorial-Create-a-CRU
 Demo: http://adrianmejia.com/angular2-todo-app/all
 
 ### Games
-
 	https://github.com/justindujardin/angular2-rpg
 	http://www.angularjs4u.com/angularjs2/angular-2-games/
 	#### Chess
@@ -96,9 +95,8 @@ Demo: http://adrianmejia.com/angular2-todo-app/all
 D3
 	https://github.com/gdi2290/ng-vegas-angular2-d3
 	
-Awesome Angular
-	https://github.com/AngularClass/awesome-angular
-	
+[Awesome Angular](https://github.com/AngularClass/awesome-angular)
+
 Expo: Games		Media	Dashboards	UI	Other	Resources
 	http://angularexpo.com/ 
 
@@ -116,6 +114,13 @@ REST
 	Fake Api \ result https://github.com/typicode/json-server	https://jsonplaceholder.typicode.com/
 	Client online https://www.hurl.it/
 	Postman, advanced rest plugins
-	
+
 Update and version management
 	NgUpdate 
+
+Pagination
+	Ng2 pagination
+		https://github.com/michaelbromley/ng2-pagination
+	http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
+	
+Pokemon app https://onsen.io/blog/tutorial-how-to-create-pokemon-app-using-angular2-cli/

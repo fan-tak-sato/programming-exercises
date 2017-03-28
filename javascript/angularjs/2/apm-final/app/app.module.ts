@@ -8,7 +8,7 @@ import { WelcomeComponent } from './home/welcome.component';
 
 /* Feature Modules */
 import { ProductModule } from './products/product.module';
-
+ 
 @NgModule({
   imports: [
     BrowserModule,

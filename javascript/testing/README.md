@@ -8,6 +8,8 @@
 - Phantom JS
 - Protractor
 - NgMock
+- Qunit
+- [Jest](https://facebook.github.io/jest/) testing for ReactJS applications
 
 Debuggers
 
