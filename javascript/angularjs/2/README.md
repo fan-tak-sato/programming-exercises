@@ -91,7 +91,9 @@ Demo: http://adrianmejia.com/angular2-todo-app/all
 ### Videos
 	ngconf
 	http://www.angularjs4u.com/angularjs2/top-10-angular-2-tutorial-videos/
-	
+	https://angularcasts.io
+	https://school.scotch.io/getting-started-with-angular-2
+
 D3
 	https://github.com/gdi2290/ng-vegas-angular2-d3
 	
@@ -124,3 +126,17 @@ Pagination
 	http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 	
 Pokemon app https://onsen.io/blog/tutorial-how-to-create-pokemon-app-using-angular2-cli/
+
+NG Formly: https://github.com/formly-js/ng-formly Formly for Angular 2!
+
+WEBPACK
+	https://webpack.github.io/docs/what-is-webpack.html
+	https://webpack.github.io/docs/tutorials/getting-started/
+	https://webpack.github.io/
+	https://webpack.github.io/docs/
+
+SystemJS
+	https://github.com/systemjs/systemjs/blob/master/docs/es6-modules-overview.md
+	https://github.com/systemjs/systemjs/blob/master/docs/config-api.md
+	https://www.sitepoint.com/modular-javascript-systemjs-jspm
+
