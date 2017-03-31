@@ -113,7 +113,9 @@ Other projects
 REST
 	https://github.com/Paldom/angular2-rest
 	RxJs https://github.com/Reactive-Extensions/RxJS
-	Fake Api \ result https://github.com/typicode/json-server	https://jsonplaceholder.typicode.com/
+	"Fake" API for tests
+		https://github.com/typicode/json-server	https://jsonplaceholder.typicode.com/
+		https://swapi.co/
 	Client online https://www.hurl.it/
 	Postman, advanced rest plugins
 
