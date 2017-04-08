@@ -8,9 +8,9 @@ function decode(msg) {
 
 /* Error... */
 try {
-	MsgObject = new message("My message");
+	MsgObject = new message('My message');
 } catch(err) {
-	console.log("Error: the message object is returning an error! ");
+	console.log("Error: the message object is returning an error: "+err);
 }
 
 /* No errors... */
