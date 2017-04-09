@@ -1,16 +1,17 @@
 function getKeys(obj) {
-    var r = []
+    var r = [];
     for (var k in obj) {
-        if (!obj.hasOwnProperty(k)) 
-            continue
-        r.push(k)
+        if (!obj.hasOwnProperty(k)) {
+			continue;
+		}
+        r.push(k);
     }
-    return r
+    return r;
 }
 
 var keys = getKeys({'eggs': null, 'spam': true}); // [ 'eggs', 'spam' ]
 
-var length = keys.length; // access the `length` property as usual for arrays
+var length = keys.length; // 2
 
 console.log(keys);
 console.log(length);
