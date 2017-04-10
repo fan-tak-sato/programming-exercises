@@ -29,5 +29,23 @@ function getFields(input, field) {
 }
 
 console.log( getFields(objArray, 'someProperty') ); // [ { aNumber: 5 }, { aNumber: 2 }, { aNumber: 9 } ]
-// console.log( _.map(objArray, _.property('someProperty.aNumber')) );
-// console.log( _.map(objArray, _.property(['someProperty', 'aNumber'])) );
+
+// Example 3
+console.log( objArray.map((v) => v.someProperty) ); // [ { aNumber: 5 }, { aNumber: 2 }, { aNumber: 9 } ]
+console.log( objArray.map((v) => v.someProperty.aNumber) ); // [ 5, 2, 9 ]
+
+// Apply Math.sqrt(value) to each element in an array.  
+var numbers = [9, 16];  
+console.log( numbers.map(Math.sqrt) );
+
+// Define the callback function.
+function AreaOfCircle(radius) {
+    var area = Math.PI * (radius * radius);
+    return area.toFixed(0);
+}
+
+var radii = [10, 20, 30];
+
+var areas = radii.map(AreaOfCircle);
+
+console.log(areas);

@@ -20,11 +20,14 @@ Typescript compiles ts file and generates .map and .js files
 
 ## CLI
 
-[AngularCLI](https://cli.angular.io/)
-- [CLI tutorial scotch](https://scotch.io/tutorials/use-the-angular-cli-for-faster-angular-2-projects)
-- [CLI wiki](https://github.com/angular/angular-cli/wiki)
-- [Documentation](http://ngcli.github.io/)
+- [AngularCLI](https://cli.angular.io)
+- [Tutorial on scotch.io](https://scotch.io/tutorials/use-the-angular-cli-for-faster-angular-2-projects)
+- [Wiki](https://github.com/angular/angular-cli/wiki/)
 - [Sitepoint reference guide](https://www.sitepoint.com/ultimate-angular-cli-reference/)
+
+### Just another CLI project:
+
+- [Documentation](http://ngcli.github.io)
 
 ## Tools
 
@@ -44,7 +47,7 @@ Typescript compiles ts file and generates .map and .js files
 ## Debugging
 
 [Codelyzer](https://github.com/mgechev/codelyzer)
-[Augury debugger](https://augury.angular.io/)
+[Augury chrome extension dev tool](https://augury.angular.io/)
 [Betangle](https://github.com/IgorMinar/batarangle)
 
 ## Courses
@@ -72,6 +75,8 @@ Typescript compiles ts file and generates .map and .js files
 
 [SBAdmin bootstrap 4 Angular 2](https://github.com/start-angular/SB-Admin-BS4-Angular-2)
 
+[NG newsletter]()
+
 ### TODO app
 
 [Sitepoint Tutorial](https://www.sitepoint.com/angular-2-tutorial/)
@@ -89,10 +94,12 @@ Demo: http://adrianmejia.com/angular2-todo-app/all
 		https://github.com/shlomiassaf/ng2-chess
 
 ### Videos
-	ngconf
-	http://www.angularjs4u.com/angularjs2/top-10-angular-2-tutorial-videos/
-	https://angularcasts.io
-	https://school.scotch.io/getting-started-with-angular-2
+
+[NGConf](https://www.ng-conf.org/)
+[Angularjs4u](http://www.angularjs4u.com/angularjs2/top-10-angular-2-tutorial-videos/)
+[Angular Cast](https://angularcasts.io)
+[Angular University](https://angular-university.io/)
+[Scotch.io](https://school.scotch.io/getting-started-with-angular-2)
 
 D3
 	https://github.com/gdi2290/ng-vegas-angular2-d3
@@ -103,6 +110,7 @@ Expo: Games		Media	Dashboards	UI	Other	Resources
 	http://angularexpo.com/ 
 
 Ng2 Admin
+
 	https://github.com/akveo/ng2-admin
 	http://akveo.com/ng2-admin/
 
@@ -119,17 +127,17 @@ REST
 	Client online https://www.hurl.it/
 	Postman, advanced rest plugins
 
-Update and version management
-	NgUpdate 
+Migrate to Angular 4
+
+...
 
 Pagination
-	Ng2 pagination
-		https://github.com/michaelbromley/ng2-pagination
-	http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
-	
-Pokemon app https://onsen.io/blog/tutorial-how-to-create-pokemon-app-using-angular2-cli/
 
-NG Formly: https://github.com/formly-js/ng-formly Formly for Angular 2!
+[Ng2 pagination](https://github.com/michaelbromley/ng2-pagination)
+	http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
+
+- [Pokemon app](https://onsen.io/blog/tutorial-how-to-create-pokemon-app-using-angular2-cli/)
+- [NG Formly for Angular 2](https://github.com/formly-js/ng-formly)
 
 WEBPACK
 	https://webpack.github.io/docs/what-is-webpack.html
@@ -141,4 +149,9 @@ SystemJS
 	https://github.com/systemjs/systemjs/blob/master/docs/es6-modules-overview.md
 	https://github.com/systemjs/systemjs/blob/master/docs/config-api.md
 	https://www.sitepoint.com/modular-javascript-systemjs-jspm
+
+Twitter Bootstrap
+	[NGX bootstrap](http://valor-software.com/ngx-bootstrap/)
+	[NGx bootstrap github](https://github.com/valor-software/ngx-bootstrap)
+
 
