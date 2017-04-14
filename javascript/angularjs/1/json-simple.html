@@ -1,29 +1,28 @@
 <!doctype html>
 <html ng-app="demo">
-
 <head>
-    <script data-require="angular.js@1.1.5" data-semver="1.1.5" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js"></script>
+	<script data-require="angular.js@1.1.5" data-semver="1.1.5" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js"></script>
 </head>
 
 <body ng-controller="ctrl">
-    <div ng-repeat="f in faq">
-        {{f.key}}-{{f.value}}
-    </div>
-</body>
+	<div ng-repeat="f in faq">
+		{{f.key}}-{{f.value}}
+	</div>
 
-<script>
-var app = angular.module('demo', []);
-app.controller("ctrl", function($scope) {
-    $scope.faq = [
-        {
-            key: "Question 1",
-            value: "Answer1"
-        },
-        {
-            key: "Question 2",
-            value: "Answer 2"
-        }
-    ];
-});
-</script>
+	<script>
+	var app = angular.module('demo', []);
+	app.controller("ctrl", function($scope) {
+		$scope.faq = [
+			{
+				key: "Question 1",
+				value: "Answer1"
+			},
+			{
+				key: "Question 2",
+				value: "Answer 2"
+			}
+		];
+	});
+	</script>
+</body>
 </html>

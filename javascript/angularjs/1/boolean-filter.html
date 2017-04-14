@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="googlebot" content="noindex, nofollow">
+<!--
+	<script type="text/javascript" src="/js/lib/dummy.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/css/result-light.css">
+	-->
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
+
+	<style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style>
+
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css">
+
+	<style type="text/css">
+	body {
+		padding:20px;
+	}
+	</style>
+
+	<title>Special filters in angularJS by buehler</title>
+
+	<script type="text/javascript">//<![CDATA[
+
+	angular.module('testApp', []).
+
+	controller('excludeInactiveCtrl', ['$scope', function ($scope) {
+		//example 1 just normal filtering on boolean value
+		$scope.data = [{name:'Name1',active:true},
+					   {name:'Name2',active:false},
+					   {name:'Name3',active:true},
+					   {name:'Name4',active:false},
+					   {name:'Name5',active:true}];
+	}]).
+
+	filter('onlyBooleanValueFilter', [function(){
+		return function(input, param){
+			var ret = [];
+			if(!angular.isDefined(param)) param = true;
+			angular.forEach(input, function(v){
+				if(angular.isDefined(v.active) && v.active === param){
+					ret.push(v);
+				}
+			});
+			return ret;
+		};
+	}]).
+
+	controller('activeOrNotCtrl', ['$scope', function ($scope) {
+		//example 2 with custom filter so that only true or only false values are shown
+		$scope.data = [{name:'Name1',active:true},
+					   {name:'Name2',active:false},
+					   {name:'Name3',active:true},
+					   {name:'Name4',active:false},
+					   {name:'Name5',active:true}];
+	}]).
+
+	filter('togglableFilter',[function(){
+		return function(input, filterText, isFilterActive){
+			if(!angular.isDefined(isFilterActive) || !isFilterActive) return input;
+			var ret = [];
+			if(angular.isDefined(filterText) && angular.isString(filterText)){
+				angular.forEach(input, function(v){
+					if(v.name.indexOf(filterText) !== -1){
+						ret.push(v);
+					}
+				});
+			}
+			return ret;
+		}
+	}]).
+	
+	controller('togglableFilterCtrl', ['$scope', function ($scope) {
+		// example 3 with deactivatable text filter
+		$scope.data = [{name:'Name1',active:true},
+						{name:'Name2',active:false},
+						{name:'Name3',active:true},
+						{name:'Name4',active:false},
+						{name:'Name5',active:true}];
+	}]);
+
+	//]]> 
+	</script>
+
+</head>
+
+<body>
+  <div ng-app="testApp" class="ng-scope">
+    <div ng-controller="excludeInactiveCtrl" class="ng-scope ng-binding">
+         <h4>exclude inactive?</h4>
+        only show active: <input type="checkbox" ng-model="showActive" class="ng-pristine ng-valid"> ngmodel value: 
+        <table class="table table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Active</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ngRepeat: o in data | filter:{active:showActive} -->
+				<tr ng-repeat="o in data | filter:{active:showActive}" class="ng-scope">
+                    <td class="ng-binding">Name1</td>
+                    <td class="ng-binding">true</td>
+                </tr><tr ng-repeat="o in data | filter:{active:showActive}" class="ng-scope">
+                    <td class="ng-binding">Name2</td>
+                    <td class="ng-binding">false</td>
+                </tr><tr ng-repeat="o in data | filter:{active:showActive}" class="ng-scope">
+                    <td class="ng-binding">Name3</td>
+                    <td class="ng-binding">true</td>
+                </tr><tr ng-repeat="o in data | filter:{active:showActive}" class="ng-scope">
+                    <td class="ng-binding">Name4</td>
+                    <td class="ng-binding">false</td>
+                </tr><tr ng-repeat="o in data | filter:{active:showActive}" class="ng-scope">
+                    <td class="ng-binding">Name5</td>
+                    <td class="ng-binding">true</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div ng-controller="activeOrNotCtrl" ng-init="showActive = true" class="ng-scope ng-binding">
+         <h4>Are you active?</h4>
+        toggle active: <input type="checkbox" ng-model="showActive" class="ng-pristine ng-valid"> ngmodel value: true
+        <table class="table table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Active</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ngRepeat: o in data | onlyBooleanValueFilter:showActive -->
+				<tr ng-repeat="o in data | onlyBooleanValueFilter:showActive" class="ng-scope">
+                    <td class="ng-binding">Name1</td>
+                    <td class="ng-binding">true</td>
+                </tr><tr ng-repeat="o in data | onlyBooleanValueFilter:showActive" class="ng-scope">
+                    <td class="ng-binding">Name3</td>
+                    <td class="ng-binding">true</td>
+                </tr><tr ng-repeat="o in data | onlyBooleanValueFilter:showActive" class="ng-scope">
+                    <td class="ng-binding">Name5</td>
+                    <td class="ng-binding">true</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div ng-controller="togglableFilterCtrl" ng-init="showActive = true" class="ng-scope ng-binding">
+         <h4>deactivate the filter.</h4>
+        toggle filter: <input type="checkbox" ng-model="filterActive" class="ng-valid ng-dirty"> ngmodel value: true<br>
+        filter text: <input type="text" ng-model="filtertext" class="ng-valid ng-dirty"> ngmodel value: 111111
+        <table class="table table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Active</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ngRepeat: o in data | togglableFilter:filtertext:filterActive -->
+            </tbody>
+        </table>
+    </div>
+</div>
+  
+  <script>
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "HCjrQ"
+    }], "*")
+  }
+</script>
+
+
+
+
+
+</body></html>

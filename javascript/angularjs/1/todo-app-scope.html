@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="todoApp">
+	<head>
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> -->
+		
+		<script src="../../../common/angularjs/1/angular.min.js"></script>
+	</head>
+	<body>
+
+	<div ng-app="todoApp" ng-controller="todoController">
+		<form ng-submit="add()">
+		<input ng-model="title"><button>Add</button>
+		</form>
+		<ul>
+			<li ng-repeat="t in tasks track by $index">{{ t }} <button ng-click="delete()">x</button></li>
+		</ul>
+	</div>
+
+	<script>
+	angular.module('todoApp', [])
+		.controller('todoController', function($scope) {
+			$scope.tasks = [];
+			$scope.add = function() {
+				$scope.tasks.push($scope.title);
+			}
+			$scope.delete = function() {
+				$scope.tasks.splice(this.$index, 1);
+			}
+		})
+	</script>
+
+	</body>
+</html>

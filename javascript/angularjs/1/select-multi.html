@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app="trialApp">
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+		<script src="../../../common/angularjs/1/angular.min.js"></script>
+	</head>
+	<body>
+
+	<div class="container">
+		
+		<div ng-controller="myController as ctrlBooks">
+		
+			<form action="" method="post">
+				
+				<select class="form-control" ng-options="book.codprod for book in ctrlBooks.books | filter:(book.visibility)" ng-model="selected" autofocus required="required">
+					<option value="">Select</option>
+				</select>
+		
+				<!-- OR -->
+				<!--
+				<select class="form-control" required="required" autofocus>
+					<option value="">Select</option>
+					<option ng-repeat="book in ctrlBooks.books" value="{{ book.codprod }}">{{ book.codprod }}</option>
+				</select>
+				-->
+				
+				<button type="submit" name="sbmt" class="btn btn-primary">Proceed</button>
+			</form>
+			
+			<pre>{{ ctrlBooks.books | json }}</pre>
+		</div>
+		
+		<script>
+		angular.module('trialApp', []).controller('myController', function($scope) {
+
+			var myList = this;
+
+			myList.books = [
+				{ codprod: '001', title: 'Learn Angular', visibility: 'true'},
+				{ codprod: '002', title: 'NG book', visibility: 'false'},
+				{ codprod: '003', title: 'Angular Directives', visibility: false},
+				{ codprod: '004', title: 'Javascript frameworks', visibility: false}
+			];
+			
+		});
+		</script>
+	</div>
+
+	</body>
+</html>

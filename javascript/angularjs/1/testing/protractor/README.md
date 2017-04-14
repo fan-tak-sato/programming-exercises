@@ -3,11 +3,12 @@
 ## Install
 
 	npm install -g protractor
-https://github.com/angular/protractor
-https://github.com/angular/protractor
-Resources
-https://github.com/angular/protractor
-This will install two command line tools, protractor and webdriver-manager
+
+[Github](https://github.com/angular/protractor)
+
+## Resources
+
+Install two command line tools, protractor and webdriver-manager
 
 	protractor --version
 

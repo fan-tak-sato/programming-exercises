@@ -1,0 +1,71 @@
+<!doctype html>
+<html ng-app="todoApp">
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<script src="../../../common/angularjs/1/angular.min.js"></script>
+
+		<style>
+		.done-true {
+			text-decoration: line-through;
+			color: grey;
+		}
+		</style>
+	</head>
+	<body>
+
+	<div class="container">
+		<h2>Todo</h2>
+		<div ng-controller="TodoListController as todoList">
+			<span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+			
+			<div class="row">
+				<div class="col-lg-10"></div>
+				<div class="col-lg-1"></div>
+				<div class="col-lg-1"></div>
+			</div>
+			<ul>
+				<li ng-repeat="todo in todoList.todos">
+				<label class="checkbox">
+					<input type="checkbox" ng-model="todo.done" title="Check to mark as done" class="">
+					<span class="done-{{todo.done}}">{{todo.text}}</span> <a ng-click="todoList.remove($index)" title="Remove task">Remove</a>
+				</label>
+				</li>
+			</ul>
+			<form ng-submit="todoList.addTodo()" class="form-horizontal" action="" method="post">
+				<input type="text" ng-model="todoList.todoText" class="form-control" size="30" placeholder="Add task">
+				<input class="btn btn-primary" type="submit" value="add">
+			</form>
+		</div>
+		
+		<script>
+		angular.module('todoApp', []).controller('TodoListController', function() {
+
+			var todoList = this;
+
+			todoList.todos = [
+				{text: 'Learn AngularJS', done: true},
+				{text: 'Build an AngularJS app', done: false}
+			];
+
+			todoList.addTodo = function() {
+				todoList.todos.push({text:todoList.todoText, done:false});
+				todoList.todoText = '';
+			};
+			
+			todoList.remove = function(i) {
+				todoList.todos.splice(i, 1);
+			};
+
+			todoList.remaining = function() {
+				var count = 0;
+				angular.forEach(todoList.todos, function(todo) {
+					count += todo.done ? 0 : 1;
+				});
+				return count;
+			};
+		});
+		</script>
+	</div>
+
+	</body>
+</html>
