@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js"></script>
+	<script>
+	angular.module('dynamicFormApp', [])
+
+	.controller('mainController', function($scope) {
+		var users = [
+			{ 
+				name: 'Chris',
+				email: ''
+			},
+			{
+				name: 'Holly',
+				email: ''
+			}
+		];
+
+		var people = [
+			{ 
+				name: 'Chris',
+				email: ''
+			},
+			{
+				name: 'Holly',
+				email: ''
+			}
+		];
+
+		$scope.formDataOne = {};
+		$scope.formDataOne.people = people;
+
+		$scope.formDataTwo = {};
+		$scope.formDataTwo.users = users;
+	});
+	</script>
+</head>
+<body class="container" ng-app="dynamicFormApp" ng-controller="mainController">
+
+	<h1>Using ngForm to Validate ngRepeat Fields</h1>
+
+	<div class="page-header">
+		<h3 class="text-danger">Non Dynamic Way</h3>
+		<p>All fields need to be filled in for the error to go away. It treats all of the fields as one input.</p>
+	</div>
+	
+	<form name="userFormOne" novalidate>
+	
+		<div class="form-group" ng-repeat="person in formDataOne.people" ng-class="{ 'has-error' : userFormOne.email.$invalid }">
+
+			<label>{{ person.name }}'s Email</label>
+			<input type="text" class="form-control" name="email" ng-model="person.email" required>
+			<p class="help-block" ng-show="userFormOne.email.$invalid">Valid Email Address Required</p>
+		
+		</div>
+
+	</form>
+	
+	{{ formDataOne }}
+	
+	<!-- ====================================================== -->
+	
+	<div class="page-header">
+		<h3 class="text-success">Dynamic Way</h3>
+		<p>Each field acts as its own input and validates by itself... like it should.</p>
+	</div>
+	
+	<form name="userFormTwo" novalidate>
+	
+		<div class="form-group" ng-repeat="user in formDataTwo.users" ng-class="{ 'has-error' : userFieldForm.email.$invalid }">
+		<ng-form name="userFieldForm">
+			<label>{{ user.name }}'s Email</label>
+			<input type="email" class="form-control" name="email" ng-model="user.email" required>
+			<p class="help-block" ng-show="userFieldForm.email.$invalid">Valid Email Address Required</p>
+		</ng-form>
+		</div>
+
+	</form>
+
+	{{ formDataTwo }}
+
+</body>
+</html>

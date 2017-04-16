@@ -2,7 +2,7 @@
 <html ng-app="todoApp">
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-		<script src="../../../common/angularjs/1/angular.min.js"></script>
+		<script src="../../../../common/angularjs/1/angular.min.js"></script>
 
 		<style>
 		.done-true {
@@ -14,7 +14,7 @@
 	<body>
 
 	<div class="container">
-		<h2>Todo</h2>
+		<h2>Todo app with Angular JS 1.x</h2>
 		<div ng-controller="TodoListController as todoList">
 			<span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
 			
@@ -23,18 +23,36 @@
 				<div class="col-lg-1"></div>
 				<div class="col-lg-1"></div>
 			</div>
-			<ul>
-				<li ng-repeat="todo in todoList.todos">
-				<label class="checkbox">
-					<input type="checkbox" ng-model="todo.done" title="Check to mark as done" class="">
-					<span class="done-{{todo.done}}">{{todo.text}}</span> <a ng-click="todoList.remove($index)" title="Remove task">Remove</a>
-				</label>
-				</li>
-			</ul>
-			<form ng-submit="todoList.addTodo()" class="form-horizontal" action="" method="post">
-				<input type="text" ng-model="todoList.todoText" class="form-control" size="30" placeholder="Add task">
-				<input class="btn btn-primary" type="submit" value="add">
+			
+			<form class="form-inline" ng-submit="todoList.addTodo()" action="" method="post">
+				<div class="row" ng-repeat="todo in todoList.todos">
+					<div class="col-lg-4">
+						<label class="checkbox">
+							<input type="checkbox" ng-model="todo.done" title="Check to mark as done">
+							<span class="done-{{todo.done}}">{{todo.text}}</span> 
+						</label>
+					</div>
+					<div class="col-lg-8">
+						<a ng-click="todoList.remove($index)" class="btn btn-danger" title="Remove task">X</a>
+					</div>
+					<hr>
+				</div>
 			</form>
+			
+			<form class="form-inline" ng-submit="todoList.addTodo()" action="" method="post">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="form-group">
+							<input type="text" ng-model="todoList.todoText" class="form-control" size="40" required="required" maxlength="100" placeholder="Add task...">
+						</div>
+					</div>
+					
+					<div class="col-lg-8">
+						<button type="submit" class="btn btn-primary">Add</button>
+					</div>
+				</div>
+			</form>
+
 		</div>
 		
 		<script>

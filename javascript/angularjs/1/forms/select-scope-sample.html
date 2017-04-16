@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="trialApp">
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+		<script src="../../../../common/angularjs/1/angular.min.js"></script>
+		<script src="../../../../common/live.js"></script>
+	</head>
+	<body>
+
+	<div class="container">
+	
+		<h1>Angular JS: dealing with select</h1>
+
+		<div ng-controller="myController as myCtrl">
+		
+			<form action="" class="form-inline" method="post" novalidate>
+				
+				<select ng-model="myItemSelected" ng-options="item as item.name for item in myItems" ng-change="changeValue(myItemSelected)" class="form-control">
+					<option value="">Select</option>
+				</select>
+				
+				<button type="submit" name="sbmt" class="btn btn-primary">Proceed</button>
+			</form>
+			
+			<p>&nbsp;</p>
+			
+			<pre>{{ selectedValue }}</pre>
+		</div>
+		
+		<script>
+		angular.module('trialApp', [])
+		.controller('myController', function($scope) {
+
+			$scope.selectedValue = '';
+			
+			$scope.myItems = [
+				{id: 1, name: "a"},
+				{id: 2, name: "b"},
+				{id: 3, name: "c"}
+			];
+
+			$scope.changeValue = function(item) {
+				$scope.selectedValue = item;
+			}
+			
+		});
+		</script>
+	</div>
+
+	</body>
+</html>

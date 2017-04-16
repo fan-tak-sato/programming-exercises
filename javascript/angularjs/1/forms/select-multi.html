@@ -1,0 +1,90 @@
+<!doctype html>
+<html ng-app="trialApp">
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+		<script src="../../../../common/angularjs/1/angular.min.js"></script>
+		<script src="../../../../common/live.js"></script>
+	</head>
+	<body>
+
+	<div class="container">
+	
+		<h1>Angular JS: dealing with select</h1>
+
+		<div ng-controller="myController as ctrlBooks">
+		
+			<form action="" class="form-inline" method="post">
+				
+				<!--
+				<select class="form-control" ng-change="changedValue(selected)" ng-options="book.codprod for book in ctrlBooks.books | filter:(book.visibility)" ng-model="selected" autofocus required="required">
+					<option value="">Select</option>
+				</select>
+				-->
+
+				<!-- Using scope vars -->
+				<select ng-model="blisterPackTemplateSelected" ng-change="changedValue(blisterPackTemplateSelected)" 
+				ng-options="blisterPackTemplate as blisterPackTemplate.name for blisterPackTemplate in blisterPackTemplates" class="form-control">
+					<option value="">Select</option>
+				</select>
+
+				<!--
+				<table class="table table-bordered">
+					<tr ng-repeat="book in ctrlBooks.books">
+						<td>{{ book.codprod }}</td>
+						<td>{{ book.title }}</td>
+					</tr>
+				</table>
+				-->
+
+				<!-- OR -->
+				<!--
+				<select class="form-control" ng-change="changedValue(selected)" ng-options="book.codprod for book in ctrlBooks.books | filter:(book.visibility)" ng-model="selected" autofocus required="required">
+					<option value="">Select</option>
+				</select>
+				-->
+				
+				<button type="submit" name="sbmt" class="btn btn-primary">Proceed</button>
+			</form>
+			
+			<p>&nbsp;</p>
+
+			<pre>{{ ctrlBooks.books | json }}</pre>
+		</div>
+		
+		<script>
+		angular.module('trialApp', []).controller('myController', function($scope) {
+			
+			var myList = this;
+
+			myList.books = [
+				{ codprod: '001', title: 'Learn Angular', visibility: 'true'},
+				{ codprod: '002', title: 'NG book', visibility: 'false'},
+				{ codprod: '003', title: 'Angular Directives', visibility: false},
+				{ codprod: '004', title: 'Javascript frameworks', visibility: false}
+			];
+			
+			$scope.changedValue = function(item) {
+				console.log(item);
+				if (typeof item != 'undefined') {
+					// myList.books.push(item);
+				}
+			}
+			
+			$scope.itemList = [];
+			$scope.blisterPackTemplates = [
+				{id:1,name:"a"},
+				{id:2,name:"b"},
+				{id:3,name:"c"}
+			];
+
+			$scope.changedValue = function(item) {
+				$scope.itemList.push(item.name);
+			}       
+
+		});
+		</script>
+	</div>
+
+	</body>
+</html>

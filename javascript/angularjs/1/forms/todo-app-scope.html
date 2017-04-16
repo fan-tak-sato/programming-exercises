@@ -3,13 +3,13 @@
 	<head>
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> -->
 		
-		<script src="../../../common/angularjs/1/angular.min.js"></script>
+		<script src="../../../../common/angularjs/1/angular.min.js"></script>
 	</head>
 	<body>
 
 	<div ng-app="todoApp" ng-controller="todoController">
 		<form ng-submit="add()">
-		<input ng-model="title"><button>Add</button>
+			<input ng-model="title"><button>Add</button>
 		</form>
 		<ul>
 			<li ng-repeat="t in tasks track by $index">{{ t }} <button ng-click="delete()">x</button></li>

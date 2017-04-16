@@ -1,0 +1,82 @@
+<!doctype html>
+<html ng-app="trialApp">
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+		<script src="../../../../common/angularjs/1/angular.min.js"></script>
+		<script src="../../../../common/live.js"></script>
+	</head>
+	<body>
+
+	<div class="container">
+	
+		<h1>Angular JS: select unique ID</h1>
+
+		<div ng-controller="myController as ctrlBooks">
+		
+			<form action="" class="form-inline" name="myForm" method="post">
+				<div ng-repeat="itemToAdd in getItemsToAdd()">
+					<ng-form name="ngFormName">
+						<select name="id" ng-model="myItemSelected" ng-options="myItem as myItem for myItem in getAvailableItemIds(item)" ng-change="changeValue(myItemSelected, $index)" class="form-control">
+								<!-- <option value="">Select</option> -->
+						</select>
+						<button type="button" ng-click="deleteRow($index)" ng-show="$index > 0" class="btn btn-danger">X</button>
+						<hr>
+					</ng-form>
+				</div>
+				<button type="submit" name="sbmt" class="btn btn-primary">Proceed</button>
+			</form>
+			<br>
+			<pre>{{ ngFormName }}</pre>
+			<pre>{{ itemsToAdd }}</pre>
+		</div>
+		
+		<script>
+		angular.module('trialApp', [])
+		.controller('myController', function($scope) {
+		
+			$scope.selectedValue = '';
+			
+			
+			$scope.availableIds = [];
+			$scope.itemsToAdd = [];
+			
+			$scope.myItems = [
+				{id: 1, name: "a"},
+				{id: 2, name: "b"},
+				{id: 3, name: "c"}
+			];
+
+			$scope.changeValue = function(item, rowIndex) {
+				// Add new row
+				if ($scope.itemsToAdd < $scope.myItems && typeof $scope.itemsToAdd[rowIndex+1] == 'undefined') {
+					$scope.itemsToAdd.push({});
+				}
+				
+				$scope.selectedValue = item;
+			}
+			
+			$scope.getAvailableItemIds = function(item) {
+				$scope.availableIds = $scope.myItems.map( (v) => v.id );
+				
+				var usedIds = $scope.itemsToAdd.map( itm => itm.id );
+
+				if (typeof item != 'undefined')
+					return $scope.availableIds.filter( id => id === item.id || usedIds.indexOf(id) === -1 );
+				else
+					return $scope.availableIds.filter( id => usedIds.indexOf(id) === -1 );
+			}
+			
+			$scope.getItemsToAdd = function() {
+				if ($scope.itemsToAdd.length==0) {
+					$scope.itemsToAdd.push({});
+				}
+				return $scope.itemsToAdd;
+			}
+			
+		});
+		</script>
+	</div>
+
+	</body>
+</html>
