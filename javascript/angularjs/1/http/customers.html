@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	table, th , td  {
+		border: 1px solid grey;
+		border-collapse: collapse;
+		padding: 5px;
+	}
+	table tr:nth-child(odd) {
+		background-color: #f1f1f1;
+	}
+	table tr:nth-child(even) {
+		background-color: #ffffff;
+	}
+	</style>
+	
+	<!-- Live update -->
+	<script src="../../../../common/live.js"></script>
+	
+	<script src="../../../../common/angularjs/1/angular.min.js"></script>
+</head>
+<body>
+
+	<div ng-app="myApp" ng-controller="customersCtrl">
+
+	<!-- TODO: sanitize view characters with accents -->
+	<table>
+		<tr ng-repeat="x in names">
+			<td>{{ x.Name }}</td>
+			<td>{{ x.Country }}</td>
+		</tr>
+	</table>
+
+</div>
+ 
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+	$http.get("customers.php")
+	.then(function (response) {$scope.names = response.data.records;});
+});
+</script>
+ 
+</body>
+</html>

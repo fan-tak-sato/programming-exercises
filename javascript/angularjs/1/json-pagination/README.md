@@ -3,8 +3,7 @@ JSON pagination
 
 Pagination of a JSON string
 
-Resources
------------------------
+## Resources
 
 With previous \ next buttons: http://jsfiddle.net/prash/Cp73s/330/
 

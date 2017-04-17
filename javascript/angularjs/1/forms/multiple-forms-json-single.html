@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html data-ng-app="formApp">
+	<head>
+		<script type="text/javascript" src="https://code.angularjs.org/1.2.26/angular.js"></script>
+		<script type="text/javascript"> 
+			var formApp = angular.module("formApp",[]);
+
+			formApp.controller("formController", function($scope)
+			{
+				$scope.forms = [{name: "Foo"}, {name: "Bar"}];
+			});
+		</script>
+	</head>
+	<body data-ng-controller="formController">
+		<h1>Multiple forms with Angular JS</h1>
+		<p>In this example, a form is created for each JSON object but the fields are NOT configured in the same data structure.</p>
+		<div data-ng-repeat="form in forms">
+			<form name="{{form.name}}">
+				<input type="text" name="a" data-ng-model="form.someField">
+				<input type="text" name="b" data-ng-model="form.someOtherField">
+			 </form>
+			 <p>{{form | json }}</p>
+			 <p>{{form.someField + form.someOtherField}}</p>
+		</div>
+
+	</div>
+</html>

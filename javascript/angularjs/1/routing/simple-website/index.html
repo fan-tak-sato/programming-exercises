@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular JS mini website</title>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+</head>
+<body ng-app="myApp">
+
+<p><a href="#/" title="Home page">Home</a></p>
+
+<a href="#about" title="">About</a>
+<a href="#services" title="">Service</a>
+<a href="#contacts" title="">Contacs</a>
+
+<div ng-view></div>
+
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+	$routeProvider
+	.when("/", {
+		templateUrl : "templates/main.html"
+	})
+	.when("/about", {
+		templateUrl : "templates/about.html"
+	})
+	.when("/services", {
+		templateUrl : "templates/services.html"
+	})
+	.when("/contacts", {
+		templateUrl : "templates/contacts.html"
+	});
+});
+</script>
+
+</body>
+</html>

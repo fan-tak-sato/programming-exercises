@@ -1,5 +1,4 @@
-Javascript Unit Tests with Karma
-===================================
+# Javascript Unit Tests with Karma
 
 ## Install karma:
 

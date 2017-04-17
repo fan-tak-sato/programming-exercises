@@ -1,19 +1,20 @@
-# AngularJS Resources
+# AngularJS 
 
-- Official website(https://angularjs.org/)
+AngularJS 1.x links and resources
+
+## Resources
+
+- [Official website](https://angularjs.org/)
 - [Angular-UI](http://angular-ui.github.io/)
 - [Angular Strap](http://mgcrea.github.io/angular-strap/) 
-
-[Egghead](https://egghead.io/)
-
-http://www.ng-newsletter.com/
-
-https://github.com/jmcunningham/AngularJS-Learning
+- [NG Newsletter](http://www.ng-newsletter.com/)
+- [Angular JS learning](https://github.com/jmcunningham/AngularJS-Learning)
+- [W3 schools guide](https://www.w3schools.com/angular/default.asp)
 
 ## Videos
 
 - [AngularJS Fundamentals In 60-ish Minutes on Youtube](https://www.youtube.com/watch?v=i9MHigUZKEM)
-- https://egghead.io/courses/angularjs-app-from-scratch-getting-started
+- [Egghead course](https://egghead.io/courses/angularjs-app-from-scratch-getting-started)
 
 ## Books
 
@@ -24,4 +25,3 @@ https://github.com/jmcunningham/AngularJS-Learning
 - AngularJS essential
 - AngularJS services
 - Mastering AngularJS directives
-

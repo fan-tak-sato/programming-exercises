@@ -37,7 +37,6 @@
 		
 			$scope.selectedValue = '';
 			
-			
 			$scope.availableIds = [];
 			$scope.itemsToAdd = [];
 			
@@ -54,6 +53,10 @@
 				}
 				
 				$scope.selectedValue = item;
+			}
+			
+			$scope.deleteRow = function(rowIndex) {
+				$scope.itemsToAdd.splice(rowIndex, 1);
 			}
 			
 			$scope.getAvailableItemIds = function(item) {
