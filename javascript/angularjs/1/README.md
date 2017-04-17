@@ -5,11 +5,22 @@ AngularJS 1.x links and resources
 ## Resources
 
 - [Official website](https://angularjs.org/)
+- [Cheatsheet](http://www.cheatography.com/proloser/cheat-sheets/angularjs/)
+- 
 - [Angular-UI](http://angular-ui.github.io/)
-- [Angular Strap](http://mgcrea.github.io/angular-strap/) 
+- [Angular-UI bootstrap](http://angular-ui.github.io/bootstrap/)
+- [UI Bootstrap](http://angular-ui.github.io/bootstrap/)
+- [Angular Strap](http://mgcrea.github.io/angular-strap/)
+
 - [NG Newsletter](http://www.ng-newsletter.com/)
 - [Angular JS learning](https://github.com/jmcunningham/AngularJS-Learning)
 - [W3 schools guide](https://www.w3schools.com/angular/default.asp)
+
+## Testing
+
+- Protractor
+- Karma
+- Jasmine
 
 ## Videos
 

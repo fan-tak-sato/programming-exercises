@@ -1,0 +1,18 @@
+{
+  "name": "todo-node",
+  "version": "1.0.0",
+  "description": "todo mvc angularjs 1.x app",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "todomvc": "^0.1.1",
+    "todomvc-app-css": "^2.1.0",
+    "todomvc-common": "^1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
