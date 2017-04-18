@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="plunker">
 <head>
+	<title>Multiple forms with AngularJS</title>
+	
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.min.js"></script>
@@ -9,6 +11,11 @@
 	<script src="../../../../common/live.js"></script>
 
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+	.form-row {
+		padding-bottom: 1%;
+	}
+	</style>
 </head>
 <body ng-controller="MainCtrl">
 
@@ -24,7 +31,7 @@
 
 		<div ng-repeat="cont in form.contacts">
 			<ng-form name="cntForm">
-			<div class="row" style="padding-bottom: 1%">
+			<div class="row form-row">
 				<div class="col-lg-3">
 					<select name="id" ng-model="cont.id" ng-options="myItem for myItem in getAvailableItemIds(item, $index)" ng-change="changeValue(cont.id, $index)" class="form-control" ng-required="isRequired(cont)" autofocus>
 					</select>
@@ -36,7 +43,7 @@
 					<input type="text" name="surname" ng-model="cont.surname" ng-required="isRequired(cont)" class="form-control" placeholder="Surname...">
 				</div>
 				<div class="col-lg-1">
-					<button type="button" ng-show="form.contacts.length > 1" ng-click="removeRow(form, $index)" class="btn btn-danger">X</button>
+					<button type="button" ng-show="form.contacts.length > 1" ng-click="removeRow(form, $index)" class="btn btn-danger">&times;</button>
 				</div>
 			</div>
 			</ng-form>
