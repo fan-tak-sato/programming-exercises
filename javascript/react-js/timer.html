@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8'>
+	<meta name="robots" content="noindex">
+</head>
+<body>
+
+<div id="root">
+    <!-- This element's contents will be replaced with your component. -->
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js'></script>
+
+<script>
+
+'use strict';
+
+function tick() {
+	var element = React.createElement(
+		'div',
+		null,
+		React.createElement(
+			'h1',
+			null,
+			'Hello, world!'
+		),
+		React.createElement(
+			'h2',
+			null,
+			'It is ',
+			new Date().toLocaleTimeString(),
+			'.'
+		)
+	);
+	ReactDOM.render(element, document.getElementById('root'));
+}
+
+setInterval(tick, 1000);
+
+</script>
+</body>
+</html>

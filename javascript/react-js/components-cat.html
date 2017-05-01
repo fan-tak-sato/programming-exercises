@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8'>
+	<meta name="robots" content="noindex">
+</head>
+<body>
+
+<div id="root">
+    <!-- This element's contents will be replaced with your component. -->
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js'></script>
+
+<script>
+
+'use strict';
+
+
+function formatDate(date) {
+  return date.toLocaleDateString();
+}
+
+function Comment(props) {
+	return React.createElement(
+		"div",
+		{ className: "Comment" },
+		React.createElement(
+			"div",
+			{ className: "UserInfo" },
+			React.createElement("img", { className: "Avatar",
+			src: props.author.avatarUrl,
+			alt: props.author.name }),
+			React.createElement(
+			"div",
+			{ className: "UserInfo-name" },
+			props.author.name
+			)
+		),
+		React.createElement(
+			"div",
+			{ className: "Comment-text" },
+			props.text
+		),
+		React.createElement(
+			"div",
+			{ className: "Comment-date" },
+			formatDate(props.date)
+		)
+	);
+}
+
+var comment = {
+  date: new Date(),
+  text: 'I hope you enjoy learning React!',
+  author: {
+    name: 'Hello Kitty',
+    avatarUrl: 'http://placekitten.com/g/64/64'
+  }
+};
+ReactDOM.render(React.createElement(Comment, {
+  date: comment.date,
+  text: comment.text,
+  author: comment.author }), document.getElementById('root'));
+
+</script>
+</body>
+</html>
