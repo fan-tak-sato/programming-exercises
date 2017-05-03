@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AngularJS numeric counter</title>
+</head>
+
+<body>
+	<h1>Numeric counter</h1>
+	
+	<p>This solution does not work with more recent AngularJS versions!</p>
+
+	<div ng-app>
+		<div ng-controller="TestCtrl">
+			<div ng-repeat="a in range(5)">{{ $index + 1 }}</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.1/angular.min.js"></script>
+	<script>
+	//<![CDATA[
+
+	function TestCtrl($scope) {
+		$scope.range = function(n) {
+			return new Array(n);
+		};
+	};
+	//]]> 
+	</script>
+</body>
+</html>
