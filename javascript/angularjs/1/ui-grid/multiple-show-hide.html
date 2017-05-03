@@ -1,0 +1,69 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+	<script src="http://ui-grid.info/release/ui-grid.js"></script>
+	<link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+</head>
+<body>
+
+<div ng-controller="MainCtrl">
+	<button ng-init="state=true" ng-click="state = !state">Click me</button>
+	<div ng-show="state">
+		<div id="grid1" ui-grid="{ data: myData }" class="grid" ui-grid-auto-resize></div>
+	</div>
+	<div ng-show="!state">
+		<div id="grid2" ui-grid="{ data: myData2 }" class="grid" ui-grid-auto-resize></div>
+	</div>
+</div>
+
+<script>
+	var app = angular.module('app', ['ui.grid','ui.grid.autoResize']);
+
+	app.controller('MainCtrl', ['$scope', function ($scope) {
+
+	$scope.myData = [
+	{
+		"firstName": "Cox",
+		"lastName": "Carney",
+		"company": "Enormo",
+		"employed": true
+	},
+	{
+		"firstName": "Lorraine",
+		"lastName": "Wise",
+		"company": "Comveyer",
+		"employed": false
+	},
+	{
+		"firstName": "Nancy",
+		"lastName": "Waters",
+		"company": "Fuelton",
+		"employed": false
+	}];
+	
+	$scope.myData2 = [
+	{
+		"firstName": "Foo",
+		"lastName": "Bar",
+		"company": "Test",
+		"employed": true
+	},
+	{
+		"firstName": "Blash",
+		"lastName": "Wasdasdise",
+		"company": "Comvadasdeyer",
+		"employed": false
+	},
+	{
+		"firstName": "Naasdasdncy",
+		"lastName": "Watasdasders",
+		"company": "asd",
+		"employed": false
+	}];
+}]);
+
+</script>
+
+</body>
+</html>

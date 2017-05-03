@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="yourApp">
+<head>
+	<title>My first AngularJS Controllers Inheritance code</title>
+	<script SRC="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>  
+	<script type="text/javascript">	 
+		var app = angular.module('yourApp', []);  
+
+		app.controller('ParentController', function($scope) {
+			$scope.customer = {hasPANNo: false };
+		});
+	  
+		app.controller('ChildController', function($scope) {
+			$scope.displayCustomer = function() {
+				$scope.customer.name = "Jimi Scott";
+				$scope.customer.hasPANNo = true;
+			}
+		});
+	</script>
+</head>
+<body>
+
+<div ng-controller="ParentController">
+	<div ng-controller="ChildController">
+		<a href="#" ng-click="displayCustomer()">DisplayCustomer</a>
+	</div>	
+	{{ "Name : " + customer.name }} </br>  
+	{{ 'PanNo: ' + customer.hasPANNo }}	  
+</div>  
+
+</body>
+</html>
