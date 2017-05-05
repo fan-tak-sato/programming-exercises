@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="googlebot" content="noindex, nofollow">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+	<title>AngularJS add form element with select</title>
+</head>
+<body ng-app="myApp">
+
+<p>TODO disable add students button if you are not allowed to add more students...</p>
+
+<div ng-controller="MyController">
+	<div ng-repeat="exam_student in exam_students track by $index">
+		<select  ng-model="exam_student.student_id" ng-change="hasChange()">
+			<option ng-repeat="student in students" value={{::student.id}} ng-disabled="student.disable">{{::student.name}}</option>
+		</select>
+		<button type="button" ng-click="removeStudent($index)">-</button>
+	</div>
+	<button type="button" ng-click="addStudent()" title="Add Student">Add Student</button>
+</div>
+
+<script>//<![CDATA[
+
+var app = angular.module('myApp', []);
+
+app.controller('MyController', ['$scope', MyController]);
+
+function MyController($scope) {
+
+	// I suggest adding an empty object so that we can re-select the options
+    $scope.students = [
+    			{},
+				{id: 1, name: 'st1', disable: false},
+				{id: 2, name: 'st2', disable: false},
+				{id: 3, name: 'st3', disable: false}
+	];
+
+	$scope.exam_students = [{}]; 
+
+	$scope.addStudent = function() {
+		if ($scope.exam_students.length == 0 || $scope.exam_students.length < $scope.students.length - 1) {
+			$scope.exam_students.push({});
+		}
+	}
+
+	$scope.removeStudent = function(index){
+		$scope.exam_students.splice(index,1);
+		$scope.hasChange();
+	}
+
+	$scope.hasChange = function() {
+		// using a lookup table, instead of 2 nested loops, for a better performance when the list gets large
+		var lookupTable = {};
+	  
+		// store the student_id in the lookupTable and set it to true
+		// worth noting since I am using option tag, student_id will be stored as string instead of number, but it is ok because key in javascript object will be converted to string
+		$scope.exam_students.forEach(function(exam_student) {
+
+		lookupTable[exam_student.student_id] = true;
+
+		});
+		  
+		// loop through the options and if student_id is true/there, set disable accordingly
+		$scope.students.forEach(function(student) {
+			if(lookupTable[student.id]) {
+				student.disable = true;
+			} else {
+				student.disable = false;
+			}
+			//or student.disable = table[student.id];
+		});
+	}
+}
+
+//]]>
+</script>
+
+</body>
+</html>
