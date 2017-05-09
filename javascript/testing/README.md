@@ -2,8 +2,9 @@
 
 - [Mocha](https://mochajs.org/) TDD, unit testing
 - [Chai](http://chaijs.com/) BDD and TDD
-- [Karma](https://karma-runner.github.io/)
-- [Jasmine](https://jasmine.github.io/)
+- [Karma](https://karma-runner.github.io/) Spectacular Test Runner for JavaScript
+- [Jasmine](https://jasmine.github.io/) 
+- [CasperJS](http://casperjs.org/) navigation scripting & testing utility which uses headless browsers 
 - Sinon 
 - Phantom JS
 - Protractor
@@ -13,5 +14,5 @@
 
 Debuggers
 
-Augury
-Chrome dev tools
+- Augury
+- Chrome dev tools

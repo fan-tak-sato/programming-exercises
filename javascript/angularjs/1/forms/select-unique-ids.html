@@ -98,12 +98,11 @@ app.controller('MainCtrl', function($scope) {
 		}
 	}
 	
-	$scope.removeRow = function(form, currentRowIndex){
+	$scope.removeRow = function(form, currentRowIndex) {
 		form.contacts.splice(currentRowIndex, 1);
 	}
 	
 	$scope.isValidForm = function(formName) {
-		// console.log( formName );
 		return formName.$valid;
 	}
 	
@@ -113,11 +112,6 @@ app.controller('MainCtrl', function($scope) {
     
 	$scope.submit = function(form){
 		console.log(form.contacts);
-	}
-	
-	// Debug
-	$scope.log = function(myVar) {
-		// console.log( myVar );
 	}
 
 });
