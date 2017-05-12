@@ -1,0 +1,75 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.js"></script>
+
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid-unstable.js"></script>
+
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid-unstable.css" type="text/css">
+    <style>
+	.grid {
+		width: 500px;
+		height: 250px;
+	}
+
+	#grid1 .ui-grid-row.ui-grid-row-selected > [ui-grid-row] .ui-grid-cell {
+		background-color: red;
+	}
+    </style>
+</head>
+<body>
+
+	<div ng-controller="MainCtrl">
+		<div id="grid1" ui-grid="gridOptions" ui-grid-edit ui-grid-selection class="grid"></div>
+	</div>
+
+    <script>
+	var app = angular.module('app', ['ui.grid', 'ui.grid.edit', 'ui.grid.selection']);
+
+	app.filter('zip', function () {
+	  return function (input, entity) {
+		if (entity.getZip() > 30000) {
+		  return 'Yes';
+		}
+		else {
+		  return 'No';
+		}
+	  };
+	});
+
+	app.controller('MainCtrl', ['$scope', function ($scope) {
+
+	$scope.gridOptions = {
+			enableSorting: true,
+			columnDefs: [
+			  { name:'firstName', field: 'first-name' },
+			  { name:'1stFriend', field: 'friends[0]' },
+			  { name:'city', field: 'address.city'},
+			  { name:'getZip', field: 'getZip()', enableCellEdit:false },
+			  { displayName:'Zip > 3000', field: 'getZip()', enableCellEdit:false, cellFilter: 'zip:row.entity' }
+			],
+			data : [
+			  {
+				 "first-name": "Cox",
+				 "friends": ["friend0"],
+				 "address": {street:"301 Dove Ave", city:"Laurel", zip:"39565"},
+				 "getZip" : function() {return this.address.zip;}
+			  },
+			  {
+				 "first-name": "Jim",
+				 "friends": ["friend1"],
+				 "address": {street:"123 Street Ave", city:"Bay", zip:"12457"},
+				 "getZip" : function() {return this.address.zip;}
+			  }
+			]
+		  };
+
+	}]);
+	</script>
+  </body>
+</html>

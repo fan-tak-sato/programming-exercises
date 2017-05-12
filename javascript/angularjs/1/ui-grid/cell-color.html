@@ -1,0 +1,71 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-touch.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.js"></script>
+
+	<script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+	<script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+	<script src="http://ui-grid.info/release/ui-grid-unstable.js"></script>
+	
+	<link rel="stylesheet" href="http://ui-grid.info/release/ui-grid-unstable.css" type="text/css">
+	
+	<style>
+	.grid {
+		width: 500px;
+		height: 200px;
+	}
+	.green {
+		background-color: #2dff07;
+		color: red;
+	}
+
+	.blue {
+		background-color: #1fe0f0;
+		color: #153ff0;
+	}
+	</style>
+  </head>
+  <body>
+
+<div ng-controller="MainCtrl">
+	<br>
+	<br>
+	<div id="grid1" ui-grid="gridOptions" class="grid"></div>
+</div>
+
+
+<script>
+var app = angular.module('app', ['ngAnimate', 'ui.grid']);
+
+app.controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
+  
+	$scope.myData = [{sv_name: "Moroni", sv_code: 50,count:0},
+				 {sv_name: "Tiancum", sv_code: 43,count:1},
+				 {sv_name: "Jacob", sv_code: 27,count:0},
+				 {sv_name: "Nephi", sv_code: 29,count:7},
+				 {sv_name: "Enos", sv_code: 34,count:0}];
+  
+	$scope.gridOptions = {
+		enableSorting: true,
+		data:'myData',
+		columnDefs: [
+		  { field: 'sv_name', displayName: 'Nombre'},
+		  {field: 'sv_code', displayName: 'Placa'},
+		  { field: 'count', displayName: 'Cuenta',
+			cellClass: function(grid, row, col, rowRenderIndex, colRenderIndex) {
+			  if (grid.getCellValue(row,col) == 1) {
+				return 'blue';
+			  }
+			  return 'green';
+			}
+		  }
+		]
+	};
+
+}]);
+</script>
+
+</body>
+</html>

@@ -27,15 +27,21 @@
 
 	<form name="frmOne" ng-repeat="form in forms">
 	
-		<p>{{form.name}}</p>
-		
+		<p>{{ form.name }}</p>
+
 		<p>This example add the value to the ID selection</p>
+		
+		<div class="row form-row">
+			<div class="col-lg-3">
+				<input type="text" name="address" class="form-control" placeholder="Address..." ng-model="form.address">
+			</div>
+		</div>
 
 		<div ng-repeat="cont in form.contacts">
 			<ng-form name="cntForm">
 			<div class="row form-row">
 				<div class="col-lg-3">
-					<select name="id" ng-model="cont.id" ng-options="getItemLabel(myItem) for myItem in getAvailableItemIds(item, $index) track by myItem" ng-change="changeValue(cont.id, $index)" class="form-control" ng-required="isRequired(cont)" autofocus>
+					<select name="id" ng-model="cont.id" ng-options="getItemLabel(myItem) for myItem in getAvailableItemIds(myItem, $index) track by myItem" ng-change="changeValue(cont.id, $index)" class="form-control" ng-required="isRequired(cont)" autofocus>
 					</select>
 				</div>
 				<div class="col-lg-3">
@@ -78,6 +84,7 @@ app.controller('MainCtrl', function($scope) {
 	$scope.forms = [
 		{
 			name: "Angular JS 1.x unique ID selection on multiple forms",
+			address: '',
 			contacts: [{ id: '', name: '', autname: ''}]
 		}
 	];

@@ -1,4 +1,4 @@
-// Example 1
+// Get all "foo" values
 var objArray = [
 	{ foo: 1, bar: 2},
 	{ foo: 3, bar: 4},

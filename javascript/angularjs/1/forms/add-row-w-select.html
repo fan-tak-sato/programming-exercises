@@ -17,7 +17,7 @@
 <div class="container" ng-controller="MyController">
 	
 	<h3>Adding select dynamically</h3>
-	
+
 	<p>Add a new student to an exam. You cannot select a student twice.</p>
 
 	<form class="form-horizontal" method="post" role="form" novalidate>
@@ -41,7 +41,6 @@
 		</div>
 		{{ getStudents() }}
 	</form>
-</div>
 
 <script>//<![CDATA[
 
@@ -59,7 +58,7 @@ function MyController($scope) {
 				{id: 3, name: 'Student 3', disable: false}
 	];
 
-	$scope.exam_students = [{}]; 
+	$scope.exam_students = [{}];
 
 	$scope.addStudent = function() {
 		if ( $scope.canAddStudent() ) {

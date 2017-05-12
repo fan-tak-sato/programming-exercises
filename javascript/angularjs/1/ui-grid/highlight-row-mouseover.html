@@ -1,0 +1,57 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-touch.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+	<script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+	<script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+	<script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+	<script src="http://ui-grid.info/release/ui-grid.js"></script>
+	<link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+	<style>
+	.grid {
+		width: 500px;
+		height: 250px;
+	}
+	</style>
+</head>
+
+<body>
+
+	<div ng-controller="MainCtrl">
+		<div id="grid1" ui-grid="{ data: myData, rowTemplate:'_rowTemplate.html' }" class="grid"></div>
+	</div>
+	
+	<script>
+	var app = angular.module('app', ['ngTouch', 'ui.grid']);
+
+app.controller('MainCtrl', ['$scope', function($scope) {
+
+  $scope.myData = [{
+    "firstName": "Cox",
+    "lastName": "Carney",
+    "company": "Enormo",
+    "employed": true
+  }, {
+    "firstName": "Lorraine",
+    "lastName": "Wise",
+    "company": "Comveyer",
+    "employed": false
+  }, {
+    "firstName": "Nancy",
+    "lastName": "Waters",
+    "company": "Fuelton",
+    "employed": false
+  }];
+
+  // Here row is the scope of the row which the mouse is under. 
+  // TODO: highlight other cells in the row from this.
+  $scope.onRowHover = function(row) {
+    console.log(row);
+  }
+}]);
+	</script>
+	
+</body>
+</html>
