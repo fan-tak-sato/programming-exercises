@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="angularjs-starter">
+<head lang="en">
+	<meta charset="utf-8">
+	<title>Data pagination with LIMIT</title>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.js"></script>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<script>
+		document.write('<base href="' + document.location + '" />');
+	</script>
+	<script src="pagination.js"></script>
+	<script src="app.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+
+<div class="container">
+	<h2>Pagination with limit</h2>
+	<p>The script slices data to display n elements per page</p>
+	<ul>
+		<li ng-repeat="item in data">{{item.name}}</li>
+	</ul>
+	<pagination num-pages="noOfPages" current-page="currentPage" class="pagination-small"></pagination>
+</div>
+	
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!-- Resource: http://stackoverflow.com/questions/31301637/server-side-paging-with-mysql-php-and-angularjs -->
+<!DOCTYPE html>
+<html ng-app="angularjs-starter">
+<head lang="en">
+	<meta charset="utf-8">
+	<title>Data pagination with LIMIT</title>
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.0/css/bootstrap-combined.min.css" rel="stylesheet">
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.js"></script>
+	
+</head>
+<body ng-controller="activityTableCtrl">
+<div class="container">
+	<section id="main-content" class="animated fadeInRight">
+		<div class="row">
+			<div class="col-md-12" ng-controller="activityTableCtrl">
+				<div class="panel panel-default">
+				  <div class="panel-heading">
+					<h3 class="panel-title">Server side Pagination</h3>
+				  </div>
+				  <div class="panel-body">
+				  <!-- TOP OF TABLE: shows page size and search box -->
+				  <div class="dataTables_wrapper form-inline" role="grid">
+					<div class="row">
+						<div class="col-sm-6 col-md-6 col-lg-6">
+							<div class="dataTables_length" id="example_length">
+								
+								<select name="example_length" aria-controls="example" class="form-control input-sm" ng-model="pageSize" ng-change="pageSizeChanged()">
+									<option value="10">10</option>
+									<option value="25">25</option>
+									<option value="50">50</option>
+									<option value="100">100</option>
+								</select> records per page
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6 col-lg-6">
+							<div id="example_filter" class="dataTables_filter">
+								<label>Search:<input type="search" class="form-control input-sm" aria-controls="example" ng-model="searchText" ng-change="searchTextChanged()"></label>
+							</div>
+						</div>
+					</div>                        
+
+					<!-- DATA TABLE: shows the results -->
+					<!-- <table id="example" class="table table-striped table-bordered" datatable="" cellspacing="0" width="100%"> -->
+					<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+					<thead>
+						<tr>
+							<th>Caller Number</th>
+							<th>Total Lookups</th>
+							<th>Total Blocks</th>
+							<th>Total Complaints</th>
+							<th>Activity Percentage</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr ng-repeat = "x in activity">
+							<td>{{x.CallerPhoneNum}}</td>
+							<td>{{x.TotalLookups}}</td>
+							<td>{{x.TotalBlocks}}</td>
+							<td>{{x.TotalComplaints}}</td>
+							<td>{{x.ActivityRanking}}</td>
+						</tr>
+					</tbody>
+					</table>
+
+					<!-- BOTTOM OF TABLE: shows record number and pagination control -->
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="dataTables_info" ole="alert" aria-live="polite" aria-relevant="all">Showing {{startItem}} to {{endItem}} of {{totalItems}} entries</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="dataTables_paginate paging_simple_numbers">
+							<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" items-per-page="pageSize" max-size="3" boundary-links="true" rotate="false" ></pagination>
+							</div>
+						</div>
+					</div>
+
+					<!-- UI pagination is working but it does not change data -->
+					<!--
+					<pagination num-pages="totalPages" current-page="currentPage" class="pagination-small"></pagination>
+					-->
+					<ul>
+						<li><strong>Total items:</strong> {{ totalItems }}</li>
+						<li><strong>Total pages:</strong> {{ totalPages }}</li>
+						<li><strong>Cuurent page:</strong> {{ currentPage }}</li>
+						<li><strong>Page size:</strong> {{ pageSize }}</li>
+					</ul>
+					
+				  </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+	
+<script>
+var app = angular.module('angularjs-starter', []);
+
+app.controller('activityTableCtrl', function($scope, $http) {
+
+	$scope.currentPage = 1;
+	$scope.totalItems = 0;
+	$scope.totalPages = 0;
+	$scope.pageSize = 10;
+	$scope.searchText = '';
+
+	function getData() {
+
+		var baseUrl = 'http://localhost/exercises/javascript/angularjs/1/pagination/getData.php?page=';
+
+		$http.get(baseUrl + $scope.currentPage + '&size=' + $scope.pageSize + '&search=' + $scope.searchText)
+			.success(function(data) {
+				// Set data for the grid
+				$scope.activity = [];
+				$scope.totalItems = data.totalCount;
+				$scope.startItem = ($scope.currentPage - 1) * $scope.pageSize + 1;
+				$scope.endItem = $scope.currentPage * $scope.pageSize;
+				// Total pages
+				$scope.totalPages = Math.ceil($scope.totalItems / $scope.pageSize);
+				// End item
+				if ($scope.endItem > $scope.totalCount) {
+					$scope.endItem = $scope.totalCount;
+				}
+				angular.forEach(data.PortalActivity, function(temp){
+					$scope.activity.push(temp);
+				});
+			});
+	}
+
+	$scope.pageChanged = function() {
+		getData();
+	}
+
+	$scope.pageSizeChanged = function() {
+		$scope.currentPage = 1;
+		getData();
+	}
+
+	$scope.searchTextChanged = function() {
+		$scope.currentPage = 1;
+		getData();
+	}
+
+	getData();
+
+});
+</script>
+</body>
+</html>
