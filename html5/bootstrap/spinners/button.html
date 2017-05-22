@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title></title>
+
+	<link href="../../../common/bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+	
+	<style>
+	body, html {
+		padding-top: 1em;
+	}
+
+	.glyphicon.fast-right-spinner {
+		-webkit-animation: glyphicon-spin-r 1s infinite linear;
+		animation: glyphicon-spin-r 1s infinite linear;
+	}
+
+	.glyphicon.normal-right-spinner {
+		-webkit-animation: glyphicon-spin-r 2s infinite linear;
+		animation: glyphicon-spin-r 2s infinite linear;
+	}
+
+	.glyphicon.slow-right-spinner {
+		-webkit-animation: glyphicon-spin-r 3s infinite linear;
+		animation: glyphicon-spin-r 3s infinite linear;
+	}
+
+	.glyphicon.fast-left-spinner {
+		-webkit-animation: glyphicon-spin-l 1s infinite linear;
+		animation: glyphicon-spin-l 1s infinite linear;
+	}
+
+	.glyphicon.normal-left-spinner {
+		-webkit-animation: glyphicon-spin-l 2s infinite linear;
+		animation: glyphicon-spin-l 2s infinite linear;
+	}
+
+	.glyphicon.slow-left-spinner {
+		-webkit-animation: glyphicon-spin-l 3s infinite linear;
+		animation: glyphicon-spin-l 3s infinite linear;
+	}
+
+	@-webkit-keyframes glyphicon-spin-r {
+		0% {
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+		}
+
+		100% {
+			-webkit-transform: rotate(359deg);
+			transform: rotate(359deg);
+		}
+	}
+
+	@keyframes glyphicon-spin-r {
+		0% {
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+		}
+
+		100% {
+			-webkit-transform: rotate(359deg);
+			transform: rotate(359deg);
+		}
+	}
+
+	@-webkit-keyframes glyphicon-spin-l {
+		0% {
+			-webkit-transform: rotate(359deg);
+			transform: rotate(359deg);
+		}
+
+		100% {
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+		}
+	}
+
+	@keyframes glyphicon-spin-l {
+		0% {
+			-webkit-transform: rotate(359deg);
+			transform: rotate(359deg);
+		}
+
+		100% {
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+		}
+	}
+	</style>
+
+</head>
+
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class='col-lg-12 text-center'>
+			<p>
+				<button type="button" class="btn btn-default">
+					<span class="glyphicon glyphicon-repeat fast-right-spinner"></span>
+					fast-right-spinner
+				</button>
+				<button type="button" class="btn btn-default">
+					<span class="glyphicon glyphicon-repeat normal-right-spinner"></span>
+					normal-right-spinner
+				</button>
+				<button type="button" class="btn btn-default">
+					<span class="glyphicon glyphicon-repeat slow-right-spinner"></span>
+					slow-right-spinner
+				</button>
+			</p>
+			<p>
+				<button type="button" class="btn btn-default">
+					<span class="glyphicon glyphicon-repeat fast-left-spinner"></span>
+					fast-left-spinner
+				</button>
+				<button type="button" class="btn btn-default">
+					<span class="glyphicon glyphicon-repeat normal-left-spinner"></span>
+					normal-left-spinner
+				</button>
+				<button type="button" class="btn btn-default">
+					<span class="glyphicon glyphicon-repeat slow-left-spinner"></span>
+					slow-left-spinner
+				</button>
+			</p>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
