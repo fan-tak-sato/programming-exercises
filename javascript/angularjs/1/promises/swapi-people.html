@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script SRC="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
+</head>
+<body ng-app="myModule" ng-controller="HelloCtrl">
+
+<p>{{ people.person1 | json }}</p>
+<p>{{ people.person3 | json }}</p>
+<p>{{ people.starship9 | json }}</p>
+
+<script>
+angular.module('myModule', [])
+.controller('HelloCtrl', function($http, $scope) {
+
+	var people = {
+		person1: '',
+		person3: '',
+		starship9: ''
+	};
+
+	var baseApiUrl = 'http://swapi.co/api/';
+	
+	$http.get('http://swapi.co/api/people/1/')
+		.then(function(response) {
+			people.person1 = response.data;
+			return $http.get('http://swapi.co/api/people/3/');
+		})
+		.then(function(response) {
+			people.person3 = response.data;
+			return $http.get('http://swapi.co/api/starships/9/');
+		})
+		.then(function(response) {
+			people.starship9 = response.data;
+			return;
+		});
+		
+	$scope.people = people;
+
+	// console.log( people );
+
+});
+</script>
+</body>
+</html>

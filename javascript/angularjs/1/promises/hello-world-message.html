@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js"></script>
+</head>
+<body ng-app="myModule" ng-controller="HelloCtrl">
+
+	<h1>Messages</h1>
+	<ul>
+		<li ng-repeat="message in messages">{{ message }}</li>
+	</ul>
+
+<script>
+angular.module('myModule', [])
+
+.factory('HelloWorld', function($q, $timeout) {
+
+	var getMessages = function() {
+		var deferred = $q.defer();
+
+		$timeout(function() {
+			deferred.resolve(['Hello', 'world']);
+		}, 2000);
+
+		return deferred.promise;
+	};
+
+	return {
+		getMessages: getMessages
+	};
+
+})
+.controller('HelloCtrl', function($scope, HelloWorld) {
+	$scope.messages = HelloWorld.getMessages();
+});
+</script>
+</body>
+</html>
