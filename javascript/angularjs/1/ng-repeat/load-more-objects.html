@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="travel">
+<head>
+	<meta charset="utf-8" />
+	<title>AngularJS Ng Repeat Load more example</title>
+	<script>document.write('<base href="' + document.location + '" />');</script>
+	<script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.17/angular.js" data-semver="1.3.17"></script>
+	<script>
+	(function() {
+	var app = angular.module('travel', []);
+
+	app.controller('TravelController', function($scope) {
+
+		var vm = this;
+
+		vm.cruise = cruises;
+		vm.limit = 3;
+
+		$scope.loadMore = function() {
+			var increamented = vm.limit + 3;
+				vm.limit = increamented > vm.cruise.length ? vm.cruise.length : increamented;
+			};
+		});
+
+
+		var cruises = [{
+			img: 'img1',
+			title: 'title1',
+			desc: 'lorem ipsusm bla ba bla lbla blall'
+		}, {
+			img: 'img2',
+			title: 'title2',
+			desc: 'lorem ipsusm bla ba bla lbla blall'
+		}, {
+			img: 'img3',
+			title: 'title3',
+			desc: 'lorem ipsusm bla ba bla lbla blall'
+		}, {
+			img: 'img4',
+			title: 'title4',
+			desc: 'lorem ipsusm bla ba bla lbla blall'
+		}, {
+			img: 'img5',
+			title: 'title5',
+			desc: 'lorem ipsusm bla ba bla lbla blall'
+		}, {
+			img: 'img6',
+			title: 'title6',
+			desc: 'lorem ipsusm bla ba bla lbla blall'
+		}, {
+			img: 'img7',
+			title: 'title7',
+			desc: 'lorem ipsusm bla ba bla lbla blall'
+		}, {
+			img: 'img8',
+			title: 'title8',
+			desc: 'lorem ipsusm bla ba bla lbla blall'
+		}, {
+			img: 'img9',
+			title: 'title9',
+			desc: 'lorem ipsusm bla ba bla lbla blall'
+		}, ];
+
+
+	})();
+	</script>
+</head>
+
+<body>
+
+<div id="middle">
+	<div class="module-title"><h2>Latest News About Luxury Cruises</h2></div>
+
+	<div class="cruisewrap" ng-controller="TravelController as travel">
+	<div class="center">
+		<div ng-repeat="elem in travel.cruise | limitTo:travel.limit" class="cruises">
+			<div>
+				<img src=""  height="250" width="250">
+			</div>      
+			<div>
+				<span>{{ elem.title }}</span>
+			</div>
+			<div>
+				<span>{{ elem.desc }}</span>
+			</div>
+			<button class="btn btn-default" type="button">Button</button>
+		</div>
+	</div>
+
+	<button style="width:120px;text-align:center;margin:auto" class="more btn btn-primary btn-block" ng-click="loadMore()">Load More!</button>
+
+	</div>
+</div>
+
+</body>
+</html>
