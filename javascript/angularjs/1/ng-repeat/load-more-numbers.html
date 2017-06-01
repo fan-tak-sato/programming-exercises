@@ -10,6 +10,7 @@
 	<title></title>
 </head>
 <body ng-controller="MainCtrl">
+
 	<table class="table">
 		<tr ng-repeat="d in data | limitTo:totalDisplayed">
 			<td>{{d}}</td>
@@ -20,12 +21,12 @@
 <script>
 var app = angular.module('app', []);
 
-app.controller('MainCtrl', function ($scope) {
+app.controller('MainCtrl', function($scope) {
 
-	// fake data
+	// Fake data
 	var count = 2000;
 	var data = [];
-	
+
 	while(count) {
 		data[count] = count--;
 	} 
