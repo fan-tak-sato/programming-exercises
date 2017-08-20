@@ -16,37 +16,37 @@ include_once('VisualQuickstartPHPBook.php');
  */
 function testFactoryMethod(AbstractFactoryMethod $factoryMethodInstance)
 {
-    $phpUs = $factoryMethodInstance->makePHPBook("us");
-    echo 'us php Author: '.
-        $phpUs->getAuthor()."<br>";
-    echo 'us php Title: '.
-        $phpUs->getTitle()."<br>";
+	$phpUs = $factoryMethodInstance->makePHPBook("us");
+	echo 'us php Author: '.
+		$phpUs->getAuthor()."<br>";
+	echo 'us php Title: '.
+		$phpUs->getTitle()."<br>";
 
 
-    $phpUs = $factoryMethodInstance->makePHPBook("other");
-    echo 'other php Author: '.
-        $phpUs->getAuthor()."<br>";
-    echo 'other php Title: '.
-        $phpUs->getTitle()."<br>";
+	$phpUs = $factoryMethodInstance->makePHPBook("other");
+	echo 'other php Author: '.
+		$phpUs->getAuthor()."<br>";
+	echo 'other php Title: '.
+		$phpUs->getTitle()."<br>";
 
-    $phpUs = $factoryMethodInstance->makePHPBook("otherother");
-    echo 'otherother php Author: '.
-        $phpUs->getAuthor()."<br>";
-    echo 'otherother php Title: '.
-        $phpUs->getTitle()."<br>";
+	$phpUs = $factoryMethodInstance->makePHPBook("otherother");
+	echo 'otherother php Author: '.
+		$phpUs->getAuthor()."<br>";
+	echo 'otherother php Title: '.
+		$phpUs->getTitle()."<br>";
 }
 
 
 ?>
 <html>
-    <head>
-        <title>Factory pattern test</title>
-    </head>
-    <body>
-        <h1>TESTING FACTORY METHOD PATTERN</h1>
-        <p><strong>Testing OReillyFactoryMethod:</strong> </p>
-        <p><?php testFactoryMethod(new OReillyFactoryMethod()) ?></p>
-        <p><strong>Testing SamsFactoryMethod:</strong> </p>
-        <p><?php testFactoryMethod(new SamsFactoryMethod()); ?></p>
-    </body>
+	<head>
+		<title>Factory pattern test</title>
+	</head>
+	<body>
+		<h1>TESTING FACTORY METHOD PATTERN</h1>
+		<p><strong>Testing OReillyFactoryMethod:</strong> </p>
+		<p><?php testFactoryMethod(new OReillyFactoryMethod()) ?></p>
+		<p><strong>Testing SamsFactoryMethod:</strong> </p>
+		<p><?php testFactoryMethod(new SamsFactoryMethod()); ?></p>
+	</body>
 </html>

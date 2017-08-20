@@ -2,8 +2,8 @@
 
 abstract class AbstractBook {
 
-    abstract function getAuthor();
+	abstract function getAuthor();
 
-    abstract function getTitle();
+	abstract function getTitle();
 
 }

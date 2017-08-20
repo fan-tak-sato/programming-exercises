@@ -2,13 +2,13 @@
 
 abstract class AbstractPageDirector {
 
-    /**
-     * @param AbstractPageBuilder $builder_in
-     */
-    abstract function __construct(AbstractPageBuilder $builder_in);
+	/**
+	 * @param AbstractPageBuilder $builder_in
+	 */
+	abstract function __construct(AbstractPageBuilder $builder_in);
 
-    abstract function buildPage();
+	abstract function buildPage();
 
-    abstract function getPage();
+	abstract function getPage();
 
 }

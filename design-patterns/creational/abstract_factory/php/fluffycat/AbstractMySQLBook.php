@@ -2,6 +2,6 @@
 
 abstract class AbstractMySQLBook {
 
-    protected $subject = "MySQL";
+	protected $subject = "MySQL";
 
 }

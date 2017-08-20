@@ -2,30 +2,31 @@
 
 class OReillyFactoryMethod extends AbstractFactoryMethod {
 
-    private $context = "OReilly";
+	private $context = "OReilly";
 
-    /**
-     * @param mixed $param
-     * @return mixed
-     */
-    public function makePHPBook($param) {
-        $book = NULL;
+	/**
+	 * @param mixed $param
+	 * 
+	 * @return mixed
+	 */
+	public function makePHPBook($param) {
+		$book = NULL;
 
-        switch ($param) {
+		switch ($param) {
 
-            case "us":
-                $book = new OReillyPHPBook;
-            break;
+			case "us":
+				$book = new OReillyPHPBook;
+			break;
 
-            case "other":
-                $book = new SamsPHPBook;
-            break;
+			case "other":
+				$book = new SamsPHPBook;
+			break;
 
-            default:
-                $book = new OReillyPHPBook;
-            break;
-        }
+			default:
+				$book = new OReillyPHPBook;
+			break;
+		}
 
-        return $book;
-    }
+		return $book;
+	}
 }

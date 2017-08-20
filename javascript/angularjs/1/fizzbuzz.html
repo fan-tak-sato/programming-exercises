@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<script src="../../../common/angularjs/1/angular.min.js"></script>
+	<script>
+	angular.module('myApp', [])
+		.controller('myCtrl', ['$scope', function($scope) {
+
+			$scope.showRules = false;
+
+			$scope.fizzbazznum = '';
+			$scope.fizzbazznumRes = false;
+			
+			$scope.toggleRules = function() {
+				if ($scope.showRules) {
+					$scope.showRules = false;
+				} else {
+					$scope.showRules = true;
+				}
+				
+				console.log( $scope.showRules );
+			}
+		
+			function range(start, stop, step){
+				var a=[start], b=start;
+				while(b<stop) {
+					b += step;a.push(b);
+				}
+				return a;
+			}
+			
+			$scope.examineNumber =  function(number) {
+				
+				if (number%3==0 && number%5!==0) {
+					return 'Fizz';
+				}
+				
+				if (number%5==0 && number%3!==0) {
+					return 'Buzz';
+				}
+				
+				if (number%3==0 && number%5==0) {
+					return 'FizzBuzz';
+				}
+				
+				return number;
+			}
+			
+			$scope.setFizzbazzNumRes =  function(number) {
+				if (!number || isNaN(number)) {
+					$scope.fizzbazznumRes = 'Error: insert a valid number';
+					return false;
+				}
+				
+				$scope.fizzbazznumRes = $scope.examineNumber(number);
+			}
+
+			$scope.numbers = range(1, 100, 1);
+
+		}]);
+	</script>
+</head>
+
+<body>
+
+	<div class="container" ng-controller="myCtrl">
+		<h1>FizzBuzz game test</h1>
+		
+		<p>
+			<a href="#" class="btn btn-sm btn-primary" ng-click="toggleRules()" title="Read rules">Rules</a>
+		</p>
+
+		<div ng-show="showRules" class="alert alert-warning">
+			Players generally sit in a circle. The player designated to go first says the number "1", and each player thenceforth counts one number in turn. However, any number divisible by three is replaced by the word fizz and any divisible by five by the word buzz. Numbers divisible by both become fizz buzz. A player who hesitates or makes a mistake is eliminated from the game. <a href="https://en.wikipedia.org/wiki/Fizz_buzz" target="_blank">Wikipedia</a>
+		</div>
+		
+		<div>
+			<form action="" method="post" class="form-inline">
+				<div class="form-group">
+					<input type="number" class="form-control" name="fizzbazznum" ng-model="fizzbazznum" placeholder="Num...">
+					<button class="btn btn-sm btn-primary" ng-click="setFizzbazzNumRes(fizzbazznum)" type="button">Examine</button>
+				</div>
+			</form>
+			
+			<div class="alert alert-warning" style="margin-top: 1%" ng-if="fizzbazznumRes">
+				<strong>{{ fizzbazznumRes }}</strong>
+			</div>
+		</div>
+
+		<h2>Sequence 1 to 100</h2>
+		
+		<div ng-repeat="number in numbers">
+			{{ examineNumber(number) }}
+		</div>
+	</div>
+</body>
+</html>

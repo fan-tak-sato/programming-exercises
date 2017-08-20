@@ -3,7 +3,6 @@
 include_once('AbstractPageBuilder.php');
 include_once('AbstractPageBuilder.php');
 include_once('AbstractPageDirector.php');
-include_once('BookSingleton.php');
 include_once('HTMLPage.php');
 include_once('HTMLPageBuilder.php');
 include_once('HTMLPageDirector.php');
@@ -18,10 +17,10 @@ $page = $pageDirector->GetPage();
 ?>
 <html>
 <head>
-    <title>BUILDER PATTERN TEST</title>
+	<title>BUILDER PATTERN TEST</title>
 </head>
 <body>
-    <h1>BUILDER PATTERN TEST</h1>
-    <p><?php echo $page->showPage(); ?></p>
+	<h1>BUILDER PATTERN TEST</h1>
+	<p><?php echo $page->showPage(); ?></p>
 </body>
 </html>
